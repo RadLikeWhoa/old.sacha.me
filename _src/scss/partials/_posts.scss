@@ -1,0 +1,53 @@
+.post {
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  .button {
+    border-bottom: 0;
+  }
+}
+
+.post-inline,
+.post-archive {
+  border-bottom: 1px solid rgba(#ccc, 0.45);
+
+  &:last-of-type {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.post-inline {
+  padding-bottom: 3em;
+  margin-bottom: 3em;
+
+  @include at-least(m) {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+  }
+}
+
+.post-archive {
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+
+  &:last-of-type {
+    margin-bottom: 3em;
+  }
+}
+
+.post-links {
+  padding-top: 1.5em;
+  margin-top: 1.5em;
+  border-top: 1px solid rgba(#333, 0.35);
+
+  ol {
+    list-style-type: decimal-leading-zero;
+  }
+}
+
+.post-meta {
+  margin-bottom: 1.5em;
+  color: #aaa;
+}

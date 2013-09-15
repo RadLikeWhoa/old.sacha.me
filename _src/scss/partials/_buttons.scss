@@ -1,0 +1,30 @@
+.button {
+  @include rem(padding, 0.75rem 1.5rem);
+  display: inline-block;
+  font-weight: bold;
+  background-color: $control-light;
+  border-radius: 5px;
+}
+
+.button-block {
+  display: block;
+}
+
+.button-center {
+  display: block;
+  text-align: center;
+}
+
+.button-disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.button-dark {
+  background-color: $control-dark;
+}
+
+.button-small {
+  @include rem(padding, 0.25rem 0.75rem);
+}

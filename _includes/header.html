@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.name }} — Front-End Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="description" content="{{ site.tagline }}">
+    <link rel="alternate" href="{{ site.url }}/feed.xml" type="application/atom+xml" title="{{ site.name }}">
+    {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+    <link rel="canonical" href="{{ canonical }}">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% if site.google_analytics %}
+      <script>
+        (function(G,o,O,g,l){G.GoogleAnalyticsObject=O;G[O]||(G[O]=function(){(G[O].q=G[O].q||[]).push(arguments)});G[O].l=+new Date;g=o.createElement('script'),l=o.getElementsByTagName('script')[0];g.src='//www.google-analytics.com/analytics.js';l.parentNode.insertBefore(g,l)}(this,document,'ga'));ga('create','{{ site.google_analytics }}');ga('send','pageview')
+      </script>
+    {% endif %}
+  </head>
+  <body class="{{ page.page_class }}">
+    <header class="site-header">
+      <div class="wrap">
+        <h1 class="site-heading"><a href="/">{{ site.name }}</a></h1>
+        <nav>
+          <ul class="site-nav grid unstyled">
+            <li class="menu-toggle js-menu-toggle">
+              <a>Menu <span class="icon icon-list"></span></a>
+            </li>
+            {% for link in site.links %}
+              <li class="site-nav-item {% if link.url == page.navigation_match %} is-active {% endif %}">
+                <a href="{{ link.url }}" title="{{ link.title }}"><span class="label">{{ link.title }}</span> <span class="icon icon-{{ link.icon_class }}"></span></a>
+              </li>
+            {% endfor %}
+            <li class="active-nav-item"></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="main">

@@ -1,0 +1,154 @@
+$nav-item-count: 2;
+
+.site-header {
+  margin-bottom: 3em;
+  background-color: $highlight;
+
+  a {
+    display: block;
+    color: $main;
+  }
+}
+
+.site-heading {
+  margin-bottom: 0;
+  text-align: center;
+  -webkit-transition: text-shadow 0.25s ease-in-out;
+
+  &:hover {
+    text-shadow: 0 0 10px rgba(#fff, 0.5)
+  }
+
+  a {
+    @include rem(padding, 1.5rem 0);
+
+    @include at-least(s) {
+      @include rem(padding, 3rem 0);
+    }
+  }
+}
+
+.site-nav {
+  position: relative;
+  margin-left: 0;
+
+  &.is-open {
+    max-height: 18em;
+  }
+
+  @include up-to(m) {
+    max-height: 3em;
+    overflow: hidden;
+    -webkit-transition: max-height 0.25s ease-in-out;
+  }
+
+  @include at-least(m) {
+    &:hover .site-nav-item a {
+      color: $main;
+      background-color: transparent;
+    }
+  }
+}
+
+.site-nav-item,
+.active-nav-item,
+.menu-toggle {
+  width: 100%;
+
+  @include up-to(m) {
+    background-color: $main;
+  }
+
+  @include at-least(m) {
+    width: percentage(1, $nav-item-count);
+  }
+
+  @include up-to(m) {
+    a {
+      color: $highlight;
+    }
+  }
+
+  @include up-to(m) {
+    .icon {
+      float: right;
+      padding-top: 0.25em;
+    }
+  }
+}
+
+.site-nav-item {
+  @extend %grid-col;
+
+  padding-left: 0;
+
+  @for $i from 2 through $nav-item-count + 1 {
+    #{"&:nth-child(#{$i}).is-active ~ .active-nav-item"} {
+      -webkit-transform: translateX(($i - 2) * 100%);
+    }
+
+    #{"&:nth-child(#{$i}):hover ~ li.active-nav-item"} {
+      -webkit-transform: translateX(($i - 2) * 100%);
+    }
+  }
+
+  @include up-to(m) {
+    border-top: 1px solid $control-light;
+  }
+
+  @include at-least(m) {
+    text-align: center;
+  }
+
+  &.is-active a {
+    font-weight: bold;
+  }
+
+  &.is-active a,
+  .site-nav &:hover a {
+    color: $highlight;
+  }
+
+  a {
+    position: relative;
+    padding: 0.75em 1.5em;
+    z-index: 10;
+    -webkit-transition: color 0.25s ease-in-out;
+
+    @include at-least(m) {
+      padding: 1.5em 0;
+    }
+  }
+
+  .label {
+    @include at-least(m) {
+      display: none;
+    }
+  }
+}
+
+.active-nav-item {
+  @include at-least(m) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $main;
+    border-radius: 5px 5px 0 0;
+    pointer-events: none;
+    -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  }
+}
+
+.menu-toggle {
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+
+  a {
+    padding: 0.75em 1.5em;
+  }
+
+  @include at-least(m) {
+    display: none;
+  }
+}

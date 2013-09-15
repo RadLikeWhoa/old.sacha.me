@@ -1,0 +1,13 @@
+$rem-fallback: 16px;
+
+$gutters: 1.5rem;
+
+$highlight: #eb724c;
+$main: #f9f9f9;
+$code: #FDF6E3;
+$warning: #FA3232;
+$info: adjust-hue($warning, -150deg);
+$share: adjust-hue($warning, -230deg);
+$footer: #444;
+$control-light: darken($main, 6%);
+$control-dark: darken($footer, 6%);

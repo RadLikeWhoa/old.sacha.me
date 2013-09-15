@@ -1,0 +1,17 @@
+.pagination li {
+  @extend %grid-col;
+
+  width: 100%;
+
+  @include up-to(m) {
+    margin-bottom: 1.5em;
+  }
+
+  @include at-least(m) {
+    width: 50%;
+  }
+}
+
+.post-pagination {
+  margin-top: 3em;
+}

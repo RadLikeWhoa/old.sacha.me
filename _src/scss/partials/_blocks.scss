@@ -1,0 +1,44 @@
+.content-block {
+  padding: 0.75em 1em;
+  border: 1px solid;
+  border-radius: 3px;
+
+  &::before {
+    font-style: italic;
+  }
+
+  code {
+    background-color: $code;
+  }
+}
+
+.warning-block {
+  color: darken($warning, 30%);
+  background-color: rgba($warning, 0.05);
+  border-color: rgba(darken($warning, 10%), 0.1);
+
+  &::before {
+    content: "Note: ";
+  }
+}
+
+.info-block {
+  color: darken($info, 30%);
+  background-color: rgba($info, 0.05);
+  border-color: rgba(darken($info, 10%), 0.1);
+
+  &::before {
+    content: "Info: ";
+  }
+}
+
+.share-block {
+  padding: 1.5em;
+  color: darken($share, 30%);
+  background-color: rgba($share, 0.05);
+  border-color: rgba(darken($share, 10%), 0.1);
+
+  &:last-child {
+    margin-top: 1.5em;
+  }
+}

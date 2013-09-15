@@ -1,0 +1,54 @@
+html {
+  font: 100%/1.5 Source Sans Pro, sans-serif;
+
+  @include at-least(s) {
+    font-size: 112.5%;
+  }
+
+  @include at-least(m) {
+    font-size: 125%;
+  }
+
+  @include at-least(l) {
+    font-size: 137.5%;
+  }
+}
+
+#{headings(1 to 4, false)},
+p,
+pre,
+ul,
+ol {
+  margin-top: 0;
+}
+
+#{headings(1 to 4, false)},
+p,
+.highlight,
+ul,
+ol {
+  @include rem(margin-bottom, 1.5rem);
+}
+
+#{headings(1 to 4, false)} {
+  font-family: Montserrat, Source Sans Pro, sans-serif;
+}
+
+#{headings(1)} {
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+#{headings(2)} {
+  font-size: 1.7em;
+  line-height: 1.765;
+}
+
+#{headings(3)} {
+  font-size: 1.27em;
+  line-height: 1.179;
+}
+
+#{headings(4)} {
+  font-size: 1em;
+}

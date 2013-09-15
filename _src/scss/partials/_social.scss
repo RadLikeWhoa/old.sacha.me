@@ -1,0 +1,20 @@
+$brand-colours:
+  "codepen"    #383839,
+  "dribbble"   #e43a7b,
+  "github"     #4183c4,
+  "instagram"  #3f729b,
+  "lastfm"     #ac020d,
+  "pinboard"   #3944db,
+  "spotify"    #81b71a
+  "tumblr"     #34526f,
+  "twitter"    #00a0d1;
+
+.social-link-item .button {
+  color: $main;
+}
+
+@each $brand in $brand-colours {
+  .#{nth($brand, 1)} {
+    background-color: #{nth($brand, 2)};
+  }
+}

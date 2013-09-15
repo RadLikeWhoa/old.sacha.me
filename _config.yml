@@ -1,0 +1,57 @@
+name: Sacha Schmid
+tagline: "Sacha Schmid is a front-end developer from Switzerland, with an eye for beautiful code."
+description: "Hi there, my name is Sacha Schmid and I am a front-end developer from Switzerland. I'm especially focused on creating appealing designs using the latest HTML, CSS and JavaScript techniques."
+short_description: "My name is Sacha Schmid. I'm a front-end developer from Switzerland."
+
+url: http://sachaschmid.ch
+permalink: /:title/
+
+paginate: 10
+paginate_path: archive/page/:num/
+
+timezone: Europe/Zurich
+
+author:
+  name: Sacha Schmid
+  social:
+    - network: Twitter
+      url: https://twitter.com/sachaschmid
+    - network: GitHub
+      url: https://github.com/radlikewhoa
+    - network: Pinboard
+      url: https://pinboard.in/u:sachaschmid
+    - network: Dribbble
+      url: http://dribbble.com/sachaschmid
+    - network: Instagram
+      url: https://instagram.com/radlikewhoa_
+    - network: lastfm
+      url: http://last.fm/user/HawkFire21
+    - network: Spotify
+      url: http://open.spotify.com/user/sachaschmid
+
+# google_analytics: UA-26829096-1
+
+links:
+  - title: Home
+    url: /
+    icon_class: home
+  - title: Archive
+    url: /archive
+    icon_class: archive
+  # - title: Projects
+    # url: /projects
+    # icon_class: case
+  # - title: About
+    # url: /about
+    # icon_class: person
+  # - title: Contact
+    # url: /contact
+    # icon_class: envelope
+
+markdown: rdiscount
+pygments: true
+
+rdiscount:
+  extensions:
+    - footnotes
+    - smart

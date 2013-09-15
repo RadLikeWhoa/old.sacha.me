@@ -1,0 +1,65 @@
+@function _breakpoint ($point) {
+  @if $point == s {
+    @return 30em;
+  } @else if $point == m {
+    @return 45em;
+  } @else if $point == l {
+    @return 60em;
+  }
+}
+
+@mixin at-least ($point) {
+  @media (min-width: _breakpoint($point)) {
+    @content;
+  }
+}
+
+@mixin up-to ($point) {
+  @media (max-width: _breakpoint($point)) {
+    @content;
+  }
+}
+
+@mixin rem ($property, $values) {
+  $px-values: ();
+  $leave: auto 0 inherit initial;
+
+  @each $value in $values {
+    @if index($leave, $value) == false {
+      $px-values: append($px-values, $value / 1rem * $rem-fallback);
+    } @else {
+      $px-values: append($px-values, $value);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $values;
+}
+
+@function percentage ($value, $of) {
+  @return 100 / $of * $value * 1%;
+}
+
+@function _construct-heading ($level, $class) {
+  $selector: "h#{$level}, ";
+
+  @if $class {
+    $selector: $selector + ".h#{$level}";
+  }
+
+  @return $selector;
+}
+
+@function headings ($level: 1, $class: true) {
+  $selector: "";
+
+  @if length($level) > 1 {
+    @for $i from nth($level, 1) through nth($level, 3) {
+      $selector: $selector + _construct-heading($i, $class)
+    }
+  } @else {
+    $selector: _construct-heading($level, $class);
+  }
+
+  @return $selector;
+}

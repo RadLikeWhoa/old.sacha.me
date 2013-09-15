@@ -1,0 +1,13 @@
+$gutters: 1.5rem !default;
+
+.grid {
+  @extend .clearfix;
+  @include rem(margin-left, -$gutters);
+}
+
+%grid-col,
+.grid-col {
+  display: block;
+  float: left;
+  @include rem(padding-left, $gutters);
+}
