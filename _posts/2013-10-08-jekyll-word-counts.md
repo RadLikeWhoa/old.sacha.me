@@ -3,6 +3,8 @@ layout: post
 
 title: "Word Counts and Reading Time in Jekyll"
 caption: "Jekyll makes it easy to display a post's word count or its reading time using no JavaScript whatsoever."
+
+published: false
 ---
 
 Displaying a post's word count is rather common when creating a blog, but usually those techniques rely on JavaScript to work. The script reads the post's text, counts the words and displays the result accordingly. That was the way I did things on this blog first as well, but then I set out to find a better way.

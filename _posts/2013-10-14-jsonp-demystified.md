@@ -3,6 +3,8 @@ layout: post
 
 title: JSONP, Demystified
 caption: "Dealing with APIs in JavaScript can be daunting at first, especially when it comes to working around cross-domain issues. Luckily, there are easy ways to get around the confusion."
+
+published: false
 ---
 
 When dealing with APIs in JavaScript, [JSONP](http://en.wikipedia.org/wiki/JSONP "JSONP on Wikipedia") is all the rage these days. There is a number of reasons as to why this technique reached such popularity, but there's also a lot of uncertainity when it comes to actually using it. Most people would be all like "Ugh, JSONP is easy, just use jQuery!" But as usual, "just use jQuery" is not an acceptable answer for everyone.
