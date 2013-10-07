@@ -4,7 +4,7 @@ a {
 
   .post & {
     border-bottom: 1px solid transparent;
-    -webkit-transition: border-bottom-color 0.15s ease-in-out;
+    transition: border-bottom-color 0.15s ease-in-out;
 
     &:hover {
       border-bottom-color: currentcolor;

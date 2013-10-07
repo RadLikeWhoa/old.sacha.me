@@ -9,9 +9,13 @@ body {
 }
 
 .wrap {
-  max-width: 40em;
+  max-width: 35em;
   padding: 0 1.5em;
   margin: 0 auto;
+}
+
+.wrap-wide {
+  max-width: 39em;
 }
 
 .site-intro {

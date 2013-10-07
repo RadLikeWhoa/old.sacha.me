@@ -1,5 +1,3 @@
-$nav-item-count: 2;
-
 .site-header {
   margin-bottom: 3em;
   background-color: $highlight;
@@ -13,7 +11,7 @@ $nav-item-count: 2;
 .site-heading {
   margin-bottom: 0;
   text-align: center;
-  -webkit-transition: text-shadow 0.25s ease-in-out;
+  transition: text-shadow 0.25s ease-in-out;
 
   &:hover {
     text-shadow: 0 0 10px rgba(#fff, 0.5)
@@ -39,7 +37,7 @@ $nav-item-count: 2;
   @include up-to(m) {
     max-height: 3em;
     overflow: hidden;
-    -webkit-transition: max-height 0.25s ease-in-out;
+    transition: max-height 0.25s ease-in-out;
   }
 
   @include at-least(m) {
@@ -57,23 +55,19 @@ $nav-item-count: 2;
 
   @include up-to(m) {
     background-color: $main;
-  }
 
-  @include at-least(m) {
-    width: percentage(1, $nav-item-count);
-  }
-
-  @include up-to(m) {
     a {
       color: $highlight;
     }
-  }
 
-  @include up-to(m) {
     .icon {
       float: right;
       padding-top: 0.25em;
     }
+  }
+
+  @include at-least(m) {
+    width: percentage(1, $nav-item-count);
   }
 }
 
@@ -84,11 +78,11 @@ $nav-item-count: 2;
 
   @for $i from 2 through $nav-item-count + 1 {
     #{"&:nth-child(#{$i}).is-active ~ .active-nav-item"} {
-      -webkit-transform: translateX(($i - 2) * 100%);
+      transform: translateX(($i - 2) * 100%);
     }
 
     #{"&:nth-child(#{$i}):hover ~ li.active-nav-item"} {
-      -webkit-transform: translateX(($i - 2) * 100%);
+      transform: translateX(($i - 2) * 100%);
     }
   }
 
@@ -113,7 +107,7 @@ $nav-item-count: 2;
     position: relative;
     padding: 0.75em 1.5em;
     z-index: 10;
-    -webkit-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
 
     @include at-least(m) {
       padding: 1.5em 0;
@@ -136,7 +130,7 @@ $nav-item-count: 2;
     background-color: $main;
     border-radius: 5px 5px 0 0;
     pointer-events: none;
-    -webkit-transition: -webkit-transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out;
   }
 }
 

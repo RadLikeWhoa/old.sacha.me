@@ -100,7 +100,7 @@
   margin-bottom: 1.5em;
 
   a:hover {
-    -webkit-animation: pop 0.25s ease-in-out;
+    animation: pop 0.25s ease-in-out;
   }
 
   @include at-least(s) {
@@ -116,8 +116,8 @@
   }
 }
 
-@-webkit-keyframes pop {
+@keyframes pop {
   50% {
-    -webkit-transform: rotate(3deg) scale(1.2);
+    transform: rotate(3deg) scale(1.2);
   }
 }

@@ -1,4 +1,2 @@
-_site
-
-# Only during development, don't include posts
-_posts/
+_site/
+_drafts/
