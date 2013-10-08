@@ -53,5 +53,5 @@ pygments: true
 
 rdiscount:
   extensions:
-    - footnotes
+    # - footnotes
     - smart

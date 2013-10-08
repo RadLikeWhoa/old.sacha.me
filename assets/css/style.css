@@ -18,6 +18,11 @@
   clear: both;
 }
 
+.small {
+  font-size: 0.8em;
+  line-height: 1.875;
+}
+
 .text-left {
   text-align: left;
 }
@@ -372,7 +377,6 @@ pre code {
   background-image: linear-gradient(to right, #fdf6e3 30%, rgba(253, 246, 227, 0)), linear-gradient(to right, rgba(253, 246, 227, 0), #fdf6e3 70%), radial-gradient(farthest-side at 0 50%, rgba(51, 51, 51, 0.05), rgba(51, 51, 51, 0)), radial-gradient(farthest-side at 100% 50%, rgba(51, 51, 51, 0.05), rgba(51, 51, 51, 0));
   background-repeat: no-repeat;
   background-position: 0 0, 100% 0, 0 0, 100% 0;
-  -webkit-background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
   background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
   background-attachment: local, local, scroll, scroll;
   border: 1px solid rgba(250, 231, 179, 0.7);
@@ -700,7 +704,6 @@ pre code {
 }
 
 * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -1017,32 +1020,64 @@ body {
   background-color: #383839;
 }
 
+.codepen:hover {
+  background-color: #474748;
+}
+
 .dribbble {
   background-color: #e43a7b;
+}
+
+.dribbble:hover {
+  background-color: #e8558d;
 }
 
 .github {
   background-color: #4183c4;
 }
 
+.github:hover {
+  background-color: #5892cb;
+}
+
 .instagram {
   background-color: #3f729b;
+}
+
+.instagram:hover {
+  background-color: #4882b1;
 }
 
 .lastfm {
   background-color: #ac020d;
 }
 
+.lastfm:hover {
+  background-color: #ca020f;
+}
+
 .pinboard {
   background-color: #3944db;
+}
+
+.pinboard:hover {
+  background-color: #535ce0;
 }
 
 .spotify {
   background-color: #81b71a;
 }
 
+.spotify:hover {
+  background-color: #94d21e;
+}
+
 .twitter {
   background-color: #00a0d1;
+}
+
+.twitter:hover {
+  background-color: #00b7f0;
 }
 
 .site-footer {
@@ -1145,19 +1180,14 @@ body {
   left: 1.5rem;
   right: 0;
   height: 1px;
-  background-image: -webkit-gradient(linear, top left, top right, from(rgba(249, 249, 249, 0)), color-stop(rgba(249, 249, 249, 0.35)), to(rgba(249, 249, 249, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(249, 249, 249, 0), rgba(249, 249, 249, 0.35), rgba(249, 249, 249, 0));
-  background-image: linear-gradient(to right, rgba(249, 249, 249, 0), rgba(249, 249, 249, 0.35), rgba(249, 249, 249, 0));
+  background: rgba(249, 249, 249, 0.35);
+  background: -webkit-linear-gradient(left, rgba(249, 249, 249, 0), rgba(249, 249, 249, 0.35), rgba(249, 249, 249, 0));
+  background: linear-gradient(to right, rgba(249, 249, 249, 0), rgba(249, 249, 249, 0.35), rgba(249, 249, 249, 0));
 }
 
 .social-link-item {
   width: 33.33333%;
   margin-bottom: 1.5em;
-}
-
-.social-link-item a:hover {
-  -webkit-animation: pop 0.25s ease-in-out;
-  animation: pop 0.25s ease-in-out;
 }
 
 @media (min-width: 30em) {
@@ -1175,20 +1205,5 @@ body {
 @media (min-width: 60em) {
   .social-link-item {
     width: 14.28571%;
-  }
-}
-
-@-webkit-keyframes pop {
-  50% {
-    -webkit-transform: rotate(3deg) scale(1.2);
-    transform: rotate(3deg) scale(1.2);
-  }
-}
-
-@keyframes pop {
-  50% {
-    -webkit-transform: rotate(3deg) scale(1.2);
-    -ms-transform: rotate(3deg) scale(1.2);
-    transform: rotate(3deg) scale(1.2);
   }
 }

@@ -16,5 +16,9 @@ $brand-colours:
 @each $brand in $brand-colours {
   .#{nth($brand, 1)} {
     background-color: #{nth($brand, 2)};
+
+    &:hover {
+      background-color: lighten(nth($brand, 2), 6%);
+    }
   }
 }
