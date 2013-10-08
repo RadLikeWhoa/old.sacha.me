@@ -15,8 +15,10 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON('package.json')
 
-    clean:
-      files: 'dist/'
+    jekyll:
+      dist:
+        options:
+          safe: true
 
     # jshint:
       # options:
@@ -26,24 +28,24 @@ module.exports = (grunt) ->
     uglify:
       dist:
         files:
-          'assets/js/main.js': '_src/js/main.js'
+          '_site/assets/js/main.js': '_src/js/main.js'
 
     sass:
       dist:
         files:
-          'assets/css/style.css': '_src/scss/style.scss'
+          '_site/assets/css/style.css': '_src/scss/style.scss'
 
     autoprefixer:
       dist:
         options:
           browsers: [ 'last 2 version', 'ie 8' ]
-        src: 'assets/css/style.css'
-        dest: 'assets/css/style.css'
+        src: '_site/assets/css/style.css'
+        dest: '_site/assets/css/style.css'
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask('default', [
-    'clean',
+    'jekyll',
     # 'jshint',
     'uglify',
     'sass',
