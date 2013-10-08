@@ -42,12 +42,21 @@ module.exports = (grunt) ->
         src: '_site/assets/css/style.css'
         dest: '_site/assets/css/style.css'
 
+    copy:
+      dist:
+        expand: true
+        cwd: '_src/fonts/'
+        src: '**'
+        dest: '_site/assets/css/fonts/'
+        flatten: true
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask('default', [
-    'jekyll',
+    'jekyll:dist',
     # 'jshint',
     'uglify',
     'sass',
-    'autoprefixer'
+    'autoprefixer',
+    'copy'
   ])
