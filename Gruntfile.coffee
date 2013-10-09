@@ -46,24 +46,24 @@ module.exports = (grunt) ->
     watch:
       jekyll:
         files: [ '_config.yml', '/**/*.html', '/_posts/*.md', 'feed.xml', 'sitemap.xml' ]
-        tasks: [ 'any-newer:jekyll' ]
+        tasks: [ 'jekyll:dist' ]
       js:
         files: '_src/js/*.js'
-        tasks: [ 'newer:jshint', 'any-newer:uglify', 'newer:copy:assets' ]
+        tasks: [ 'jshint:dist', 'uglify:dist', 'copy:assets' ]
       sass:
         files: '_src/scss/**/*.scss'
-        tasks: [ 'any-newer:sass', 'newer:autoprefixer', 'newer:copy:assets' ]
+        tasks: [ 'sass:dist', 'autoprefixer:dist', 'copy:assets' ]
       fonts:
         files: '_src/fonts/'
-        tasks: [ 'newer:copy:fonts', 'newer:copy:assets' ]
+        tasks: [ 'copy:fonts', 'copy:assets' ]
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask('default', [
-    'any-newer:jekyll',
-    'newer:jshint',
-    'any-newer:uglify',
-    'any-newer:sass',
-    'newer:autoprefixer',
-    'newer:copy:fonts'
+    'jekyll:dist',
+    'jshint:dist',
+    'uglify:dist',
+    'sass:dist',
+    'autoprefixer:dist',
+    'copy:fonts'
   ])

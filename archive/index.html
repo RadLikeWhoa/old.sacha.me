@@ -17,22 +17,22 @@ navigation_match: /archive
     <li>
       {% if paginator.previous_page %}
         <a href="{% if paginator.previous_page == 1 %}/archive{% else %}{{ paginator.previous_page_path }}{% endif %}" class="button button-block">
-          <span class="icon icon-left"></span> Newer posts
+          <span class="icon icon-left"></span> <span class="label">Newer posts</span>
         </a>
       {% else %}
         <a class="button button-block button-disabled">
-          <span class="icon icon-left"></span> No newer posts found
+          <span class="icon icon-left"></span> <span class="label">No newer posts found</span>
         </a>
       {% endif %}
     </li>
     <li class="text-right">
       {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path }}" class="button button-block">
-          Older posts <span class="icon icon-right"></span>
+          <span class="label">Older posts</span> <span class="icon icon-right"></span>
         </a>
       {% else %}
         <a class="button button-block button-disabled">
-          No older posts found <span class="icon icon-right"></span>
+          <span class="label">No older posts found</span> <span class="icon icon-right"></span>
         </a>
       {% endif %}
     </li>
