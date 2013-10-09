@@ -9,7 +9,7 @@ Displaying a post's word count is rather common when creating a blog, but usuall
 
 <p class="content-block info-block">If you just want to get to the snippets without the explanations, they're available in the paragraph <a href="#summing-it-up" title="Jump to this paragraph">Summing it up</a>.</p>
 
-### [Showing the word count](id:showing-the-word-count)
+### [](id:showing-the-word-count) Showing the word count
 
 Luckily Jekyll provides a handy liquid filter called `number_of_words`. So displaying the actual word count is as simple as that:
 
@@ -21,7 +21,7 @@ Luckily Jekyll provides a handy liquid filter called `number_of_words`. So displ
 
 While this works just nicely it's not very solid. You might want to hide word counts on shorter posts, for example as they're of little value in such posts. This is a little more complex as you can not directly use Liquid filters in a conditional block.
 
-### [Variables in Liquid](id:variables-in-liquid)
+### [](id:variables-in-liquid) Variables in Liquid
 
 In Liquid there are two ways to create variables. You can `{% raw %}{% assign %}{% endraw %}` a variable and you can `{% raw %}{% capture %}{% endraw %}` a variable. The difference might not be obvious, but it's simple once you get it.
 
@@ -49,7 +49,7 @@ But what if you want to store a Liquid tags's return value in a variable? That's
 
 As you can see in the above example, you can capture any number of strings into a variable, be it strings returned from a Liquid tag or fixed strings.
 
-### [Making the word count conditional](id:making-the-word-count-conditional)
+### [](id:making-the-word-count-conditional) Making the word count conditional
 
 Now that you know about `{% raw %}{% assign %}{% endraw %}` and `{% raw %}{% capture %}{% endraw %}` we can move on to store our word count in a variable. The question remains, do we assign the variable or do we capture it?
 
@@ -88,7 +88,7 @@ But you'll soon see that this won't work as intended as Jekyll will throw you th
 
 You can use Liquid filters to substract your minimum number from the word count to see if it falls below 0. If it does it will contain a '-' at the beginning, which means the post is too short and won't get the word number displayed. If our variable doesn't contain a '-' we can simply add our minimum number back to the word count and display it. Quite simple, right?
 
-### [Customising the output](id:customising-the-input)
+### [](id:customising-the-input) Customising the output
 
 Now that we finally have our word number along with the conditional to hide it from short posts we can move on to make the output a bit nicer. You do this using Liquid filters like `append` or `prepend`. For a complete list of available filters you can check Shopify's [Liquid for Designers guide](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters "Shopify's guide for Liquid").
 
@@ -100,7 +100,7 @@ Now that we finally have our word number along with the conditional to hide it f
 
 The above snippet results in something like _'There are 250 words in this post'_. You can go crazy with filters, they offer lots of possibilities.
 
-### [Calculating the reading time](id:calculating-the-reading-time)
+### [](id:calculating-the-reading-time) Calculating the reading time
 
 You might have noticed that I display an estimated reading time on this blog instead of just a word count. Personally, I just think this is a more useful guideline. Doing this is as easy as putting the `divided_by` filter into our final word count construct. The number to divide by is arbitrary, but 180 is the avarage number of words a person reads per minute.
 
@@ -110,7 +110,7 @@ You might have noticed that I display an estimated reading time on this blog ins
 {% endraw %}
 {% endhighlight %}
 
-### [Summing it up](id:summing-it-up)
+### [](id:summing-it-up) Summing it up
 
 Instead of making you pick up all the pieces scattered all over this post, here are the two snippets to display the word count and the reading time.
 
