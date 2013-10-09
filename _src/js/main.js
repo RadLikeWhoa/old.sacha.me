@@ -23,7 +23,7 @@ function getPostLinks () {
     link.id = link.id || 'post-reference-' + counter
     counter += 1
 
-    backref = '[<a href="#' + link.id + '" title="Jump to context">↩</a>]'
+    backref = '[<a href="#' + link.id + '" title="Jump to context"><span class="icon icon-up"></span></a>]'
 
     html += '<li class="small">' +
               '<a href="' + href + '">' + prefix + base + '</a>' +

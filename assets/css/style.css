@@ -320,6 +320,10 @@ a {
   content: "\48";
 }
 
+.icon-up::before {
+  content: "\55";
+}
+
 pre,
 code {
   font-size: 0.8em;
