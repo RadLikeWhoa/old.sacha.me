@@ -805,7 +805,7 @@ body {
   .site-nav-item,
   .active-nav-item,
   .menu-toggle {
-    width: 50%;
+    width: 33.33333%;
   }
 }
 
@@ -835,6 +835,18 @@ body {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
+}
+
+.site-nav-item:nth-child(4).is-active ~ .active-nav-item {
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+.site-nav-item:nth-child(4):hover ~ li.active-nav-item {
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
 }
 
 @media (max-width: 45em) {
