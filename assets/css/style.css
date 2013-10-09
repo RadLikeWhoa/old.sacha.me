@@ -1004,68 +1004,36 @@ body {
   color: #f9f9f9;
 }
 
-.codepen {
-  background-color: #383839;
-}
-
 .codepen:hover {
-  background-color: #474748;
-}
-
-.dribbble {
-  background-color: #e43a7b;
+  color: #383839;
 }
 
 .dribbble:hover {
-  background-color: #e8558d;
-}
-
-.github {
-  background-color: #4183c4;
+  color: #e43a7b;
 }
 
 .github:hover {
-  background-color: #5892cb;
-}
-
-.instagram {
-  background-color: #3f729b;
+  color: #4183c4;
 }
 
 .instagram:hover {
-  background-color: #4882b1;
-}
-
-.lastfm {
-  background-color: #ac020d;
+  color: #3f729b;
 }
 
 .lastfm:hover {
-  background-color: #ca020f;
-}
-
-.pinboard {
-  background-color: #3944db;
+  color: #ac020d;
 }
 
 .pinboard:hover {
-  background-color: #535ce0;
-}
-
-.spotify {
-  background-color: #81b71a;
+  color: #3944db;
 }
 
 .spotify:hover {
-  background-color: #94d21e;
-}
-
-.twitter {
-  background-color: #00a0d1;
+  color: #81b71a;
 }
 
 .twitter:hover {
-  background-color: #00b7f0;
+  color: #00a0d1;
 }
 
 .site-footer {
