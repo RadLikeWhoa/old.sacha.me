@@ -5,10 +5,14 @@ function getBase (url) {
 }
 
 function getPostLinks () {
+  if (!('querySelector' in document)) return
+
   var links = document.querySelectorAll('.post-body a'),
       list = document.querySelector('.post-links ol'),
       counter = 1,
       html = ''
+
+  if (!links || !list) return
 
   for (var i = 0, j = links.length; i < j; i++) {
     var link = links[i],
@@ -31,18 +35,18 @@ function getPostLinks () {
             '</li>'
   }
 
-  if (!html || !list) return
+  if (!html) return
 
   list.innerHTML = html
   list.parentNode.style.display = 'block'
 }
 
-if (document.body.classList.contains('page-post')) {
-  getPostLinks()
+if (_menuToggle) {
+  if ('addEventListener' in window) {
+    _menuToggle.addEventListener('click', function () {
+      this.parentNode.classList.toggle('is-open')
+    })
+  }
 }
 
-if (_menuToggle) {
-  _menuToggle.addEventListener('click', function () {
-    this.parentNode.classList.toggle('is-open')
-  })
-}
+getPostLinks()
