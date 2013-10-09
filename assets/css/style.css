@@ -316,6 +316,10 @@ a {
   content: "\72";
 }
 
+.icon-list::before {
+  content: "\48";
+}
+
 pre,
 code {
   font-size: 0.8em;
