@@ -14,7 +14,7 @@ $brand-colours:
 }
 
 @each $brand in $brand-colours {
-  .#{nth($brand, 1)}:hover
+  .#{nth($brand, 1)}:hover,
   .#{nth($brand, 1)}:focus {
     color: #{nth($brand, 2)};
     transition: color 0.25s ease-in-out

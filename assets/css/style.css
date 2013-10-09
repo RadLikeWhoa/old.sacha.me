@@ -1016,49 +1016,57 @@ body {
   color: #f9f9f9;
 }
 
-.codepen:hover .codepen:focus {
+.codepen:hover,
+.codepen:focus {
   color: #383839;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.dribbble:hover .dribbble:focus {
+.dribbble:hover,
+.dribbble:focus {
   color: #e43a7b;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.github:hover .github:focus {
+.github:hover,
+.github:focus {
   color: #4183c4;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.instagram:hover .instagram:focus {
+.instagram:hover,
+.instagram:focus {
   color: #3f729b;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.lastfm:hover .lastfm:focus {
+.lastfm:hover,
+.lastfm:focus {
   color: #ac020d;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.pinboard:hover .pinboard:focus {
+.pinboard:hover,
+.pinboard:focus {
   color: #3944db;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.spotify:hover .spotify:focus {
+.spotify:hover,
+.spotify:focus {
   color: #81b71a;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.twitter:hover .twitter:focus {
+.twitter:hover,
+.twitter:focus {
   color: #00a0d1;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
