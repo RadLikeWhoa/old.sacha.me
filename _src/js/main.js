@@ -19,7 +19,7 @@ function getPostLinks () {
         href = link.href,
         title = link.title,
         base = getBase(href),
-        prefix = getBase(window.location.href) !== base ? '→ ' : '',
+        prefix = getBase(window.location.href) !== base ? '<span class="icon icon-external"></span> ' : '',
         backref
 
     if (!href || window.location.origin + window.location.pathname === href.replace(/#(.*)/, '')) continue

@@ -333,6 +333,10 @@ a {
   content: "\55";
 }
 
+.icon-external::before {
+  content: "\65";
+}
+
 pre,
 code {
   font-size: 0.8em;
