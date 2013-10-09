@@ -22,11 +22,6 @@
 .post-inline {
   padding-bottom: 3em;
   margin-bottom: 3em;
-
-  @include at-least(m) {
-    padding-right: 1.5em;
-    padding-left: 1.5em;
-  }
 }
 
 .post-archive {

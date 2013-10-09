@@ -23,7 +23,7 @@
           <ul class="social-links grid">
             {% for link in site.author.social %}
               <li class="social-link-item">
-                <a href="{{ link.url }}" class="{{ link.network | downcase }} button button-center" title="{{ link.network }}">
+                <a href="{{ link.url }}" class="{{ link.network | downcase }} button button-dark button-center" title="{{ link.network }}">
                   <span class="icon icon-{{ link.network | downcase }}"></span>
                 </a>
               </li>

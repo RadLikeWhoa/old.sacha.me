@@ -949,13 +949,6 @@ body {
   margin-bottom: 3em;
 }
 
-@media (min-width: 45em) {
-  .post-inline {
-    padding-right: 1.5em;
-    padding-left: 1.5em;
-  }
-}
-
 .post-archive {
   padding-bottom: 1.5em;
   margin-bottom: 1.5em;
@@ -1006,34 +999,50 @@ body {
 
 .codepen:hover {
   color: #383839;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .dribbble:hover {
   color: #e43a7b;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .github:hover {
   color: #4183c4;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .instagram:hover {
   color: #3f729b;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .lastfm:hover {
   color: #ac020d;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .pinboard:hover {
   color: #3944db;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .spotify:hover {
   color: #81b71a;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .twitter:hover {
   color: #00a0d1;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .site-footer {

@@ -16,5 +16,6 @@ $brand-colours:
 @each $brand in $brand-colours {
   .#{nth($brand, 1)}:hover {
     color: #{nth($brand, 2)};
+    transition: color 0.25s ease-in-out
   }
 }
