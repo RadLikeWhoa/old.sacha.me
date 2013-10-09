@@ -700,7 +700,7 @@ pre code {
 body {
   margin: 0;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: #444;
 }
 
 .wrap {
@@ -733,8 +733,13 @@ body {
   border-radius: 5px;
 }
 
+.main {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #f9f9f9;
+}
+
 .site-header {
-  margin-bottom: 3em;
   background-color: #eb724c;
 }
 
@@ -1074,7 +1079,6 @@ body {
 
 .site-footer {
   padding: 3em 0;
-  margin-top: 3em;
   color: #f9f9f9;
   background-color: #444;
 }

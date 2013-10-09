@@ -5,7 +5,7 @@
 body {
   margin: 0;
   color: #333;
-  background-color: $main;
+  background-color: $footer;
 }
 
 .wrap {
@@ -34,4 +34,10 @@ body {
   text-align: center;
   background-color: $control-light;
   border-radius: 5px;
+}
+
+.main {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: $main;
 }
