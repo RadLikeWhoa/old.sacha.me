@@ -1133,21 +1133,7 @@ body {
 .social-links {
   position: relative;
   padding-left: 0;
-  padding-top: 3em;
-  margin-top: 1.5em;
   margin-bottom: -1.5em;
-}
-
-.social-links::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 1.5rem;
-  right: 0;
-  height: 1px;
-  background: rgba(249,249,249,0.35);
-  background: -webkit-linear-gradient(left, rgba(249,249,249,0), rgba(249,249,249,0.35), rgba(249,249,249,0));
-  background: linear-gradient(to right, rgba(249,249,249,0), rgba(249,249,249,0.35), rgba(249,249,249,0));
 }
 
 .social-link-item {

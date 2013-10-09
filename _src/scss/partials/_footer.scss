@@ -78,20 +78,7 @@
 .social-links {
   position: relative;
   padding-left: 0;
-  padding-top: 3em;
-  margin-top: 1.5em;
   margin-bottom: -1.5em;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: $gutters;
-    right: 0;
-    height: 1px;
-    background: rgba($main, 0.35);
-    background: linear-gradient(to right, rgba($main, 0), rgba($main, 0.35), rgba($main, 0));
-  }
 }
 
 .social-link-item {
