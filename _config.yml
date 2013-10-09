@@ -38,6 +38,9 @@ links:
   - title: Archive
     url: /archive
     icon_class: archive
+  - title: RSS
+    url: /feed.xml
+    icon_class: rss
   # - title: Projects
     # url: /projects
     # icon_class: case

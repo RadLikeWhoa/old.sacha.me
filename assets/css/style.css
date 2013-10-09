@@ -305,15 +305,15 @@ a {
 }
 
 .icon-left::before {
-  content: "\3c";
+  content: "\31";
 }
 
 .icon-right::before {
-  content: "\3e";
+  content: "\32";
 }
 
-.icon-list::before {
-  content: "\2d";
+.icon-rss::before {
+  content: "\72";
 }
 
 pre,
