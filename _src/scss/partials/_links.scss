@@ -6,8 +6,15 @@ a {
     border-bottom: 1px solid transparent;
     transition: border-bottom-color 0.15s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       border-bottom-color: currentcolor;
+      outline: none;
+    }
+
+    &:target {
+      outline: none;
+      background-color: rgba($highlight, 0.13);
     }
   }
 }

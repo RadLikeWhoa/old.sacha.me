@@ -185,8 +185,15 @@ a {
   transition: border-bottom-color 0.15s ease-in-out;
 }
 
-.post a:hover {
+.post a:hover,
+.post a:focus {
   border-bottom-color: currentcolor;
+  outline: none;
+}
+
+.post a:target {
+  outline: none;
+  background-color: rgba(235,114,76,0.13);
 }
 
 .button {
@@ -200,7 +207,8 @@ a {
   transition: background-color 0.25s ease-in-out;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: #efefef;
 }
 
@@ -223,7 +231,8 @@ a {
   background-color: #353535;
 }
 
-.button-dark:hover {
+.button-dark:hover,
+.button-dark:focus {
   background-color: #2d2d2d;
 }
 
@@ -741,7 +750,8 @@ body {
   transition: text-shadow 0.25s ease-in-out;
 }
 
-.site-heading:hover {
+.site-heading:hover,
+.site-heading:focus {
   text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
@@ -776,7 +786,8 @@ body {
 }
 
 @media (min-width: 45em) {
-  .site-nav:hover .site-nav-item a {
+  .site-nav:hover .site-nav-item a,
+  .site-nav:focus .site-nav-item a {
     color: #f9f9f9;
     background-color: transparent;
   }
@@ -827,7 +838,8 @@ body {
   transform: translateX(0%);
 }
 
-.site-nav-item:nth-child(2):hover ~ li.active-nav-item {
+.site-nav-item:nth-child(2):hover ~ li.active-nav-item,
+.site-nav-item:nth-child(2):focus ~ li.active-nav-item {
   -webkit-transform: translateX(0%);
   -ms-transform: translateX(0%);
   transform: translateX(0%);
@@ -839,7 +851,8 @@ body {
   transform: translateX(100%);
 }
 
-.site-nav-item:nth-child(3):hover ~ li.active-nav-item {
+.site-nav-item:nth-child(3):hover ~ li.active-nav-item,
+.site-nav-item:nth-child(3):focus ~ li.active-nav-item {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
@@ -851,7 +864,8 @@ body {
   transform: translateX(200%);
 }
 
-.site-nav-item:nth-child(4):hover ~ li.active-nav-item {
+.site-nav-item:nth-child(4):hover ~ li.active-nav-item,
+.site-nav-item:nth-child(4):focus ~ li.active-nav-item {
   -webkit-transform: translateX(200%);
   -ms-transform: translateX(200%);
   transform: translateX(200%);
@@ -874,7 +888,8 @@ body {
 }
 
 .site-nav-item.is-active a,
-.site-nav .site-nav-item:hover a {
+.site-nav .site-nav-item:hover a,
+.site-nav .site-nav-item:focus a {
   color: #eb724c;
 }
 
@@ -1001,49 +1016,49 @@ body {
   color: #f9f9f9;
 }
 
-.codepen:hover {
+.codepen:hover .codepen:focus {
   color: #383839;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.dribbble:hover {
+.dribbble:hover .dribbble:focus {
   color: #e43a7b;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.github:hover {
+.github:hover .github:focus {
   color: #4183c4;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.instagram:hover {
+.instagram:hover .instagram:focus {
   color: #3f729b;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.lastfm:hover {
+.lastfm:hover .lastfm:focus {
   color: #ac020d;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.pinboard:hover {
+.pinboard:hover .pinboard:focus {
   color: #3944db;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.spotify:hover {
+.spotify:hover .spotify:focus {
   color: #81b71a;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.twitter:hover {
+.twitter:hover .twitter:focus {
   color: #00a0d1;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;

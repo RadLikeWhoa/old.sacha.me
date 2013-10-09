@@ -13,7 +13,8 @@
   text-align: center;
   transition: text-shadow 0.25s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-shadow: 0 0 10px rgba(#fff, 0.5)
   }
 
@@ -41,7 +42,8 @@
   }
 
   @include at-least(m) {
-    &:hover .site-nav-item a {
+    &:hover .site-nav-item a,
+    &:focus .site-nav-item a {
       color: $main;
       background-color: transparent;
     }
@@ -81,7 +83,8 @@
       transform: translateX(($i - 2) * 100%);
     }
 
-    #{"&:nth-child(#{$i}):hover ~ li.active-nav-item"} {
+    #{"&:nth-child(#{$i}):hover ~ li.active-nav-item"},
+    #{"&:nth-child(#{$i}):focus ~ li.active-nav-item"} {
       transform: translateX(($i - 2) * 100%);
     }
   }
@@ -99,7 +102,8 @@
   }
 
   &.is-active a,
-  .site-nav &:hover a {
+  .site-nav &:hover a,
+  .site-nav &:focus a {
     color: $highlight;
   }
 
