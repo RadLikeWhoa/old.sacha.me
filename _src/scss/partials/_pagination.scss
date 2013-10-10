@@ -5,6 +5,10 @@
 
   @include up-to(m) {
     margin-bottom: 1.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include at-least(m) {
@@ -14,4 +18,43 @@
 
 .post-pagination {
   margin-top: 3em;
+
+  li {
+    &:nth-child(1) {
+      .label {
+        @include rem(padding-left, 1.25rem);
+      }
+
+      .icon {
+        @include rem(left, 1.5rem);
+      }
+    }
+
+    &:nth-child(2) {
+      .label {
+        @include rem(padding-right, 1.25rem);
+      }
+
+      .icon {
+        @include rem(right, 1.5rem);
+      }
+    }
+  }
+
+  a {
+    position: relative;
+  }
+
+   .icon {
+    position: absolute;
+    @include rem(top, 0.75rem);
+    padding-top: 0.25em;
+  }
+
+  .label {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

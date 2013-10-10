@@ -1017,6 +1017,10 @@ body {
   .pagination li {
     margin-bottom: 1.5em;
   }
+
+  .pagination li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 45em) {
@@ -1027,6 +1031,44 @@ body {
 
 .post-pagination {
   margin-top: 3em;
+}
+
+.post-pagination li:nth-child(1) .label {
+  padding-left: 20px;
+  padding-left: 1.25rem;
+}
+
+.post-pagination li:nth-child(1) .icon {
+  left: 24px;
+  left: 1.5rem;
+}
+
+.post-pagination li:nth-child(2) .label {
+  padding-right: 20px;
+  padding-right: 1.25rem;
+}
+
+.post-pagination li:nth-child(2) .icon {
+  right: 24px;
+  right: 1.5rem;
+}
+
+.post-pagination a {
+  position: relative;
+}
+
+.post-pagination .icon {
+  position: absolute;
+  top: 12px;
+  top: 0.75rem;
+  padding-top: 0.25em;
+}
+
+.post-pagination .label {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .social-link-item .button {
