@@ -35,3 +35,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.faded {
+  color: darken($main, 40%);
+}

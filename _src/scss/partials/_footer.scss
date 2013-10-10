@@ -77,7 +77,7 @@
 .social-links {
   position: relative;
   padding-left: 0;
-  margin-bottom: -1.5em;
+  margin-bottom: 0;
 }
 
 .social-link-item {
@@ -97,4 +97,8 @@
   @include at-least(l) {
     width: percentage(1, 7);
   }
+}
+
+.copyright {
+  margin-bottom: 0;
 }

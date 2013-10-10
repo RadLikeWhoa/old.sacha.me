@@ -36,6 +36,10 @@
   white-space: nowrap;
 }
 
+.faded {
+  color: #939393;
+}
+
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -1263,7 +1267,7 @@ body {
 .social-links {
   position: relative;
   padding-left: 0;
-  margin-bottom: -1.5em;
+  margin-bottom: 0;
 }
 
 .social-link-item {
@@ -1287,4 +1291,8 @@ body {
   .social-link-item {
     width: 14.28571%;
   }
+}
+
+.copyright {
+  margin-bottom: 0;
 }
