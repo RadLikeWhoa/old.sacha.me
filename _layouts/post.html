@@ -31,22 +31,22 @@ page_class: page-post
     <li>
       {% if page.next %}
         <a href="{{ page.next.url }}" class="button button-block">
-          <span class="icon icon-left"></span> <span class="label">{{ page.next.title }}</span>
+          <span class="icon icon-left"></span> <div class="label-truncate"><span class="label">{{ page.next.title }}</span></div>
         </a>
       {% else %}
       <a class="button button-block button-disabled">
-        <span class="icon icon-left"></span> <span class="label">No newer post found</span>
+        <span class="icon icon-left"></span> <div class="label-truncate"><span class="label">No newer post found</span></div>
       </a>
       {% endif %}
     </li>
     <li class="text-right">
       {% if page.previous %}
         <a href="{{ page.previous.url }}" class="button button-block">
-          <span class="label">{{ page.previous.title }}</span> <span class="icon icon-right"></span>
+          <div class="label-truncate"><span class="label">{{ page.previous.title }}</span></div> <span class="icon icon-right"></span>
         </a>
       {% else %}
       <a class="button button-block button-disabled">
-        <span class="label">No older post found</span> <span class="icon icon-right"></span>
+        <div class="label-truncate"><span class="label">No older post found</span></div> <span class="icon icon-right"></span>
       </a>
       {% endif %}
     </li>

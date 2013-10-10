@@ -30,7 +30,8 @@
   text-align: center;
 }
 
-.break-wrap {
-  white-space: pre-wrap;
-  word-break: break-all;
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

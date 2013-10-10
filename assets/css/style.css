@@ -29,9 +29,11 @@
   text-align: center;
 }
 
-.break-wrap {
-  white-space: pre-wrap;
-  word-break: break-all;
+.truncate,
+.post-pagination .label-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @font-face {
@@ -1055,7 +1057,7 @@ body {
   margin-top: 3em;
 }
 
-.post-pagination li:nth-child(1) .label {
+.post-pagination li:nth-child(1) .label-truncate {
   margin-left: 20px;
   margin-left: 1.25rem;
 }
@@ -1065,7 +1067,7 @@ body {
   left: 1.5rem;
 }
 
-.post-pagination li:nth-child(2) .label {
+.post-pagination li:nth-child(2) .label-truncate {
   margin-right: 20px;
   margin-right: 1.25rem;
 }
@@ -1086,11 +1088,8 @@ body {
   padding-top: 0.25em;
 }
 
-.post-pagination .label {
+.post-pagination .label-truncate {
   display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .social-link-item .button {
