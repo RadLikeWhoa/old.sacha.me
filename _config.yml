@@ -4,10 +4,10 @@ description: "Hi there, my name is Sacha Schmid and I am a front-end developer f
 short_description: "My name is Sacha Schmid. I'm a front-end developer from Switzerland."
 
 url: http://sachaschmid.ch
-permalink: /:title/
+permalink: articles/:title/
 
 paginate: 10
-paginate_path: archive/page/:num/
+paginate_path: articles/page/:num/
 
 timezone: Europe/Zurich
 
@@ -35,8 +35,8 @@ links:
   - title: Home
     url: /
     icon_class: home
-  - title: Archive
-    url: /archive
+  - title: Articles
+    url: /articles
     icon_class: archive
   - title: RSS
     url: /feed.xml
