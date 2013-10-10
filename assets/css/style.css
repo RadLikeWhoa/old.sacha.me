@@ -179,6 +179,11 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus {
+  outline: none;
+}
+
 .post a {
   border-bottom: 1px solid transparent;
   -webkit-transition: border-bottom-color 0.15s ease-in-out;
@@ -207,9 +212,20 @@ a {
   transition: background-color 0.25s ease-in-out;
 }
 
+.button .label {
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom-color 0.25s ease-in-out;
+  transition: border-bottom-color 0.25s ease-in-out;
+}
+
 .button:hover,
 .button:focus {
-  background-color: #efefef;
+  background-color: #e2e2e2;
+}
+
+.button:hover .label,
+.button:focus .label {
+  border-bottom-color: currentColor;
 }
 
 .button-block {
@@ -767,14 +783,20 @@ body {
   transition: text-shadow 0.25s ease-in-out;
 }
 
-.site-heading:hover,
-.site-heading:focus {
-  text-shadow: 0 0 10px rgba(255,255,255,0.5);
-}
-
 .site-heading a {
   padding: 24px 0;
   padding: 1.5rem 0;
+}
+
+.site-heading a span {
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom-color 0.25s ease-in-out;
+  transition: border-bottom-color 0.25s ease-in-out;
+}
+
+.site-heading a:hover span,
+.site-heading a:focus span {
+  border-bottom-color: currentColor;
 }
 
 @media (min-width: 30em) {
@@ -1034,8 +1056,8 @@ body {
 }
 
 .post-pagination li:nth-child(1) .label {
-  padding-left: 20px;
-  padding-left: 1.25rem;
+  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .post-pagination li:nth-child(1) .icon {
@@ -1044,8 +1066,8 @@ body {
 }
 
 .post-pagination li:nth-child(2) .label {
-  padding-right: 20px;
-  padding-right: 1.25rem;
+  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .post-pagination li:nth-child(2) .icon {

@@ -22,7 +22,7 @@
   li {
     &:nth-child(1) {
       .label {
-        @include rem(padding-left, 1.25rem);
+        @include rem(margin-left, 1.25rem);
       }
 
       .icon {
@@ -32,7 +32,7 @@
 
     &:nth-child(2) {
       .label {
-        @include rem(padding-right, 1.25rem);
+        @include rem(margin-right, 1.25rem);
       }
 
       .icon {

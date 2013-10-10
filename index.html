@@ -16,12 +16,12 @@ navigation_match: /
       {% if post.caption %}
         <p class="post-caption">{{ post.caption }}</p>
       {% endif %}
-      <p><a class="button button-block" href="{{ post.url }}">Read the article <span class="icon icon-right"></span></a></p>
+      <p><a class="button button-block" href="{{ post.url }}"><span class="label">Read the article</span> <span class="icon icon-right"></span></a></p>
     </article>
   {% endfor %}
   {% if site.posts.size > 3 %}
-    <a href="/archive" class="button button-center">More posts</a>
+    <a href="/archive" class="button button-center"><span class="label">More posts</span></a>
   {% else %}
-    <a class="button button-center button-disabled">No more posts found</a>
+    <a class="button button-center button-disabled"><span class="label">No more posts found</span></a>
   {% endif %}
 </section>

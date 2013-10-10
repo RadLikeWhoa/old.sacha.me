@@ -12,13 +12,18 @@
   text-align: center;
   transition: text-shadow 0.25s ease-in-out;
 
-  &:hover,
-  &:focus {
-    text-shadow: 0 0 10px rgba(#fff, 0.5)
-  }
-
   a {
     @include rem(padding, 1.5rem 0);
+
+    span {
+      border-bottom: 1px solid transparent;
+      transition: border-bottom-color 0.25s ease-in-out;
+    }
+
+    &:hover span,
+    &:focus span {
+      border-bottom-color: currentColor;
+    }
 
     @include at-least(s) {
       @include rem(padding, 3rem 0);

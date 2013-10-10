@@ -6,9 +6,18 @@
   border-radius: 5px;
   transition: background-color 0.25s ease-in-out;
 
+  .label {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.25s ease-in-out;
+  }
+
   &:hover,
   &:focus {
-    background-color: lighten($control-light, 2%);
+    background-color: darken($control-light, 3%);
+
+    .label {
+      border-bottom-color: currentColor;
+    }
   }
 }
 
