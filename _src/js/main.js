@@ -1,7 +1,7 @@
 var _menuToggle = document.getElementById('menu-toggle')
 
 function getBase (url) {
-  return url.replace(/(http(s)?:\/\/)?(www\.)?/, '').split('/')[0]
+  return url.match(/(https?:\/\/)?(www\.)?([^\/]+)/).pop()
 }
 
 function getPostLinks () {
@@ -41,12 +41,14 @@ function getPostLinks () {
   list.parentNode.style.display = 'block'
 }
 
-if (_menuToggle) {
-  if ('addEventListener' in window) {
+function init () {
+  if (_menuToggle && 'addEventListener' in window) {
     _menuToggle.addEventListener('click', function () {
       this.parentNode.classList.toggle('is-open')
     })
   }
+
+  getPostLinks()
 }
 
-getPostLinks()
+init()
