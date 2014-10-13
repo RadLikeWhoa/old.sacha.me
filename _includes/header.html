@@ -11,11 +11,6 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="/assets/css/style.css">
-    {% if site.google_analytics %}
-      <script>
-        (function(G,o,O,g,l){G.GoogleAnalyticsObject=O;G[O]||(G[O]=function(){(G[O].q=G[O].q||[]).push(arguments)});G[O].l=+new Date;g=o.createElement('script'),l=o.scripts[0];g.src='//www.google-analytics.com/analytics.js';l.parentNode.insertBefore(g,l)}(this,document,'ga'));ga('create', '{{ site.google_analytics }}', "{{ site.url | remove:'http://' }}");ga('send','pageview')
-      </script>
-    {% endif %}
   </head>
   <body class="{{ page.page_class }}">
     <header class="site-header">
