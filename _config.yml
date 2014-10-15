@@ -56,3 +56,7 @@ rdiscount:
   extensions:
     # - footnotes
     - smart
+
+sass:
+  sass_dir: _src/scss
+  style: :compressed
