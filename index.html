@@ -7,14 +7,15 @@ navigation_match: /
   <p>{{ site.description }}</p>
 </section>
 <section class="posts wrap">
+  <h2 class="section-heading">Latest project</h2>
   <h2 class="section-heading">Latest article</h2>
-  {% assign first = site.posts.first %}
+  {% assign post = site.categories.articles.first %}
   <article class="post post-inline">
     <h3 class="post-title">
-      <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ first.date | date: 'Posted on %A, %d %B %Y' }}">{{ first.date | date: "%b %d" }}</time> — <a href="{{ first.url }}">{{ first.title }}</a>
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}">{{ post.date | date: "%b %d" }}</time> — <a href="{{ post.url }}">{{ post.title }}</a>
     </h3>
-    {% if first.caption %}
-      <p class="post-caption">{{ first.caption }}</p>
+    {% if post.caption %}
+      <p class="post-caption">{{ post.caption }}</p>
     {% endif %}
   </article>
   <a href="/articles" class="button button-center"><span class="label">View all posts</span></a>
