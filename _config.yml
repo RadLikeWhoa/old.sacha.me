@@ -47,7 +47,7 @@ links:
     # icon_class: envelope
 
 markdown: rdiscount
-highlight: true
+highlighter: pygments
 
 rdiscount:
   extensions:

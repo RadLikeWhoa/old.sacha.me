@@ -1,7 +1,9 @@
 .content-block {
   padding: 0.75em 1em;
-  border: 1px solid;
-  border-radius: 3px;
+  margin-left: -1.5em;
+  margin-right: -1.5em;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 
   &::before {
     font-style: italic;
@@ -9,6 +11,12 @@
 
   code {
     background-color: $code;
+  }
+
+  @include at-least(m) {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-radius: 3px;
   }
 }
 

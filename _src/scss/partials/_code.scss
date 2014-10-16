@@ -25,17 +25,21 @@ code {
 }
 
 .highlight {
+  margin-left: -1.5em;
+  margin-right: -1.5em;
+
   pre {
     padding: 0.75em 1em;
     background-color: $code;
-    background-image: linear-gradient(to right, $code 30%, rgba($code, 0)), linear-gradient(to right, rgba($code, 0), $code 70%), radial-gradient(farthest-side at 0 50%, rgba(#333, 0.05), rgba(#333, 0)), radial-gradient(farthest-side at 100% 50%, rgba(#333, 0.05), rgba(#333, 0));
-    background-repeat: no-repeat;
-    background-position: 0 0, 100% 0, 0 0, 100% 0;
-    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
-    background-attachment: local, local, scroll, scroll;
-    border: 1px solid rgba(darken($code, 10%), 0.7);
-    border-radius: 3px;
+    border-top: 1px solid rgba(darken($code, 10%), 0.7);
+    border-bottom: 1px solid rgba(darken($code, 10%), 0.7);
     overflow-x: auto;
+
+    @include at-least(m) {
+      border-left: 1px solid rgba(darken($code, 10%), 0.7);
+      border-right: 1px solid rgba(darken($code, 10%), 0.7);
+      border-radius: 3px;
+    }
   }
 
   .c { color: #BBC4C4; } /* Comment */
