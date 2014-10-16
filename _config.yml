@@ -4,10 +4,7 @@ description: "Hi there, my name is Sacha Schmid and I am a front-end developer f
 short_description: "My name is Sacha Schmid. I'm a front-end developer from Switzerland."
 
 url: http://sachaschmid.ch
-permalink: articles/:title/
-
-paginate: 10
-paginate_path: articles/page/:num/
+permalink: :categories/:title/
 
 timezone: Europe/Zurich
 
