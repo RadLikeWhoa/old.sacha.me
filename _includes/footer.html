@@ -1,15 +1,7 @@
     </section>
     <footer class="site-footer">
-      <div class="wrap wrap-wide">
+      <div class="wrap">
         <div class="grid">
-          <div class="footer-info">
-            <img src="http://www.gravatar.com/avatar/41846240bdcfece48077ca4f21eb4ae9.png" class="avatar">
-          </div>
-          <div class="footer-info">
-            <h4>About</h4>
-            <p>{{ site.short_description }}</p>
-            <!--<p><a href="/about" class="button button-dark">Read more <span class="icon icon-right"></span></a></p>-->
-          </div>
           <div class="footer-info">
             <h4>Navigation</h4>
             <ul class="unstyled">
@@ -18,19 +10,34 @@
               {% endfor %}
             </ul>
           </div>
-        </div>
-        {% if site.author.social %}
-          <ul class="social-links grid">
-            {% for link in site.author.social %}
-              <li class="social-link-item">
-                <a href="{{ link.url }}" class="{{ link.network | downcase }} button button-dark button-center" title="{{ link.network }}">
-                  <span class="icon icon-{{ link.network | downcase }}"></span>
+          <div class="footer-info">
+            <h4>Social</h4>
+            <ul class="unstyled social-links">
+              {% for link in site.author.social %}
+                <li class="social-link-item">
+                  <a href="{{ link.url }}" class="{{ link.network | downcase }} button button-dark button-small" title="{{ link.network }}">
+                    <span class="icon icon-{{ link.network | downcase }}"></span><span class="label">{{ link.network }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="footer-info">
+            <h4>Site Links</h4>
+            <ul class="unstyled">
+              <li>
+                <a href="/feed.xml" class="button button-dark button-small">
+                  <span class="icon icon-rss"></span><span class="label">RSS</span>
                 </a>
               </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        <p class="copyright text-center faded small">Copyright 2014 — Sacha Schmid. Icons by Daniel Bruce — www.entypo.com.</p>
+              <li>
+                <a href="https://github.com/RadLikeWhoa/radlikewhoa.github.io" class="button button-dark button-small">
+                  <span class="icon icon-github"></span><span class="label">GitHub Repo</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
     <script src="/assets/js/main.js"></script>

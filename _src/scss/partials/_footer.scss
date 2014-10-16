@@ -1,5 +1,5 @@
 .site-footer {
-  padding: 3em 0;
+  padding: 3em 0 1.5em;
   color: $main;
   background-color: $footer;
 }
@@ -7,39 +7,11 @@
 .footer-info {
   @extend %grid-col;
 
+  width: 100%;
   margin-bottom: 1.5em;
 
-  &:nth-child(1) {
-    display: none;
-
-    @include at-least(l) {
-      width: percentage(1, 7);
-      display: block;
-    }
-  }
-
-  &:nth-child(2) {
-    width: 100%;
-
-    @include at-least(m) {
-      width: percentage(2, 3);
-    }
-
-    @include at-least(l) {
-      width: percentage(4, 7);
-    }
-  }
-
-  &:nth-child(3) {
-    width: 100%;
-
-    @include at-least(m) {
-      width: percentage(1, 3);
-    }
-
-    @include at-least(l) {
-      width: percentage(2, 7);
-    }
+  @include at-least(m) {
+    width: percentage(1, 3);
   }
 
   li {
@@ -65,38 +37,10 @@
   }
 }
 
-.avatar {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border: 5px solid $main;
-  border-radius: 3px;
-}
-
 .social-links {
   position: relative;
   padding-left: 0;
   margin-bottom: 0;
-}
-
-.social-link-item {
-  @extend %grid-col;
-
-  width: percentage(1, 3);
-  margin-bottom: 1.5em;
-
-  @include at-least(s) {
-    width: 25%;
-  }
-
-  @include at-least(m) {
-    width: 20%;
-  }
-
-  @include at-least(l) {
-    width: percentage(1, 7);
-  }
 }
 
 .copyright {
