@@ -29,18 +29,12 @@ links:
   - title: Articles
     url: /articles
     icon_class: archive
-  - title: RSS
-    url: /feed.xml
-    icon_class: rss
-  # - title: Projects
-    # url: /projects
-    # icon_class: case
-  # - title: About
-    # url: /about
-    # icon_class: person
-  # - title: Contact
-    # url: /contact
-    # icon_class: envelope
+  - title: Projects
+    url: /projects
+    icon_class: case
+  - title: About
+    url: /about
+    icon_class: person
 
 markdown: rdiscount
 highlighter: pygments
