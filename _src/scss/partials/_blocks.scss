@@ -2,12 +2,9 @@
   padding: 0.75em 1em;
   margin-left: -1.5em;
   margin-right: -1.5em;
+  font-style: italic;
   border-top: 1px solid;
   border-bottom: 1px solid;
-
-  &::before {
-    font-style: italic;
-  }
 
   code {
     background-color: $code;
@@ -24,20 +21,12 @@
   color: darken($warning, 30%);
   background-color: rgba($warning, 0.05);
   border-color: rgba(darken($warning, 10%), 0.1);
-
-  &::before {
-    content: "Note: ";
-  }
 }
 
 .info-block {
   color: darken($info, 30%);
   background-color: rgba($info, 0.05);
   border-color: rgba(darken($info, 10%), 0.1);
-
-  &::before {
-    content: "Info: ";
-  }
 }
 
 .share-block {
