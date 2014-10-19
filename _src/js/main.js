@@ -4,51 +4,41 @@ function getBase (url) {
   return url.match(/(https?:\/\/)?(www\.)?([^\/]+)/).pop()
 }
 
-function getPostLinks () {
-  if (!('querySelector' in document)) return
+if (_menuToggle && 'addEventListener' in window) {
+  _menuToggle.addEventListener('click', function () {
+    this.parentNode.classList.toggle('is-open')
+  })
+}
 
+if ('querySelector' in document) {
   var links = document.querySelectorAll('.post-body a'),
-      list = document.querySelector('.post-links ol'),
+      list = document.getElementById('post-links-list'),
       counter = 1,
       html = ''
 
-  if (!links || !list) return
+  if (links && list) {
+    for (var i = 0, j = links.length; i < j; i++) {
+      var link = links[i],
+          href = link.href.replace(/https?:\/\//, ''),
+          title = link.title,
+          backref
 
-  for (var i = 0, j = links.length; i < j; i++) {
-    var link = links[i],
-        href = link.href,
-        title = link.title,
-        base = getBase(href),
-        prefix = getBase(window.location.href) !== base ? '<span class="icon icon-external"></span> ' : '',
-        backref
+      if (!href || window.location.origin + window.location.pathname === href.replace(/#(.*)/, '')) continue
 
-    if (!href || window.location.origin + window.location.pathname === href.replace(/#(.*)/, '')) continue
+      link.id = link.id || 'post-reference-' + counter
+      counter += 1
 
-    link.id = link.id || 'post-reference-' + counter
-    counter += 1
+      backref = '<a href="#' + link.id + '" title="Jump to context"><span class="icon icon-up"></span></a> '
 
-    backref = '[<a href="#' + link.id + '" title="Jump to context"><span class="icon icon-up"></span></a>]'
+      html += '<div class="grid-col post-link-entry">' +
+                '<div class="post-link"><a href="' + href + '">' + href + '</a></div>' +
+                '<div>' + (title ? backref + ' ' + title : backref) + '</div>' +
+              '</div>'
+    }
 
-    html += '<li class="small">' +
-              '<a href="' + href + '">' + prefix + base + '</a>' +
-              (title ? '<div>' + title + ' ' + backref + '</div>' : ' ' + backref) +
-            '</li>'
+    if (html) {
+      list.innerHTML = html
+      list.parentNode.style.display = 'block'
+    }
   }
-
-  if (!html) return
-
-  list.innerHTML = html
-  list.parentNode.style.display = 'block'
 }
-
-function init () {
-  if (_menuToggle && 'addEventListener' in window) {
-    _menuToggle.addEventListener('click', function () {
-      this.parentNode.classList.toggle('is-open')
-    })
-  }
-
-  getPostLinks()
-}
-
-init()

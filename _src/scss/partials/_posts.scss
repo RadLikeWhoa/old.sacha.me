@@ -30,13 +30,23 @@
 }
 
 .post-links {
-  padding-top: 1.5em;
   margin-top: 1.5em;
-  border-top: 1px solid rgba(#333, 0.35);
+}
 
-  ol {
-    list-style-type: decimal-leading-zero;
+.post-link-entry {
+  margin-bottom: 1.5em;
+  width: 100%;
+
+  @include at-least(m) {
+    width: 50%;
   }
+}
+
+.post-link {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .post-meta {
