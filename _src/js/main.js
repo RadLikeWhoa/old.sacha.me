@@ -23,7 +23,7 @@ if ('querySelector' in document) {
           title = link.title,
           backref
 
-      if (!href || window.location.origin + window.location.pathname === href.replace(/#(.*)/, '')) continue
+      if (!href || window.location.origin + window.location.pathname === link.href.replace(/#(.*)/, '')) continue
 
       link.id = link.id || 'post-reference-' + counter
       counter += 1
@@ -31,7 +31,7 @@ if ('querySelector' in document) {
       backref = '<a href="#' + link.id + '" title="Jump to context"><span class="icon icon-up"></span></a> '
 
       html += '<div class="grid-col post-link-entry">' +
-                '<div class="post-link"><a href="' + href + '">' + href + '</a></div>' +
+                '<a class="post-link" href="' + href + '">' + href + '</a>' +
                 '<div>' + (title ? backref + ' ' + title : backref) + '</div>' +
               '</div>'
     }
