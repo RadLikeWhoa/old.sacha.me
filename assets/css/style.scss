@@ -2,21 +2,21 @@
 ---
 
 @import "variables";
-@import "partials/mixins";
+@import "mixins";
 
-@import "partials/helpers";
+@import "helpers";
 
-@import "partials/typography";
-@import "partials/grid";
-@import "partials/links";
-@import "partials/buttons";
-@import "partials/icons";
-@import "partials/code";
-@import "partials/blocks";
+@import "typography";
+@import "grid";
+@import "links";
+@import "buttons";
+@import "icons";
+@import "code";
+@import "blocks";
 
-@import "partials/base";
-@import "partials/header";
-@import "partials/posts";
-@import "partials/pagination";
-@import "partials/social";
-@import "partials/footer";
+@import "base";
+@import "header";
+@import "posts";
+@import "pagination";
+@import "social";
+@import "footer";
