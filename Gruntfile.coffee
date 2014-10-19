@@ -4,27 +4,10 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON('package.json')
 
-    jekyll:
-      dist:
-        options:
-          safe: true
-
-    jshint:
-      options:
-        jshintrc: '_test/.jshintrc'
-      dist: '_src/js/*.js'
-
     uglify:
       dist:
         files:
           'assets/js/main.js': '_src/js/main.js'
-
-    sass:
-      dist:
-        options:
-          style: 'compressed'
-        files:
-          'assets/css/style.css': '_src/scss/style.scss'
 
     autoprefixer:
       dist:
@@ -60,8 +43,6 @@ module.exports = (grunt) ->
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask('default', [
-    'jekyll:dist',
-    'jshint:dist',
     'uglify:dist',
     'sass:dist',
     'autoprefixer:dist',
