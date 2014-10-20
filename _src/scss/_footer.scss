@@ -11,7 +11,7 @@
   margin-bottom: 1.5em;
 
   @include at-least(m) {
-    width: percentage(1, 3);
+    width: 1 / 3 * 100%;
   }
 
   li {
@@ -44,5 +44,5 @@
 }
 
 .copyright {
-  margin-bottom: 0;
+  text-align: center;
 }
