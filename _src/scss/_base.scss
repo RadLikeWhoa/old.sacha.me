@@ -28,6 +28,14 @@ body {
   }
 }
 
+.home-section {
+  margin-bottom: 3em;
+
+  &:last-child {
+    margin-bottom: 1.5em;
+  }
+}
+
 .section-heading {
   @include rem(padding, 1.5rem 0);
   @include rem(margin-bottom, 3rem);
@@ -38,6 +46,6 @@ body {
 
 .main {
   padding-top: 3em;
-  padding-bottom: 3em;
+  padding-bottom: 1.5em;
   background-color: $main;
 }

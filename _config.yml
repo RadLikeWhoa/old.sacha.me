@@ -1,7 +1,5 @@
 name: Sacha Schmid
 tagline: "Sacha Schmid is a front-end developer from Switzerland, with an eye for beautiful code."
-description: "Hi there, my name is Sacha Schmid and I am a front-end developer from Switzerland. I'm especially focused on creating appealing designs using the latest HTML, CSS and JavaScript techniques."
-short_description: "My name is Sacha Schmid. I'm a front-end developer from Switzerland."
 
 url: http://sachaschmid.ch
 permalink: :categories/:title/
