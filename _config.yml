@@ -34,13 +34,12 @@ links:
     url: /about
     icon_class: person
 
-markdown: rdiscount
+markdown: kramdown
 highlighter: pygments
 
-rdiscount:
-  extensions:
-    # - footnotes
-    - smart
+kramdown:
+  enable_coderay: false
+  header_offset: 2
 
 sass:
   sass_dir: _src/scss
