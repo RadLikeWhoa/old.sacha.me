@@ -10,20 +10,26 @@
   a {
     display: block;
     color: $main;
+
+    @include up-to(m) {
+      text-align: center;
+    }
   }
 
   .icon {
-    float: right;
-    padding-top: 0.25em;
+    @include at-least(m) {
+      float: right;
+      padding-top: 0.25em;
+    }
   }
-}
-
-.social-links {
-  position: relative;
-  padding-left: 0;
-  margin-bottom: 0;
 }
 
 .copyright {
   text-align: center;
+}
+
+.opt-label {
+  @include up-to(m) {
+    display: none;
+  }
 }

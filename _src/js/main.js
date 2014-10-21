@@ -30,7 +30,7 @@ if ('querySelector' in document) {
 
       backref = '<a href="#' + link.id + '" title="Jump to context"><span class="icon icon-up"></span></a> '
 
-      html += '<div class="grid-col post-link-entry">' +
+      html += '<div class="post-link-entry col med-col-1-2">' +
                 '<a class="post-link" href="' + href + '">' + href + '</a>' +
                 '<div>' + (title ? backref + ' ' + title : backref) + '</div>' +
               '</div>'
