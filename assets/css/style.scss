@@ -4,10 +4,12 @@
 @import "variables";
 @import "mixins";
 
+@import "media-queries";
+@import "grid";
+
 @import "helpers";
 
 @import "typography";
-@import "grid";
 @import "links";
 @import "buttons";
 @import "icons";
@@ -17,4 +19,5 @@
 @import "base";
 @import "header";
 @import "posts";
+@import "projects";
 @import "footer";

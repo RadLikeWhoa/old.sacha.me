@@ -1,7 +1,5 @@
 $rem-fallback: 16px;
 
-$gutters: 1.5rem;
-
 $default: #333;
 $highlight: #eb724c;
 $main: #f9f9f9;
@@ -14,3 +12,17 @@ $control-light: darken($main, 6%);
 $control-dark: darken($footer, 10%);
 
 $nav-item-count: 4;
+
+$column-prefixes: (
+  's': 'sma',
+  'm': 'med',
+  'l': 'lar'
+);
+
+$columns: 2 3 4 !default;
+
+$media-queries: (
+  's': 30em,
+  'm': 45em,
+  'l': 60em
+);

@@ -57,8 +57,6 @@
 .site-nav-item,
 .active-nav-item,
 .menu-toggle {
-  width: 100%;
-
   @include up-to(m) {
     background-color: $main;
 
@@ -71,17 +69,9 @@
       padding-top: 0.25em;
     }
   }
-
-  @include at-least(m) {
-    width: percentage(1, $nav-item-count);
-  }
 }
 
 .site-nav-item {
-  @extend %grid-col;
-
-  padding-left: 0;
-
   @for $i from 2 through $nav-item-count + 1 {
     #{"&:nth-child(#{$i}).is-active ~ .active-nav-item"} {
       transform: translateX(($i - 2) * 100%);
