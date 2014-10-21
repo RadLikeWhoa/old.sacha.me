@@ -44,3 +44,22 @@ kramdown:
 sass:
   sass_dir: _src/scss
   style: :compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: "articles"
+      type: "posts"
+    values:
+      layout: post
+  -
+    scope:
+      path: "projects"
+      type: "posts"
+    values:
+      layout: project

@@ -1,6 +1,4 @@
 ---
-layout: post
-
 title: "Hello, World"
 caption: "A new home to better show myself on the web."
 ---
