@@ -51,11 +51,7 @@ $enable-pull-columns: false !default;
   display: block;
   margin-left: -$gutters;
 
-  &:after {
-    content: ' ';
-    display: table;
-    clear: both;
-  }
+  @extend %clearfix;
 }
 
 .#{$grid-columns-namespace} {
@@ -80,18 +76,4 @@ $enable-pull-columns: false !default;
   @include at-least($media-query) {
     @include _column-setup($prefix);
   }
-}
-
-$gutters: 1.5rem !default;
-
-.grid {
-  @extend .clearfix;
-  @include rem(margin-left, -$gutters);
-}
-
-%grid-col,
-.grid-col {
-  display: block;
-  float: left;
-  @include rem(padding-left, $gutters);
 }
