@@ -1,4 +1,32 @@
 .icon-well {
   width: 100%;
   padding-bottom: 100%;
+  border-radius: 5px;
+
+  @include at-least(m) {
+    padding-bottom: 15.5em;
+  }
+}
+
+.project-intro {
+  height: 7.5em;
+  overflow: hidden;
+}
+
+.tag-list {
+  @extend %clearfix;
+
+  margin-bottom: 1.5em;
+}
+
+.tag {
+  float: left;
+  padding: 0.25em 0.75em;
+  margin-right: 0.5em;
+  background-color: $control-light;
+  border-radius: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
