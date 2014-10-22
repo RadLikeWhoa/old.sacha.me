@@ -24,6 +24,7 @@ gulp.task('js', function () {
   return gulp.src('_src/js/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest('_site/assets/js/'))
 })
 
 gulp.task('css', function () {
@@ -34,6 +35,7 @@ gulp.task('css', function () {
     .pipe(cmq())
     .pipe(csso())
     .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('_site/assets/css'))
 })
 
 gulp.task('webserver', function () {

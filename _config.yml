@@ -1,24 +1,9 @@
 name: Sacha Schmid
-tagline: "Sacha Schmid is a front-end developer from Switzerland, with an eye for beautiful code."
 
-url: http://sachaschmid.ch
+url: http://radlikewhoa.github.io
 permalink: :categories/:title/
 
 timezone: Europe/Zurich
-
-author:
-  name: Sacha Schmid
-  social:
-    - network: Twitter
-      url: https://twitter.com/sachaschmid
-    - network: GitHub
-      url: https://github.com/radlikewhoa
-    - network: Dribbble
-      url: http://dribbble.com/sachaschmid
-    - network: Instagram
-      url: https://instagram.com/radlikewhoa_
-    - network: lastfm
-      url: http://last.fm/user/HawkFire21
 
 links:
   - title: Home
@@ -40,10 +25,6 @@ highlighter: pygments
 kramdown:
   enable_coderay: false
   header_offset: 2
-
-sass:
-  sass_dir: _src/scss
-  style: :compressed
 
 defaults:
   -
