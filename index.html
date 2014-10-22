@@ -1,22 +1,41 @@
 ---
-layout: default
 navigation_match: /
 ---
 
-<section class="site-intro wrap">
-  <p>Hi there, my name is Sacha Schmid and I am a front-end developer from Switzerland. I design and build websites for private clients and small companies using modern HTML, CSS and JavaScript.</p>
+<section class="home-section wrap">
+  <p class="site-intro">Hi there, my name is Sacha Schmid and I am a front-end developer from Switzerland. I design and build websites for private clients and small companies using modern HTML, CSS and JavaScript.</p>
 </section>
-<section class="posts wrap">
+<section class="home-section wrap">
   <h2 class="section-heading">Latest project</h2>
+  {% assign project = site.categories.projects.first %}
+  <article class="post post-inline">
+    <div class="grid">
+      <div class="col med-col-1-3">
+        <div class="icon-well" style="background: {{ project.pattern.gradient }}; background-size: {{ project.pattern.size }}"></div>
+      </div>
+      <div class="col med-col-2-3">
+        <h3 class="post-title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+        <div class="project-intro">
+          <p>{{ project.content | strip_html | truncatewords: 30 }}</p>
+        </div>
+        <ul class="tag-list unstyled">
+          {% for tag in project.tags %}
+            <li class="tag">{{ tag }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ project.url }}">Read more &raquo;</a>
+      </div>
+    </div>
+  </article>
+  <a href="/projects" class="button button-center"><span class="label">View all projects</span></a>
+</section>
+<section class="home-section wrap">
   <h2 class="section-heading">Latest article</h2>
   {% assign post = site.categories.articles.first %}
   <article class="post post-inline">
-    <h3 class="post-title">
-      <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}">{{ post.date | date: "%b %d" }}</time> — <a href="{{ post.url }}">{{ post.title }}</a>
-    </h3>
-    {% if post.caption %}
-      <p class="post-caption">{{ post.caption }}</p>
-    {% endif %}
+    <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p class="post-caption"><time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}" class="faded">{{ post.date | date: "%b %d" }}</time> <span class="faded">—</span> {{ post.caption }}</p>
+    <p><a href="{{ post.url }}">Read more &raquo;</a></p>
   </article>
   <a href="/articles" class="button button-center"><span class="label">View all articles</span></a>
 </section>
