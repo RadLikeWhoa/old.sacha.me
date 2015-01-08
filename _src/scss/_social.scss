@@ -1,0 +1,25 @@
+.social-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.social-item .button {
+  border-bottom: 0;
+  transition: background-color 0.25s ease-in-out;
+}
+
+$networks:
+  dribbble #ea4c89,
+  pinboard #4545E6,
+  github #4183c4,
+  twitter #55acee;
+
+@each $network in $networks {
+  [data-network="#{nth($network, 1)}"] {
+    background-color: nth($network, 2);
+
+    &:hover {
+      background-color: darken(nth($network, 2), 5%);
+    }
+  }
+}
