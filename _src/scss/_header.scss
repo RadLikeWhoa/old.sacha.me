@@ -26,7 +26,7 @@
     }
 
     @include at-least(s) {
-      @include rem(padding, 3rem 0);
+      @include rem(padding, 2rem 0);
     }
   }
 }

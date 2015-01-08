@@ -16,7 +16,7 @@
     background-color: darken($control-light, 3%);
 
     .label {
-      border-bottom-color: currentColor;
+      border-bottom-color: $highlight;
     }
   }
 }
@@ -41,7 +41,11 @@
 
   &:hover,
   &:focus {
-    background-color: darken($control-dark, 3%);
+    background-color: darken($control-dark, 5%);
+
+    .label {
+      border-bottom-color: $main;
+    }
   }
 }
 
