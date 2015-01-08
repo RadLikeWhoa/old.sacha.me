@@ -1,7 +1,12 @@
 (function () {
-  if (!('querySelector' in window)) {
+
+  // If the browser doesn't support querySelector, we're out.
+
+  if (!('addEventListener' in window && 'querySelector' in document)) {
     return false
   }
+
+  // Get all the links on post pages and create a list of all in-post URLs.
 
   var links = document.querySelectorAll('.post-body a'),
       list = document.getElementById('post-links-list'),
@@ -15,7 +20,12 @@
           title = link.title,
           backref
 
-      if (!href || window.location.origin + window.location.pathname === link.href.replace(/#(.*)/, '')) continue
+      // If the link doesn't have an href or if it's a link on the same page,
+      // ignore it and continue.
+
+      if (!href || window.location.origin + window.location.pathname === link.href.replace(/#(.*)/, '')) {
+        continue
+      }
 
       link.id = link.id || 'post-reference-' + counter
       counter += 1
@@ -35,4 +45,34 @@
       list.parentNode.style.display = 'block'
     }
   }
+
+  // Smooth-scroll to top function, largely based on
+  // https://github.com/cferdinandi/smooth-scroll
+
+  document.getElementById('topLink').addEventListener('click', function () {
+    var start = window.pageYOffset
+    var distance = start * -1
+    var time = 0
+    var interval, percentage, position
+
+    var easing = function (time) {
+      return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
+    }
+
+    var scroll = function () {
+      time += 16
+
+      percentage = time / 250
+      percentage = percentage > 1 ? 1 : percentage
+
+      position = start + (distance * easing(percentage))
+      window.scrollTo(0, Math.floor(position))
+
+      if (position === 0) {
+        clearInterval(interval)
+      }
+    }
+
+    interval = setInterval(scroll, 16)
+  })
 }())
