@@ -35,7 +35,7 @@
   position: relative;
   margin-left: 0;
 
-  &.is-open {
+  .cb-hack:checked + & {
     max-height: 18em;
   }
 
@@ -52,6 +52,10 @@
       background-color: transparent;
     }
   }
+}
+
+.cb-hack {
+  display: none;
 }
 
 .site-nav-item,
@@ -134,6 +138,11 @@
 .menu-toggle {
   border-radius: 5px 5px 0 0;
   cursor: pointer;
+
+  label {
+    display: block;
+    cursor: pointer;
+  }
 
   a {
     padding: 0.75em 1.5em;

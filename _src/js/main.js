@@ -1,16 +1,8 @@
-var _menuToggle = document.getElementById('menu-toggle')
+(function () {
+  if (!('querySelector' in window)) {
+    return false
+  }
 
-function getBase (url) {
-  return url.match(/(https?:\/\/)?(www\.)?([^\/]+)/).pop()
-}
-
-if (_menuToggle && 'addEventListener' in window) {
-  _menuToggle.addEventListener('click', function () {
-    this.parentNode.classList.toggle('is-open')
-  })
-}
-
-if ('querySelector' in document) {
   var links = document.querySelectorAll('.post-body a'),
       list = document.getElementById('post-links-list'),
       counter = 1,
@@ -28,7 +20,9 @@ if ('querySelector' in document) {
       link.id = link.id || 'post-reference-' + counter
       counter += 1
 
-      backref = '<a href="#' + link.id + '" title="Jump to context"><span class="icon icon-up"></span></a> '
+      backref = '<a href="#' + link.id + '" title="Jump to context">' +
+                  '<span class="icon icon-up"></span>' +
+                '</a>'
 
       html += '<div class="post-link-entry col med-col-1-2">' +
                 '<a class="post-link" href="' + href + '">' + href + '</a>' +
@@ -41,4 +35,4 @@ if ('querySelector' in document) {
       list.parentNode.style.display = 'block'
     }
   }
-}
+}())

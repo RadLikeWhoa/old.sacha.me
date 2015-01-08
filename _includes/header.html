@@ -17,9 +17,12 @@
       <div class="wrap">
         <h1 class="site-heading"><a href="/"><span>{{ site.name }}</span></a></h1>
         <nav>
+          <input type="checkbox" class="cb-hack" id="menuToggle">
           <ul class="site-nav grid grid--gutterless unstyled">
-            <li id="menu-toggle" class="menu-toggle col">
-              <a>Menu <span class="icon icon-list"></span></a>
+            <li class="menu-toggle col">
+              <label for="menuToggle">
+                <a>Menu <span class="icon icon-list"></span></a>
+              </label>
             </li>
             {% for link in site.links %}
               <li class="site-nav-item col med-col-1-4 {% if link.url == page.navigation_match %} is-active {% endif %}">
