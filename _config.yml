@@ -9,12 +9,12 @@ links:
   - title: Home
     url: /
     icon_class: home
-  - title: Articles
-    url: /articles
-    icon_class: archive
   - title: Projects
     url: /projects
     icon_class: case
+  - title: Articles
+    url: /articles
+    icon_class: archive
   - title: About
     url: /about
     icon_class: person
