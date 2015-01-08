@@ -48,7 +48,7 @@
 }
 
 html {
-  font: 100%/1.5 Source Sans Pro, sans-serif;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", sans-serif;
 
   @include at-least(s) {
     font-size: 112.5%;
@@ -80,7 +80,7 @@ ol {
 }
 
 #{headings(1 to 4, false)} {
-  font-family: Montserrat, Source Sans Pro, sans-serif;
+  font-family: Montserrat, "Source Sans Pro", "Helvetica Neue", sans-serif;
 }
 
 #{headings(1)} {
