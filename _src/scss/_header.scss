@@ -24,11 +24,11 @@
 
     &:hover,
     &:focus {
-      background-color: rgba(#000, 0.05);
+      background-color: rgba(#000, 0.06);
+    }
 
-      span {
-        border-bottom-color: currentColor;
-      }
+    &:focus span {
+      border-bottom-color: currentColor;
     }
 
     @include at-least(s) {

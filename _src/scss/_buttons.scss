@@ -16,11 +16,11 @@
 
   &:hover,
   &:focus {
-    background-color: darken($highlight, 5%);
+    background-color: darken($highlight, 6%);
+  }
 
-    .label {
-      border-bottom-color: $main;
-    }
+  &:focus .label {
+    border-bottom-color: $main;
   }
 }
 
@@ -45,10 +45,10 @@
   &:hover,
   &:focus {
     background-color: darken($control-dark, 5%);
+  }
 
-    .label {
-      border-bottom-color: $main;
-    }
+  &:focus .label {
+    border-bottom-color: $main;
   }
 }
 
