@@ -10,6 +10,14 @@
   }
 }
 
+.project-title a {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .project-intro {
   position: relative;
   height: 7.5em;
@@ -41,6 +49,7 @@
   margin-left: -0.25em;
   background-color: $control-light;
   border-radius: 5px;
+  vertical-align: top;
 
   &:first-child {
     margin-left: 0;

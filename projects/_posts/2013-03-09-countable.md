@@ -2,12 +2,21 @@
 title: Countable
 tags:
   - Development
-  - Design
   - Open Source
+  - Testing
+  - Documentation
+  - Design
+  - Continuous Integration
+  - Package Managers
+  - Versioning
+technologies:
+  - JavaScript
+  - HTML
+  - CSS
+  - Sass
 pattern:
-  gradient: radial-gradient(closest-side, rgba(255, 255, 255, 0.1) 98%, rgb(235, 164, 76) 99%), radial-gradient(closest-side, rgba(255, 255, 255, 0.1) 98%, rgb(235, 164, 76) 99%), rgb(235, 164, 76)
-  size: 70px 70px
-  position: 0 0, 35px 35px
+  gradient: linear-gradient(135deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px), linear-gradient(225deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px)0 64px, rgb(235, 164, 76)
+  size: 64px 128px
 type: personal
 ---
 
