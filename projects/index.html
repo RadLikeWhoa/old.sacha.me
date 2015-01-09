@@ -3,24 +3,30 @@ title: Projects
 navigation_match: /projects
 ---
 
-<section class="personal-projects wrap">
-  <h2 class="section-heading">Personal projects</h2>
-  {% for project in site.categories.projects %}
-    {% if project.type == "personal" %}
-      {% capture class %}{% cycle "personal": "grid", "grid grid--rev" %}{% endcapture %}
-      {% include project-inline.html project=project class=class %}
-    {% endif %}
-  {% endfor %}
-</section>
-<section class="client-works wrap">
-  <h2 class="section-heading">Client work</h2>
-  {% for project in site.categories.projects %}
-    {% if project.type == "client" %}
-      {% capture class %}{% cycle "client": "grid", "grid grid--rev" %}{% endcapture %}
-      {% include project-inline.html project=project class=class %}
-    {% endif %}
-  {% endfor %}
-</section>
-<section class="experiments wrap">
-  <h2 class="section-heading">Experiments</h2>
-</section>
+<div class="wrap content">
+  <section class="home-section personal-projects">
+    <h2 class="section-heading">Personal projects</h2>
+    {% for project in site.categories.projects %}
+      {% if project.type == "personal" %}
+        {% capture class %}{% cycle "personal": "grid", "grid grid--rev" %}{% endcapture %}
+        {% include project-inline.html project=project class=class %}
+      {% endif %}
+    {% endfor %}
+  </section>
+  <section class="home-section client-works">
+    <h2 class="section-heading">Client work</h2>
+    {% for project in site.categories.projects %}
+      {% if project.type == "client" %}
+        {% capture class %}{% cycle "client": "grid", "grid grid--rev" %}{% endcapture %}
+        {% include project-inline.html project=project class=class %}
+      {% endif %}
+    {% endfor %}
+  </section>
+  <section class="home-section experiments">
+    <h2 class="section-heading">Experiments</h2>
+    <p>The web is a playground where everything is possible. So if I need a break from real projects I like to come up with idea for fun little experiments. And of course, the best place to share those things is <a href="http://codepen.io/">CodePen</a>.</p>
+    <a href="http://codepen.io/sacha" class="button button-block button-center">
+      <span class="label">View more on CodePen</span>
+    </a>
+  </section>
+</div>

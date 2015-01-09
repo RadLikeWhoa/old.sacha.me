@@ -1,26 +1,17 @@
 a {
   color: $highlight;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.15s ease-in-out;
   text-decoration: none;
 
   &:hover,
   &:focus {
+    border-bottom-color: currentcolor;
     outline: none;
   }
 
-  .post &,
-  .content & {
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.15s ease-in-out;
-
-    &:hover,
-    &:focus {
-      border-bottom-color: currentcolor;
-      outline: none;
-    }
-
-    &:target {
-      outline: none;
-      background-color: rgba($highlight, 0.13);
-    }
+  &:target {
+    outline: none;
+    background-color: rgba($highlight, 0.13);
   }
 }

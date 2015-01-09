@@ -10,19 +10,25 @@
 .site-heading {
   margin-bottom: 0;
   text-align: center;
-  transition: text-shadow 0.25s ease-in-out;
 
   a {
     @include rem(padding, 1.5rem 0);
+    background-color: transparent;
+    border-bottom: 0;
+    transition: background-color 0.25s ease-in-out;
 
     span {
       border-bottom: 1px solid transparent;
       transition: border-bottom-color 0.25s ease-in-out;
     }
 
-    &:hover span,
-    &:focus span {
-      border-bottom-color: currentColor;
+    &:hover,
+    &:focus {
+      background-color: rgba(#000, 0.05);
+
+      span {
+        border-bottom-color: currentColor;
+      }
     }
 
     @include at-least(s) {
@@ -107,6 +113,7 @@
   a {
     position: relative;
     padding: 0.75em 1.5em;
+    border-bottom: 0;
     z-index: 10;
     transition: color 0.25s ease-in-out;
 
