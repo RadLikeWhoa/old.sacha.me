@@ -10,12 +10,13 @@ page_class: page-post
   </div>
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
   <div class="post-body">{{ content }}</div>
-  <p class="share content-block share-block">
-    If you enjoyed this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>. You can also <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
-  </p>
   <div class="post-links" style="display: none;">
     <h3>Links in this post</h3>
     <div id="post-links-list" class="grid"></div>
   </div>
+  <p class="share content-block share-block">
+    If you enjoyed reading this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>. You can also <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
+  </p>
+  <a href="/articles" class="button button-block button-center">View more articles</a>
 </article>
 {% include footer.html %}

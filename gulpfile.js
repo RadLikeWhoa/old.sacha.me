@@ -53,7 +53,7 @@ gulp.task('webserver', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch([ '_config.yml', '*.html', '_includes/*.html', '_layouts.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
+  gulp.watch([ '_config.yml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
   gulp.watch('_src/scss/*.scss', [ 'css' ])
   gulp.watch('_src/js/*.js', [ 'js' ])
   gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', '_site/**/*.html' ], notifyLivereload)

@@ -15,4 +15,6 @@ pattern:
   size: 70px 70px
   position: 0 0, 35px 35px
 type: client
+link: http://chirurgie-am-rhein.ch
+client: Dr. med. Tibor Horvath
 ---

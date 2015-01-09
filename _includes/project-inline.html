@@ -5,8 +5,8 @@
     </div>
     <div class="col med-col-2-3">
       <h3 class="project-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>
-      <div class="project-intro">
-        <p><span class="faded">{{ project.date | date: "%Y" }} —</span> {{ include.project.content | strip_html | truncatewords: 30 }}</p>
+      <div class="project-inline-intro">
+        <p><span class="faded">{{ project.date | date: "%Y" }} —</span> {{ include.project.excerpt | strip_html }}</p>
       </div>
       <ul class="tag-list unstyled">
         {% for tag in project.tags %}

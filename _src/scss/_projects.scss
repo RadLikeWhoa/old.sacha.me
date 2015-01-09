@@ -18,10 +18,62 @@
   overflow: hidden;
 }
 
-.project-intro {
+.project-inline-intro {
   position: relative;
   height: 7.5em;
   overflow: hidden;
+}
+
+.project-intro {
+  font-size: 1.3em;
+  line-height: 1.54;
+}
+
+.project-meta {
+  margin-bottom: 1.5em;
+  border: 1px solid rgba(204, 204, 204, 0.45);
+  border-radius: 3px;
+}
+
+.project-meta-item {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.45);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include at-least(m) {
+    border-right: 1px solid rgba(204, 204, 204, 0.45);
+    border-bottom: 0;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.project-meta-label {
+  display: block;
+  padding: 0.25em 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.45);
+}
+
+.project-meta-body {
+  display: block;
+  padding: 0.25em 0.75em;
+
+  a {
+    display: inline-block;
+  }
+
+  a, & {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .tag-list {
@@ -42,6 +94,19 @@
   }
 }
 
+.tag-list-full {
+  display: flex;
+  height: auto;
+  margin-right: -0.5em;
+  margin-bottom: 1em;
+  flex-flow: row wrap;
+  white-space: normal;
+
+  &::after {
+    content: none;
+  }
+}
+
 .tag {
   display: inline-block;
   padding: 0.25em 0.75em;
@@ -57,5 +122,17 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  .tag-list-full & {
+    display: block;
+    flex: 1 0 auto;
+    margin-left: 0;
+    margin-bottom: 0.5em;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0.5em;
+    }
   }
 }
