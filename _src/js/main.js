@@ -46,11 +46,13 @@
   // https://github.com/cferdinandi/smooth-scroll
 
   if ('requestAnimationFrame' in window && 'addEventListener' in window) {
-    document.getElementById('topLink').addEventListener('click', function () {
+    document.getElementById('topLink').addEventListener('click', function (e) {
       var start = window.pageYOffset
       var distance = start * -1
       var time = 0
       var raf, percentage, position
+
+      e.preventDefault()
 
       var easing = function (time) {
         return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
