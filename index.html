@@ -8,25 +8,7 @@ navigation_match: /
 <section class="home-section wrap">
   <h2 class="section-heading">Latest project</h2>
   {% assign project = site.categories.projects.first %}
-  <article class="post post-inline">
-    <div class="grid">
-      <div class="col med-col-1-3">
-        <div class="icon-well" style="background: {{ project.pattern.gradient }}; background-size: {{ project.pattern.size }}; background-position: {{ project.pattern.position }}"></div>
-      </div>
-      <div class="col med-col-2-3">
-        <h3 class="post-title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
-        <div class="project-intro">
-          <p>{{ project.content | strip_html | truncatewords: 30 }}</p>
-        </div>
-        <ul class="tag-list unstyled">
-          {% for tag in project.tags %}
-            <li class="tag">{{ tag }}</li>
-          {% endfor %}
-        </ul>
-        <a href="{{ project.url }}">Read more &raquo;</a>
-      </div>
-    </div>
-  </article>
+  {% include project-inline.html project = project class = "grid" %}
   <a href="/projects" class="button button-center"><span class="label">View all projects</span></a>
 </section>
 <section class="home-section wrap">

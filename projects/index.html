@@ -3,4 +3,24 @@ title: Projects
 navigation_match: /projects
 ---
 
-<p>Nothing to see here yet.</p>
+<section class="personal-projects wrap">
+  <h2 class="section-heading">Personal projects</h2>
+  {% for project in site.categories.projects %}
+    {% if project.type == "personal" %}
+      {% capture class %}{% cycle "personal": "grid", "grid grid--rev" %}{% endcapture %}
+      {% include project-inline.html project=project class=class %}
+    {% endif %}
+  {% endfor %}
+</section>
+<section class="client-works wrap">
+  <h2 class="section-heading">Client work</h2>
+  {% for project in site.categories.projects %}
+    {% if project.type == "client" %}
+      {% capture class %}{% cycle "client": "grid", "grid grid--rev" %}{% endcapture %}
+      {% include project-inline.html project=project class=class %}
+    {% endif %}
+  {% endfor %}
+</section>
+<section class="experiments wrap">
+  <h2 class="section-heading">Experiments</h2>
+</section>

@@ -1,0 +1,19 @@
+<article class="post post-inline">
+  <div class="{{ include.class }}">
+    <div class="col med-col-1-3">
+      <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"></div>
+    </div>
+    <div class="col med-col-2-3">
+      <h3 class="post-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>
+      <div class="project-intro">
+        <p>{{ include.project.content | strip_html | truncatewords: 30 }}</p>
+      </div>
+      <ul class="tag-list unstyled">
+        {% for tag in project.tags %}
+          <li class="tag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+      <a href="{{ include.project.url }}">Read more &raquo;</a>
+    </div>
+  </div>
+</article>
