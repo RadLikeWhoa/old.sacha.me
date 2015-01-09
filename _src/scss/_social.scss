@@ -13,8 +13,9 @@ $networks:
   [data-network="#{nth($network, 1)}"] {
     background-color: nth($network, 2);
 
-    &:hover {
-      background-color: darken(nth($network, 2), 5%);
+    &:hover,
+    &:focus {
+      background-color: darken(nth($network, 2), 10%);
     }
   }
 }

@@ -6,7 +6,7 @@
     <div class="col med-col-2-3">
       <h3 class="project-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>
       <div class="project-intro">
-        <p>{{ include.project.content | strip_html | truncatewords: 30 }}</p>
+        <p><span class="faded">{{ project.date | date: "%Y" }} —</span> {{ include.project.content | strip_html | truncatewords: 30 }}</p>
       </div>
       <ul class="tag-list unstyled">
         {% for tag in project.tags %}

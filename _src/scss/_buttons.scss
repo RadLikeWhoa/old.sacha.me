@@ -16,7 +16,7 @@
 
   &:hover,
   &:focus {
-    background-color: darken($highlight, 6%);
+    background-color: darken($highlight, 5%);
   }
 
   &:focus .label {
