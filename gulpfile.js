@@ -40,7 +40,7 @@ gulp.task('css', function () {
 })
 
 gulp.task('images', function () {
-  return gulp.src([ 'assets/img/**/*.{jpg,png,svg}', '_src/svg/*.svg' ])
+  return gulp.src('_src/img/**/*.*')
     .pipe(imagemin({
       progressive: true
     }))
@@ -66,8 +66,8 @@ gulp.task('watch', function () {
   gulp.watch([ '_config.yml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
   gulp.watch('_src/scss/*.scss', [ 'css' ])
   gulp.watch('_src/js/*.js', [ 'js' ])
-  gulp.watch('assets/img/*.*', [ 'images' ])
-  gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', 'assets/img/*.*', '_site/**/*.html' ], notifyLivereload)
+  gulp.watch('_src/img/**/*.*', [ 'images' ])
+  gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', 'assets/img/**/.*', '_site/**/*.html' ], notifyLivereload)
 })
 
 gulp.task('default', [ 'css', 'js', 'images', 'jekyll', 'webserver', 'watch' ])
