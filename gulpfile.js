@@ -38,6 +38,11 @@ gulp.task('css', function () {
     .pipe(gulp.dest('_site/assets/css'))
 })
 
+gulp.task('images', function () {
+  return gulp.src('assets/img/**/*.{jpg,png,svg}')
+    .pipe(gulp.dest('_site/assets/img'))
+})
+
 gulp.task('webserver', function () {
   var express = require('express')
   var app = express()
@@ -56,7 +61,8 @@ gulp.task('watch', function () {
   gulp.watch([ '_config.yml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
   gulp.watch('_src/scss/*.scss', [ 'css' ])
   gulp.watch('_src/js/*.js', [ 'js' ])
-  gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', '_site/**/*.html' ], notifyLivereload)
+  gulp.watch('assets/img/*.*', [ 'images' ])
+  gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', 'assets/img/*.*', '_site/**/*.html' ], notifyLivereload)
 })
 
-gulp.task('default', [ 'css', 'js', 'webserver', 'watch' ])
+gulp.task('default', [ 'css', 'js', 'images', 'jekyll', 'webserver', 'watch' ])

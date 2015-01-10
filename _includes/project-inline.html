@@ -1,7 +1,9 @@
 <article class="post post-inline">
   <div class="{{ include.class }}">
     <div class="col med-col-1-3">
-      <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"></div>
+      <a href="{{ include.project.url }}">
+        <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"><img src="/assets/img/{{ include.project.title }}.svg"></div>
+      </a>
     </div>
     <div class="col med-col-2-3">
       <h3 class="project-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>

@@ -1,11 +1,29 @@
 .icon-well {
   width: 100%;
-  padding-bottom: 25%;
   margin-bottom: 1.5em;
   border-radius: 5px;
+  transform-style: preserve-3d;
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+
+    @include up-to(m) {
+      height: 10em;
+    }
+
+    @include at-least(m) {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 
   @include at-least(m) {
-    padding-bottom: 15.5em;
+    height: 15.5em;
     margin-bottom: 0;
   }
 }
@@ -54,6 +72,7 @@
       left: 0;
       height: 3em;
       background-image: linear-gradient(to bottom, rgba($main, 0), $main 50%);
+      pointer-events: none;
     }
   }
 }
@@ -131,6 +150,7 @@
     bottom: 0;
     width: 1.5em;
     background-image: linear-gradient(to right, rgba($main, 0), $main);
+    pointer-events: none;
   }
 }
 

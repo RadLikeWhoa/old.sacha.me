@@ -1,5 +1,12 @@
 (function () {
 
+  // This fixes the sometimes jumping animation of the active navigation item
+  // backdrop.
+
+  setTimeout(function () {
+    document.getElementById('activeItem').className += ' transitioning'
+  }, 0)
+
   // Get all the links on post pages and create a list of all in-post URLs.
   // querySelector is a requirement for this function. If it's not available,
   // the function won't run.

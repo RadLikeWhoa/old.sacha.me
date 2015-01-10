@@ -150,14 +150,15 @@
 .active-nav-item {
   @include at-least(m) {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    height: 4.5em;
     background-color: $main;
     border-radius: 5px 5px 0 0;
     pointer-events: none;
-    transition: transform 0.25s ease-in-out;
     z-index: 5;
+
+    &.transitioning {
+      transition: transform 0.25s ease-in-out;
+    }
   }
 }
 
