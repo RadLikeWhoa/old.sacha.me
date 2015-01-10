@@ -20,6 +20,7 @@ pattern:
 type: personal
 link: http://sacha.me/Countable
 repo: https://github.com/RadLikeWhoa/Countable
+hero: countable-home.png
 ---
 
 Countable is a JavaScript library to add live paragraph-, word- and character-counting to an HTML element. I created it because I was unsatisfied with existing solutions for this problem.

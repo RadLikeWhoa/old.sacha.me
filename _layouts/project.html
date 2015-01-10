@@ -7,6 +7,9 @@ page_class: page-project
 <article class="post post-full wrap">
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
   <p class="project-intro">{{ page.excerpt | strip_html }}</p>
+  <div class="hero-img-wrapper">
+    <img src="/assets/img/{{ page.hero }}" class="hero-img">
+  </div>
   <div class="project-meta grid grid--gutterless">
     <div class="project-meta-item col med-col-1-5">
       <div class="project-meta-label small faded">Start year</div>

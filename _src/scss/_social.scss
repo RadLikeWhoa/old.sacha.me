@@ -3,6 +3,10 @@
   list-style: none;
 }
 
+.social-item:nth-child(-n+2) {
+  margin-bottom: 1.5em;
+}
+
 $networks:
   dribbble #ea4c89,
   pinboard #4545E6,

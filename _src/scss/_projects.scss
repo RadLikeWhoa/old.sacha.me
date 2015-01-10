@@ -10,6 +10,22 @@
   }
 }
 
+.hero-img-wrapper {
+  margin-left: -1.5em;
+  margin-right: -1.5em;
+  margin-bottom: 1.5em;
+}
+
+.hero-img {
+  width: 100%;
+  border: 1px solid rgba(204, 204, 204, 0.45);
+
+  @include up-to(m) {
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
 .project-title a {
   display: inline-block;
   max-width: 100%;
