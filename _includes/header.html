@@ -2,21 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.name }}, Front-End Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="{{ site.author.name }}">
-    <meta name="description" content="{{ site.tagline }}">
-    <link rel="alternate" href="{{ site.url }}/feed.xml" type="application/atom+xml" title="{{ site.name }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }} — {% endif %}Sacha Schmid, Front-End Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sacha Schmid">
+    <meta name="description" content="Sacha Schmid is a front-end developer from Switzerland, designing and building websites for private clients and small companies using modern HTML, CSS and JavaScript.">
+    <meta name="theme-color" content="#eb724c">
+    <meta name="msapplication-TileColor" content="#eb724c">
+    <link rel="alternate" href="{{ site.url }}/feed.xml" type="application/atom+xml" title="Sacha Schmid, Front-End Developer">
     <!--[if lte IE 8]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="/assets/css/style.css">
   </head>
-  <body class="{{ page.page_class }}">
+  <body>
     <a href="#content-start" tabindex="1" class="skip-to-content">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
-        <h1 class="site-heading"><a href="/"><span>{{ site.name }}</span></a></h1>
+        <h1 class="site-heading"><a href="/"><span>Sacha Schmid</span></a></h1>
         <nav>
           <input type="checkbox" class="cb-hack" id="menuToggle">
           <ul class="site-nav grid grid--gutterless unstyled">

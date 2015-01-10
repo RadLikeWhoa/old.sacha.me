@@ -1,6 +1,4 @@
-name: Sacha Schmid
-
-url: http://radlikewhoa.github.io
+url: http://sacha.me
 permalink: :categories/:title/
 
 timezone: Europe/Zurich
