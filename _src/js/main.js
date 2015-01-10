@@ -1,6 +1,8 @@
 (function () {
 
   // Get all the links on post pages and create a list of all in-post URLs.
+  // querySelector is a requirement for this function. If it's not available,
+  // the function won't run.
 
   if ('querySelector' in document) {
     var links = document.querySelectorAll('.post-body a'),
@@ -25,15 +27,23 @@
         link.id = link.id || 'post-reference-' + counter
         counter += 1
 
+        // All links get an auto-incremented counter, unless they already have
+        // a defined ID.
+
         backref = '<a href="#' + link.id + '" title="Jump to context">' +
                     '<span class="icon icon-up"></span>' +
                   '</a>'
+
+        // The final HTML is one half-width column, including the link itself,
+        // the title and the backref.
 
         html += '<div class="post-link-entry col med-col-1-2">' +
                   '<a class="post-link" href="' + href + '">' + href + '</a>' +
                   '<div>' + (title ? backref + ' ' + title : backref) + '</div>' +
                 '</div>'
       }
+
+      // The list is only displayed if there are any links.
 
       if (html) {
         list.innerHTML = html
@@ -44,6 +54,8 @@
 
   // Smooth-scroll to top function, largely based on
   // https://github.com/cferdinandi/smooth-scroll
+  // Both requestAnimationFrame and addEventListener are required for this
+  // function to run.
 
   if ('requestAnimationFrame' in window && 'addEventListener' in window) {
     document.getElementById('topLink').addEventListener('click', function (e) {
@@ -54,9 +66,15 @@
 
       e.preventDefault()
 
+      // The easing function is an easeInOutQuad function.
+
       var easing = function (time) {
         return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
       }
+
+      // The distance to scroll for each iteration is calculated using the
+      // passed time and the overall distance. Using requestAnimationFrame we
+      // can achieve 30fps.
 
       var scroll = function () {
         time += 30

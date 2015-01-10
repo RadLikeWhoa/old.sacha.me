@@ -66,6 +66,7 @@
     max-height: 3em;
     overflow: hidden;
     transition: max-height 0.25s ease-in-out;
+    z-index: 10;
   }
 
   @include at-least(m) {
@@ -156,6 +157,7 @@
     border-radius: 5px 5px 0 0;
     pointer-events: none;
     transition: transform 0.25s ease-in-out;
+    z-index: 5;
   }
 }
 

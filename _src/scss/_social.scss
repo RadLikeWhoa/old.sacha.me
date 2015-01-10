@@ -8,13 +8,13 @@
 }
 
 $networks:
-  dribbble #ea4c89,
-  pinboard #4545E6,
-  github #4183c4,
-  twitter #55acee;
+  Dribbble #ea4c89,
+  Pinboard #4545E6,
+  GitHub #4183c4,
+  Twitter #55acee;
 
 @each $network in $networks {
-  [data-network="#{nth($network, 1)}"] {
+  .social-item [title="#{nth($network, 1)}"] {
     background-color: nth($network, 2);
 
     &:hover,

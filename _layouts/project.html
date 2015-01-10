@@ -5,7 +5,7 @@ navigation_match: /projects
 {% include header.html %}
 <article class="post post-full wrap">
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
-  <p class="project-intro">{{ page.excerpt | strip_html }}</p>
+  <p class="project-intro">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
   <div class="hero-img-wrapper">
     <img src="/assets/img/{{ page.hero }}" class="hero-img">
   </div>
