@@ -1,3 +1,21 @@
+.skip-to-content {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+
+  &:focus {
+    top: 0.25em;
+    left: 0.25em;
+    height: auto;
+    width: auto;
+    color: $main;
+    clip: auto;
+    z-index: 1;
+  }
+}
+
 .site-header {
   background-color: $highlight;
 
