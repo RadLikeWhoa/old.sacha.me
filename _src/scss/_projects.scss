@@ -1,5 +1,4 @@
 .icon-well {
-  width: 100%;
   margin-bottom: 1.5em;
   border-radius: 5px;
   transform-style: preserve-3d;
@@ -8,16 +7,13 @@
     display: block;
     max-width: 100%;
     width: auto;
-    height: auto;
+    height: 10em;
     margin: 0 auto;
-
-    @include up-to(m) {
-      height: 10em;
-    }
 
     @include at-least(m) {
       position: relative;
       top: 50%;
+      height: auto;
       transform: translateY(-50%);
     }
   }
@@ -29,9 +25,10 @@
 }
 
 .hero-img-wrapper {
-  margin-left: -1.5em;
-  margin-right: -1.5em;
+  @extend %wide-bordered;
+
   margin-bottom: 1.5em;
+  border-color: #e5e5e5;
 
   &:hover + .project-meta {
     opacity: 0.3;
@@ -42,44 +39,47 @@
 .hero-img {
   display: block;
   width: 100%;
-  border: 1px solid rgba(204, 204, 204, 0.45);
-
-  @include up-to(m) {
-    border-left: 0;
-    border-right: 0;
-  }
 }
 
 .project-title a {
+  @extend %truncate;
+
   display: inline-block;
   max-width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
-.project-inline-intro {
+%fadeout {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.project-intro {
+  @extend %fadeout;
+
+  @include up-to(m) {
+    &::after {
+      content: none;
+    }
+  }
+
   @include at-least(m) {
-    position: relative;
     height: 7.5em;
     overflow: hidden;
 
     &::after {
-      content: "";
-      position: absolute;
       right: 0;
       bottom: 0;
       left: 0;
       height: 3em;
       background-image: linear-gradient(to bottom, rgba($main, 0), $main 50%);
-      pointer-events: none;
     }
   }
-}
-
-.project-intro {
-  font-size: 1.3em;
-  line-height: 1.54;
 }
 
 .project-meta {
@@ -88,21 +88,21 @@
   margin-top: calc(-3.5em - 1px);
   margin-bottom: 1.5em;
   background-color: lighten($main, 3%);
-  border: 1px solid rgba(204, 204, 204, 0.45);
+  border: 1px solid #e5e5e5;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgba(#333, 0.1);
   transition: opacity 0.25s ease-in-out;
 }
 
 .project-meta-item {
-  border-bottom: 1px solid rgba(204, 204, 204, 0.45);
+  border-bottom: 1px solid #e5e5e5;
 
   &:last-child {
     border-bottom: 0;
   }
 
   @include at-least(m) {
-    border-right: 1px solid rgba(204, 204, 204, 0.45);
+    border-right: 1px solid #e5e5e5;
     border-bottom: 0;
 
     &:last-child {
@@ -116,7 +116,7 @@
   padding: 0.25em 0.75em;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(204, 204, 204, 0.45);
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .project-meta-body {
@@ -127,44 +127,38 @@
     display: inline-block;
   }
 
-  a, & {
+  a,
+  & {
+    @extend %truncate;
+
     max-width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 }
 
-.tag-list {
-  position: relative;
+[data-tags] {
+  @extend %unstyled-list;
+}
+
+[data-tags="inline"] {
+  @extend %fadeout;
+
   height: 2em;
-  margin-bottom: 1.5em;
   white-space: nowrap;
-  overflow: hidden;
 
   &::after {
-    content: "";
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     width: 1.5em;
     background-image: linear-gradient(to right, rgba($main, 0), $main);
-    pointer-events: none;
   }
 }
 
-.tag-list-full {
+[data-tags="full"] {
   display: flex;
-  height: auto;
   margin-right: -0.5em;
   margin-bottom: 1em;
   flex-flow: row wrap;
-  white-space: normal;
-
-  &::after {
-    content: none;
-  }
 }
 
 .tag {
@@ -180,19 +174,15 @@
     margin-left: 0;
   }
 
-  &:last-child {
+  [data-tags="inline"] &:last-child {
     margin-right: 0;
   }
 
-  .tag-list-full & {
+  [data-tags="full"] & {
     display: block;
     flex: 1 0 auto;
     margin-left: 0;
     margin-bottom: 0.5em;
     text-align: center;
-
-    &:last-child {
-      margin-right: 0.5em;
-    }
   }
 }

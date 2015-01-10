@@ -1,16 +1,22 @@
-.unstyled {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style: none;
+@mixin rem ($property, $values) {
+  $px-values: ();
+  $leave: auto 0 inherit initial;
+
+  @each $value in $values {
+    @if index($leave, $value) == false {
+      $px-values: append($px-values, $value / 1rem * $rem-fallback);
+    } @else {
+      $px-values: append($px-values, $value);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $values;
 }
 
-%clearfix {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+%unstyled-list {
+  padding-left: 0;
+  list-style: none;
 }
 
 .small {
@@ -18,22 +24,27 @@
   line-height: 2;
 }
 
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.truncate {
+%truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+%wide {
+  margin-left: -1.5em;
+  margin-right: -1.5em;
+}
+
+%wide-bordered {
+  @extend %wide;
+
+  border: 1px solid;
+
+  @include up-to(m) {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 3px;
+  }
 }
 
 .faded {

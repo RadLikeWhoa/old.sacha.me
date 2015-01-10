@@ -38,7 +38,7 @@
         // a defined ID.
 
         backref = '<a href="#' + link.id + '" title="Jump to context">' +
-                    '<span class="icon icon-up"></span>' +
+                    '<span data-icon="up"></span>' +
                   '</a>'
 
         // The final HTML is one half-width column, including the link itself,

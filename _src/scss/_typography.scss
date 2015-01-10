@@ -1,50 +1,50 @@
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 400;
-  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+  src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 700;
-  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/toadOcfmlt9b38dHJxOBGIqjGYJUyOXcBwUQbRaNH6c.woff) format('woff');
+  src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/toadOcfmlt9b38dHJxOBGIqjGYJUyOXcBwUQbRaNH6c.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: italic;
   font-weight: 400;
-  src: local('Source Sans Pro Italic'), local('SourceSansPro-It'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/M2Jd71oPJhLKp0zdtTvoM_bce-VcyLJMRR1FC9qWbU8.woff) format('woff');
+  src: local("Source Sans Pro Italic"), local("SourceSansPro-It"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/M2Jd71oPJhLKp0zdtTvoM_bce-VcyLJMRR1FC9qWbU8.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-style: italic;
   font-weight: 700;
-  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldIt'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/fpTVHK8qsXbIeTHTrnQH6PgYMAt3u4NmhhzLLLPJ5qH3rGVtsTkPsbDajuO5ueQw.woff) format('woff');
+  src: local("Source Sans Pro Bold Italic"), local("SourceSansPro-BoldIt"), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/fpTVHK8qsXbIeTHTrnQH6PgYMAt3u4NmhhzLLLPJ5qH3rGVtsTkPsbDajuO5ueQw.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Source Code Pro';
+  font-family: "Source Code Pro";
   font-style: normal;
   font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/mrl8jkM18OlOQN8JLgasD9Hq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+  src: local("Source Code Pro"), local("SourceCodePro-Regular"), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/mrl8jkM18OlOQN8JLgasD9Hq-FFgoDNV3GTKpHwuvtI.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Source Code Pro';
+  font-family: "Source Code Pro";
   font-style: normal;
   font-weight: 700;
-  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/leqv3v-yTsJNC7nFznSMqYqjGYJUyOXcBwUQbRaNH6c.woff) format('woff');
+  src: local("Source Code Pro Bold"), local("SourceCodePro-Bold"), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/leqv3v-yTsJNC7nFznSMqYqjGYJUyOXcBwUQbRaNH6c.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v3/IQHow_FEYlDC4Gzy_m8fcnbFhgvWbfSbdVg11QabG8w.woff) format('woff');
+  src: local("Montserrat-Bold"), url(http://themes.googleusercontent.com/static/fonts/montserrat/v3/IQHow_FEYlDC4Gzy_m8fcnbFhgvWbfSbdVg11QabG8w.woff) format("woff");
 }
 
 html {
@@ -63,41 +63,49 @@ html {
   }
 }
 
-#{headings(1 to 4, false)},
-p,
-pre,
-ul,
-ol {
-  margin-top: 0;
-}
-
-#{headings(1 to 4, false)},
-p,
-.highlight,
-ul,
-ol {
-  @include rem(margin-bottom, 1.5rem);
-}
-
-#{headings(1 to 4, false)} {
+h1,
+h2,
+h3 {
   font-family: Montserrat, "Source Sans Pro", "Helvetica Neue", sans-serif;
 }
 
-#{headings(1)} {
+h1,
+.h1 {
   font-size: 2em;
   line-height: 1.5;
 }
 
-#{headings(2)} {
+h2,
+.h2 {
   font-size: 1.7em;
   line-height: 1.765;
 }
 
-#{headings(3)} {
+h3,
+.h3 {
   font-size: 1.27em;
   line-height: 1.179;
 }
 
-#{headings(4)} {
-  font-size: 1em;
+a {
+  color: $highlight;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.15s ease-in-out;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: currentcolor;
+    outline: none;
+  }
+
+  &:target {
+    outline: none;
+    background-color: rgba($highlight, 0.15);
+  }
+}
+
+.hero-text {
+  font-size: 1.3em;
+  line-height: 1.54;
 }

@@ -6,7 +6,7 @@ caption: "Jekyll makes it easy to display a post's word count or its reading tim
 Displaying a post's word count is rather common when creating a blog, but usually those techniques rely on JavaScript to work. The script reads the post's text, counts the words and displays the result accordingly. That was the way I did things on this blog first as well, but then I set out to find a better way.
 
 If you just want to get to the snippets without the explanations, they're available in the paragraph [Summing it up](#summing-it-up "Jump to this paragraph").
-{: .content-block .info-block }
+{: data-block="info" }
 
 # Showing the word count
 

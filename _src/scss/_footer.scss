@@ -2,34 +2,25 @@
   padding: 3em 0 1.5em;
   color: $main;
   background-color: $footer;
-}
 
-.footer-content {
-  margin-bottom: 1.5em;
-
-  a {
-    display: block;
-    color: $main;
+  [data-button] {
+    margin-bottom: 1.5em;
 
     @include up-to(m) {
       text-align: center;
     }
   }
 
-  .icon {
+  [data-icon] {
     @include at-least(m) {
       float: right;
       padding-top: 0.25em;
     }
   }
-}
 
-.copyright {
-  text-align: center;
-}
-
-.opt-label {
-  @include up-to(m) {
-    display: none;
+  .label {
+    @include up-to(m) {
+      display: none;
+    }
   }
 }

@@ -3,7 +3,7 @@ navigation_match: /articles
 ---
 
 {% include header.html %}
-<article class="post post-full wrap">
+<article class="post-full wrap">
   <div class="post-meta">
     <time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%B %d, %Y" }}</time>
   </div>
@@ -13,9 +13,9 @@ navigation_match: /articles
     <h3>Links in this post</h3>
     <div id="post-links-list" class="grid"></div>
   </div>
-  <p class="share content-block share-block">
+  <p data-block="share">
     If you enjoyed reading this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>. You can also <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
   </p>
-  <a href="/articles" class="button button-block button-center">View more articles</a>
+  <a href="/articles" data-button="center">View more articles</a>
 </article>
 {% include footer.html %}

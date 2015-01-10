@@ -25,21 +25,13 @@ code {
 }
 
 .highlight {
-  margin-left: -1.5em;
-  margin-right: -1.5em;
+  @extend %wide-bordered;
 
   pre {
     padding: 0.75em 1.5em;
     background-color: $code;
-    border-top: 1px solid rgba(darken($code, 10%), 0.7);
-    border-bottom: 1px solid rgba(darken($code, 10%), 0.7);
+    border-color: rgba(darken($code, 10%), 0.7);
     overflow-x: auto;
-
-    @include at-least(m) {
-      border-left: 1px solid rgba(darken($code, 10%), 0.7);
-      border-right: 1px solid rgba(darken($code, 10%), 0.7);
-      border-radius: 3px;
-    }
   }
 
   .c { color: #BBC4C4; } /* Comment */

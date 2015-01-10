@@ -1,4 +1,4 @@
-<article class="post post-inline">
+<article class="post-inline">
   <div class="{{ include.class }}">
     <div class="col med-col-1-3">
       <a href="{{ include.project.url }}">
@@ -7,10 +7,10 @@
     </div>
     <div class="col med-col-2-3">
       <h3 class="project-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>
-      <div class="project-inline-intro">
+      <div class="project-intro">
         <p><span class="faded">{{ project.date | date: "%Y" }} —</span> {{ include.project.excerpt | strip_html }}</p>
       </div>
-      <ul class="tag-list unstyled">
+      <ul data-tags="inline">
         {% for tag in project.tags %}
           <li class="tag">{{ tag }}</li>
         {% endfor %}

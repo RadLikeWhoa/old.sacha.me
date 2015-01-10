@@ -3,9 +3,9 @@ navigation_match: /projects
 ---
 
 {% include header.html %}
-<article class="post post-full wrap">
+<article class="post-full wrap">
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
-  <p class="project-intro">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
+  <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
   <div class="hero-img-wrapper">
     <img src="/assets/img/{{ page.hero }}" class="hero-img">
   </div>
@@ -35,9 +35,9 @@ navigation_match: /projects
   <div class="post-body">
     {{ content | remove: page.excerpt }}
   </div>
-  <p class="share content-block share-block">
+  <p data-block="share">
     If you enjoyed reading this case study you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>, or you can <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. You should also <a href="{{ page.link }}">take a look at the project's website</a>, if you haven't already. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
   </p>
-  <a href="/projects" class="button button-block button-center">View more projects</a>
+  <a href="/projects" data-button="center">View more projects</a>
 </article>
 {% include footer.html %}

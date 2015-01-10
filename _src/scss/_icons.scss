@@ -6,7 +6,7 @@
 	font-style: normal;
 }
 
-.icon {
+[data-icon] {
 	font-family: "Entypo";
 	speak: none;
 	font-style: normal;
@@ -18,14 +18,14 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.icon-person::before   { content: "\e600"; }
-.icon-home::before     { content: "\e601"; }
-.icon-archive::before  { content: "\e602"; }
-.icon-case::before     { content: "\e603"; }
-.icon-rss::before      { content: "\e604"; }
-.icon-pinboard::before { content: "\e605"; }
-.icon-up::before       { content: "\e606"; }
-.icon-github::before   { content: "\e607"; }
-.icon-twitter::before  { content: "\e608"; }
-.icon-dribbble::before { content: "\e609"; }
-.icon-list::before     { content: "\e60a"; }
+[data-icon="person"]::before   { content: "\e600"; }
+[data-icon="home"]::before     { content: "\e601"; }
+[data-icon="archive"]::before  { content: "\e602"; }
+[data-icon="case"]::before     { content: "\e603"; }
+[data-icon="rss"]::before      { content: "\e604"; }
+[data-icon="pinboard"]::before { content: "\e605"; }
+[data-icon="up"]::before       { content: "\e606"; }
+[data-icon="github"]::before   { content: "\e607"; }
+[data-icon="twitter"]::before  { content: "\e608"; }
+[data-icon="dribbble"]::before { content: "\e609"; }
+[data-icon="list"]::before     { content: "\e60a"; }

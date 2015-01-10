@@ -12,6 +12,17 @@ body {
   background-color: $footer;
 }
 
+h1,
+h2,
+h3,
+p,
+pre,
+ul,
+ol {
+  margin-top: 0;
+  @include rem(margin-bottom, 1.5rem);
+}
+
 .wrap {
   max-width: 40em;
   padding: 0 1.5em;
@@ -20,8 +31,6 @@ body {
 
 .site-intro {
   margin-bottom: 0;
-  font-size: 1.3em;
-  line-height: 1.54;
 }
 
 .home-section {

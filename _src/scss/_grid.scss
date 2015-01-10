@@ -51,7 +51,11 @@ $enable-pull-columns: false !default;
   display: block;
   margin-left: -$gutters;
 
-  @extend %clearfix;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 .#{$grid-namespace}--gutterless {

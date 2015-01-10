@@ -1,40 +1,29 @@
-.content-block {
+[data-block] {
+  @extend %wide-bordered;
+
   padding: 0.75em 1.5em;
-  margin-left: -1.5em;
-  margin-right: -1.5em;
-  border-width: 1px 0 1px 0;
-  border-style: solid;
 
   code {
     background-color: $code;
   }
-
-  @include at-least(m) {
-    border-width: 1px;
-    border-radius: 3px;
-  }
 }
 
-.warning-block {
+[data-block="warning"] {
   color: darken($warning, 30%);
   background-color: rgba($warning, 0.05);
   border-color: rgba(darken($warning, 10%), 0.1);
 }
 
-.info-block {
+[data-block="info"] {
   font-style: italic;
   color: darken($info, 30%);
   background-color: rgba($info, 0.05);
   border-color: rgba(darken($info, 10%), 0.1);
 }
 
-.share-block {
+[data-block="share"] {
   padding: 1.5em;
   color: darken($share, 30%);
   background-color: rgba($share, 0.05);
   border-color: rgba(darken($share, 10%), 0.1);
-
-  &:last-child {
-    margin-top: 1.5em;
-  }
 }

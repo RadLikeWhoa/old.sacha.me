@@ -1,4 +1,4 @@
-.post {
+.post-full {
   margin-bottom: 1.5em;
 }
 
@@ -13,8 +13,13 @@
 }
 
 .post-inline {
-  padding-bottom: 3em;
-  margin-bottom: 3em;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+
+  @include at-least(m) {
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+  }
 }
 
 .post-archive {
@@ -35,11 +40,10 @@
 }
 
 .post-link {
+  @extend %truncate;
+
   display: inline-block;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .post-meta {

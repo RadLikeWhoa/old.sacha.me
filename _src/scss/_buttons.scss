@@ -1,4 +1,4 @@
-.button {
+[data-button] {
   @include rem(padding, 0.75rem 1.5rem);
   display: inline-block;
   font-weight: bold;
@@ -24,34 +24,20 @@
   }
 }
 
-.button-block {
+[data-button~="block"] {
   display: block;
 }
 
-.button-center {
+[data-button~="center"] {
   display: block;
   text-align: center;
 }
 
-.button-disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-
-.button-dark {
+[data-button~="dark"] {
   background-color: $control-dark;
 
   &:hover,
   &:focus {
     background-color: darken($control-dark, 5%);
   }
-
-  &:focus .label {
-    border-bottom-color: $main;
-  }
-}
-
-.button-small {
-  @include rem(padding, 0.25rem 0.75rem);
 }
