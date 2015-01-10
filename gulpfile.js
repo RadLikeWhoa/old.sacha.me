@@ -4,6 +4,7 @@ var sass = require('gulp-ruby-sass')
 var autoprefixer = require('gulp-autoprefixer')
 var cmq = require('gulp-combine-media-queries')
 var csso = require('gulp-csso')
+var imagemin = require('gulp-imagemin')
 var lr
 
 function notifyLivereload (event) {
@@ -39,7 +40,11 @@ gulp.task('css', function () {
 })
 
 gulp.task('images', function () {
-  return gulp.src('assets/img/**/*.{jpg,png,svg}')
+  return gulp.src([ 'assets/img/**/*.{jpg,png,svg}', '_src/svg/*.svg' ])
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(gulp.dest('assets/img'))
     .pipe(gulp.dest('_site/assets/img'))
 })
 

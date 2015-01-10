@@ -2,7 +2,7 @@
   <div class="{{ include.class }}">
     <div class="col med-col-1-3">
       <a href="{{ include.project.url }}">
-        <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"><img src="/assets/img/{{ include.project.title }}.svg"></div>
+        <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"><img src="/assets/img/{{ include.project.title | replace: ' ', '-' }}.svg"></div>
       </a>
     </div>
     <div class="col med-col-2-3">
