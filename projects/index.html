@@ -9,7 +9,7 @@ navigation_match: /projects
     {% for project in site.categories.projects %}
       {% if project.type == "personal" %}
         {% capture class %}{% cycle "personal": "grid", "grid grid--rev" %}{% endcapture %}
-        {% include project-inline.html project=project class=class %}
+        {% include project.html project = project class = class %}
       {% endif %}
     {% endfor %}
   </section>
@@ -18,7 +18,7 @@ navigation_match: /projects
     {% for project in site.categories.projects %}
       {% if project.type == "client" %}
         {% capture class %}{% cycle "client": "grid", "grid grid--rev" %}{% endcapture %}
-        {% include project-inline.html project=project class=class %}
+        {% include project.html project = project class = class %}
       {% endif %}
     {% endfor %}
   </section>

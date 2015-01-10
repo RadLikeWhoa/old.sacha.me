@@ -26,12 +26,18 @@ code {
 
 .highlight {
   @extend %wide-bordered;
+  border-color: rgba(darken($code, 10%), 0.7);
+  margin-bottom: 1.5em;
 
   pre {
     padding: 0.75em 1.5em;
+    margin-bottom: 0;
     background-color: $code;
-    border-color: rgba(darken($code, 10%), 0.7);
     overflow-x: auto;
+
+    @include at-least(m) {
+      border-radius: 2px;
+    }
   }
 
   .c { color: #BBC4C4; } /* Comment */

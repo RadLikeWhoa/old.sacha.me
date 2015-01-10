@@ -10,11 +10,7 @@
       <div class="project-intro">
         <p><span class="faded">{{ project.date | date: "%Y" }} —</span> {{ include.project.excerpt | strip_html }}</p>
       </div>
-      <ul data-tags="inline">
-        {% for tag in project.tags %}
-          <li class="tag">{{ tag }}</li>
-        {% endfor %}
-      </ul>
+      {% include tags.html tags = project.tags style = "inline" %}
       <a href="{{ include.project.url }}">Read more &raquo;</a>
     </div>
   </div>

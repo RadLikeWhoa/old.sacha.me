@@ -34,7 +34,7 @@ However, I was not content. So later that year, I decided to drop the old versio
 
 # Things I've learned
 
-{% include tag-list.html tags = page.tags %}
+{% include tags.html tags = page.tags %}
 
 I was responsible for much of the content and free to decide which information needs to be included and which doesn't. This was interesting, considering I'm not that involved with the carnival itself, and using my outside perspective I was able to streamline the site very much. Of course, the comittee had its own ideas and official texts that ended up on the site, but other than that I was free to create the site however I wanted.
 
@@ -42,7 +42,7 @@ On the development site I learned the most when I started work on the second ver
 
 # Technologies I've used
 
-{% include tag-list.html tags = page.technologies %}
+{% include tags.html tags = page.technologies %}
 
 The first version of the site used PHP, mainly for things like including parts of the site. It was a bit of an overkill, because the rest of the site was mostly static.
 

@@ -28,7 +28,7 @@ I first released a demo on [CodePen](http://codepen.io), but later I decided to 
 
 # Things I've learned
 
-{% include tag-list.html tags = page.tags %}
+{% include tags.html tags = page.tags %}
 
 The most interesting part about this project is working with the community. As a single person, I can't even begin to cover a decent amount of bookmarklets, so I depend on other people adding their own contributions. So far, those collaborative efforts have been very enjoyable and they've helped the site grow quite a bit.
 
@@ -36,7 +36,7 @@ Other than that, this was one of my first projects to rely on a build system, sp
 
 # Technologies I've used
 
-{% include tag-list.html tags = page.technologies %}
+{% include tags.html tags = page.technologies %}
 
 I experimented with different approaches to templating. This includes [Underscore](http://underscorejs.org) and [Handlebars](http://handlebarsjs.com) templates, but I ended up using [Mustache](http://mustache.github.io) templates, because they fit best with what I wanted to achieve.
 

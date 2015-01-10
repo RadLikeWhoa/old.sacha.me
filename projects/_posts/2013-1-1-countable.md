@@ -33,7 +33,7 @@ Apparently there was a strong desire in the web development community for a proj
 
 # Things I've learned
 
-{% include tag-list.html tags = page.tags %}
+{% include tags.html tags = page.tags %}
 
 When I first started out working on the project I assumed it would be rather simple, but it didn't take long until I ran into the first problems. Luckily, the open source community was [very interested](https://github.com/RadLikeWhoa/Countable/pulls?q=is%3Apr+is%3Aclosed) in Countable so there were lots of people willing to help improve the library.
 
@@ -45,7 +45,7 @@ To make it easier for people to install and use Countable I chose to make them a
 
 # Technologies I've used
 
-{% include tag-list.html tags = page.technologies %}
+{% include tags.html tags = page.technologies %}
 
 The library itself is just plain JavaScript. Additionally, there are no dependencies, which keeps the size low and makes it easier to use Countable in an enviroment without dependency management. Still, Countable is fully compatible with module loaders like AMD or CommonJS / Node.
 

@@ -27,7 +27,7 @@ First reactions in both Dr. Horvath's professional and personal circles were pos
 
 # Things I've learned
 
-{% include tag-list.html tags = page.tags %}
+{% include tags.html tags = page.tags %}
 
 The thing I learned most about during this project was communication with the client. Whether it was through email or at one of our meetings, I learned more about discovering the client's requirements and wishes and how to note them correctly and efficiently. I also learned how to discover what content was needed and how to communicate this to the client.
 
@@ -35,6 +35,6 @@ Considering the site's target group, I had to make usability and progressive enh
 
 # Technologies I've used
 
-{% include tag-list.html tags = page.technologies %}
+{% include tags.html tags = page.technologies %}
 
 The site uses basic HTML and CSS. To facilitate development and testing I used [gulp](http://gulpjs.com). I relied on progressive enhancement to make the site look good in older browsers while allowing me to make it look the way I wanted in more modern browsers.

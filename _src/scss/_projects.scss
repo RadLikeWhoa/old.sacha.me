@@ -39,6 +39,10 @@
 .hero-img {
   display: block;
   width: 100%;
+
+  @include at-least(m) {
+    border-radius: 2px;
+  }
 }
 
 .project-title a {
