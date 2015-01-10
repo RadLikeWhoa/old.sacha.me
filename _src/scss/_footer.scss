@@ -17,10 +17,10 @@
       padding-top: 0.25em;
     }
   }
+}
 
-  .label {
-    @include up-to(m) {
-      display: none;
-    }
+.opt-label {
+  @include up-to(m) {
+    display: none;
   }
 }

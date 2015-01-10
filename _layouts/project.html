@@ -9,12 +9,12 @@ navigation_match: /projects
   <div class="hero-img-wrapper">
     <img src="/assets/img/{{ page.hero }}" class="hero-img">
   </div>
-  <div class="project-meta grid grid--gutterless">
-    <div class="project-meta-item col med-col-1-5">
+  <div class="project-meta" data-grid="gutterless">
+    <div class="project-meta-item" data-col="M1-5">
       <div class="project-meta-label small faded">Start year</div>
       <time class="project-meta-body" datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time>
     </div>
-    <div class="project-meta-item col med-col-2-5">
+    <div class="project-meta-item" data-col="M2-5">
       {% if page.type == "personal" %}
         <div class="project-meta-label small faded">Source</div>
         <div class="project-meta-body">
@@ -25,7 +25,7 @@ navigation_match: /projects
         <div class="project-meta-body">{{ page.client }}</div>
       {% endif %}
     </div>
-    <div class="project-meta-item col med-col-2-5">
+    <div class="project-meta-item" data-col="M2-5">
       <div class="project-meta-label small faded">URL</div>
       <div class="project-meta-body">
         <a href="{{page.link }}">{{ page.link }}</a>

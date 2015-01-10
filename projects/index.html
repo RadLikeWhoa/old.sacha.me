@@ -8,7 +8,7 @@ navigation_match: /projects
     <h2 class="section-heading">Personal projects</h2>
     {% for project in site.categories.projects %}
       {% if project.type == "personal" %}
-        {% capture class %}{% cycle "personal": "grid", "grid grid--rev" %}{% endcapture %}
+        {% capture class %}{% cycle "personal": "", "rev" %}{% endcapture %}
         {% include project.html project = project class = class %}
       {% endif %}
     {% endfor %}
@@ -17,7 +17,7 @@ navigation_match: /projects
     <h2 class="section-heading">Client work</h2>
     {% for project in site.categories.projects %}
       {% if project.type == "client" %}
-        {% capture class %}{% cycle "client": "grid", "grid grid--rev" %}{% endcapture %}
+        {% capture class %}{% cycle "client": "", "rev" %}{% endcapture %}
         {% include project.html project = project class = class %}
       {% endif %}
     {% endfor %}
