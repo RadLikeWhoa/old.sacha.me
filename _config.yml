@@ -21,6 +21,9 @@ links:
 markdown: kramdown
 highlighter: pygments
 
+gems:
+  - jekyll-sitemap
+
 kramdown:
   enable_coderay: false
   header_offset: 2
