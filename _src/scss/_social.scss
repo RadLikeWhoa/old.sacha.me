@@ -3,17 +3,13 @@
   list-style: none;
 }
 
-.social-item:nth-child(-n+2) {
-  @include up-to(m) {
-    margin-bottom: 1.5em;
-  }
-}
-
 $networks:
   Dribbble #ea4c89,
-  Pinboard #4545E6,
+  Pinboard #4C4CBF,
   GitHub #4183c4,
-  Twitter #55acee;
+  Twitter #55acee,
+  Instagram #4A85B5,
+  "last.fm" #CC4E56;
 
 @each $network in $networks {
   .social-item [title="#{nth($network, 1)}"] {

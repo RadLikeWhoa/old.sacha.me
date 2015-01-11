@@ -18,14 +18,16 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-[data-icon="person"]::before   { content: "\e600"; }
-[data-icon="home"]::before     { content: "\e601"; }
-[data-icon="archive"]::before  { content: "\e602"; }
-[data-icon="case"]::before     { content: "\e603"; }
-[data-icon="rss"]::before      { content: "\e604"; }
-[data-icon="pinboard"]::before { content: "\e605"; }
-[data-icon="up"]::before       { content: "\e606"; }
-[data-icon="github"]::before   { content: "\e607"; }
-[data-icon="twitter"]::before  { content: "\e608"; }
-[data-icon="dribbble"]::before { content: "\e609"; }
-[data-icon="list"]::before     { content: "\e60a"; }
+[data-icon="person"]::before    { content: "\e600"; }
+[data-icon="home"]::before      { content: "\e601"; }
+[data-icon="archive"]::before   { content: "\e602"; }
+[data-icon="case"]::before      { content: "\e603"; }
+[data-icon="rss"]::before       { content: "\e604"; }
+[data-icon="pinboard"]::before  { content: "\e605"; }
+[data-icon="up"]::before        { content: "\e606"; }
+[data-icon="github"]::before    { content: "\e607"; }
+[data-icon="twitter"]::before   { content: "\e608"; }
+[data-icon="dribbble"]::before  { content: "\e609"; }
+[data-icon="list"]::before      { content: "\e60a"; }
+[data-icon="lastfm"]::before    { content: "\e60b"; }
+[data-icon="instagram"]::before { content: "\e60c"; }
