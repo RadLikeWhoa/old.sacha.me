@@ -2,7 +2,7 @@
   <div data-grid="{{ include.class }}">
     <div data-col="M1-3">
       <a href="{{ include.project.url }}">
-        <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"><img src="/assets/img/{{ include.project.title | replace: ' ', '-' }}.svg"></div>
+        <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"><img src="/assets/img/{{ include.project.title | replace: ' ', '-' }}.svg" onerror="this.src='/assets/img/{{ include.project.title | replace: ' ', '-' }}.png'"></div>
       </a>
     </div>
     <div data-col="M2-3">
