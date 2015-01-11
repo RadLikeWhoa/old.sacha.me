@@ -10,21 +10,30 @@ $gutters: 1.5em !default;
   $cache: ();
 
   @each $group in $columns {
+    $include: ();
+
+    @if (length($group) == 2) {
+      $include: nth($group, 2);
+      $group: nth($group, 1);
+    }
+
     @for $i from 1 to $group {
-      $value: 100% / $group * $i;
-      $index: index($cache, $value);
+      @if (length($include) and index($include, $i)) or length($include) == 0 {
+        $value: 100% / $group * $i;
+        $index: index($cache, $value);
 
-      @if not $index {
-        $cache: append($cache, $value);
-        $index: length($cache);
+        @if not $index {
+          $cache: append($cache, $value);
+          $index: length($cache);
 
-        %#{$prefix + '-' + $index} { width: $value; }
-      }
+          %#{$prefix + '-' + $index} { width: $value; }
+        }
 
-      $selector: if($prefix, $prefix, "") + $i + '-' + $group;
+        $selector: if($prefix, $prefix, "") + $i + '-' + $group;
 
-      [data-#{$grid-columns-namespace}~="#{$selector}"] {
-        @extend %#{$prefix + '-' + $index};
+        [data-#{$grid-columns-namespace}~="#{$selector}"] {
+          @extend %#{$prefix + '-' + $index};
+        }
       }
     }
   }
@@ -63,8 +72,8 @@ $gutters: 1.5em !default;
 
 @include _column-setup();
 
-@each $media-query, $prefix in $column-prefixes {
-  @include at-least($media-query) {
+@each $prefix, $media-query in $column-prefixes {
+  @media #{$media-query} {
     @include _column-setup($prefix);
   }
 }
