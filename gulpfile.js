@@ -5,6 +5,8 @@ var autoprefixer = require('gulp-autoprefixer')
 var cmq = require('gulp-combine-media-queries')
 var csso = require('gulp-csso')
 var imagemin = require('gulp-imagemin')
+var svg2png = require('gulp-svg2png')
+var newer = require('gulp-newer')
 var lr
 
 function notifyLivereload (event) {
@@ -23,6 +25,7 @@ gulp.task('jekyll', function () {
 
 gulp.task('js', function () {
   return gulp.src('_src/js/*.js')
+    .pipe(newer('assets/js'))
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'))
     .pipe(gulp.dest('_site/assets/js/'))
@@ -30,6 +33,7 @@ gulp.task('js', function () {
 
 gulp.task('css', function () {
   return gulp.src('_src/scss/*.scss')
+    .pipe(newer('assets/css'))
     .pipe(sass({ style: 'compressed' }))
     .on('error', function (err) { console.log(err) })
     .pipe(autoprefixer('last 2 version'))
@@ -39,8 +43,16 @@ gulp.task('css', function () {
     .pipe(gulp.dest('_site/assets/css'))
 })
 
+gulp.task('svg', function () {
+  return gulp.src('_src/img/**/*.svg')
+    .pipe(newer('_src/img'))
+    .pipe(svg2png())
+    .pipe(gulp.dest('_src/img'))
+})
+
 gulp.task('images', function () {
   return gulp.src('_src/img/**/*.*')
+    .pipe(newer('assets/img'))
     .pipe(imagemin({
       progressive: true
     }))
@@ -63,11 +75,12 @@ gulp.task('webserver', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch([ '_config.yml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
+  gulp.watch([ '_config.yml', 'feed.xml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
   gulp.watch('_src/scss/*.scss', [ 'css' ])
   gulp.watch('_src/js/*.js', [ 'js' ])
   gulp.watch('_src/img/**/*.*', [ 'images' ])
+  gulp.watch('_src/img/**/*.svg', [ 'svg', 'images' ])
   gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', 'assets/img/**/.*', '_site/**/*.html' ], notifyLivereload)
 })
 
-gulp.task('default', [ 'css', 'js', 'images', 'jekyll', 'webserver', 'watch' ])
+gulp.task('default', [ 'css', 'js', 'svg', 'images', 'jekyll', 'webserver', 'watch' ])
