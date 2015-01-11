@@ -1,8 +1,8 @@
 pre,
 code {
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-family: Source Code Pro, Consolas, Lucida Console, Monaco, monospace;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 code {
@@ -16,7 +16,6 @@ code {
   pre & {
     padding: 0;
     font-size: 1em;
-    line-height: 1.875;
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -27,14 +26,37 @@ code {
 .highlight {
   @extend %wide-bordered;
 
+  position: relative;
   border-color: rgba(darken($code, 10%), 0.7);
   margin-bottom: 1.5em;
 
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1.5em;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  &::before {
+    left: 0;
+    background-image: linear-gradient(to right, $code, rgba($code, 0));
+  }
+
+  &::after {
+    right: 0;
+    background-image: linear-gradient(to left, $code, rgba($code, 0));
+  }
+
   pre {
-    padding: 0.75em 1.5em;
+    padding: 0.75em 2em;
     margin-bottom: 0;
     background-color: $code;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
     @include at-least(m) {
       border-radius: 2px;
