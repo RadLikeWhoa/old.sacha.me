@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: rgba($highlight, 0.2);
+}
+
+body {
+  margin: 0;
+  color: $default;
+  background-color: $footer;
+}
+
+h1,
+h2,
+h3,
+p,
+pre,
+ul,
+ol {
+  margin-top: 0;
+  @include rem(margin-bottom, 1.5rem);
+}
+
+.wrap {
+  max-width: 40em;
+  padding: 0 1.5em;
+  margin: 0 auto;
+}
+
+.site-intro {
+  margin-bottom: 0;
+}
+
+.home-section {
+  margin-bottom: 3em;
+
+  &:last-child {
+    margin-bottom: 1.5em;
+  }
+}
+
+.section-heading {
+  @include rem(padding, 1.5rem 0);
+  @include rem(margin-bottom, 3rem);
+  text-align: center;
+  background-color: $control-light;
+  border-radius: 5px;
+}
+
+.main {
+  position: relative;
+  padding-top: 3em;
+  padding-bottom: 1.5em;
+  background-color: $main;
+  box-shadow: 0 0 5px rgba(#333, 0.3);
+}

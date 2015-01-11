@@ -1,19 +1,17 @@
 @import "variables";
-@import "partials/mixins";
+@import "media-queries";
+@import "grid";
+@import "helpers";
 
-@import "partials/helpers";
+@import "typography";
+@import "buttons";
+@import "icons";
+@import "code";
+@import "blocks";
 
-@import "partials/typography";
-@import "partials/grid";
-@import "partials/links";
-@import "partials/buttons";
-@import "partials/icons";
-@import "partials/code";
-@import "partials/blocks";
-
-@import "partials/base";
-@import "partials/header";
-@import "partials/posts";
-@import "partials/pagination";
-@import "partials/social";
-@import "partials/footer";
+@import "base";
+@import "header";
+@import "posts";
+@import "projects";
+@import "social";
+@import "footer";

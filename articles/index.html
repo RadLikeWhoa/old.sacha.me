@@ -1,40 +1,16 @@
 ---
-layout: default
-title: Archive
-navigation_match: /articles
+title: Articles
+description: "Read articles on web design, web development and many other things, written by Sacha Schmid."
 ---
 
 <section class="posts wrap">
   <h2 class="section-heading">All articles</h2>
-  {% for post in paginator.posts %}
-    <article class="post post-archive">
+  {% for post in site.categories.articles %}
+    <article class="post-archive">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}" class="h3 faded">{{ post.date | date: "%b %d, %Y" }}</time>
       <h3 class="post-title">
-        <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}">{{ post.date | date: "%b %d" }}</time> — <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ post.url }}">{{ post.title }}</a>
       </h3>
     </article>
   {% endfor %}
-  <ul class="pagination unstyled grid">
-    <li>
-      {% if paginator.previous_page %}
-        <a href="{% if paginator.previous_page == 1 %}/archive{% else %}{{ paginator.previous_page_path }}{% endif %}" class="button button-block">
-          <span class="icon icon-left"></span> <span class="label">Newer posts</span>
-        </a>
-      {% else %}
-        <a class="button button-block button-disabled">
-          <span class="icon icon-left"></span> <span class="label">No newer posts found</span>
-        </a>
-      {% endif %}
-    </li>
-    <li class="text-right">
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="button button-block">
-          <span class="label">Older posts</span> <span class="icon icon-right"></span>
-        </a>
-      {% else %}
-        <a class="button button-block button-disabled">
-          <span class="label">No older posts found</span> <span class="icon icon-right"></span>
-        </a>
-      {% endif %}
-    </li>
-  </ul>
 </section>

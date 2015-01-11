@@ -1,0 +1,26 @@
+.site-footer {
+  padding: 3em 0 1.5em;
+  color: $main;
+  background-color: $footer;
+
+  [data-button] {
+    margin-bottom: 1.5em;
+
+    @include up-to(m) {
+      text-align: center;
+    }
+  }
+
+  [data-icon] {
+    @include at-least(m) {
+      float: right;
+      padding-top: 0.25em;
+    }
+  }
+}
+
+.opt-label {
+  @include up-to(m) {
+    display: none;
+  }
+}

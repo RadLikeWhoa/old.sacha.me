@@ -1,58 +1,55 @@
-name: Sacha Schmid
-tagline: "Sacha Schmid is a front-end developer from Switzerland, with an eye for beautiful code."
-description: "Hi there, my name is Sacha Schmid and I am a front-end developer from Switzerland. I'm especially focused on creating appealing designs using the latest HTML, CSS and JavaScript techniques."
-short_description: "My name is Sacha Schmid. I'm a front-end developer from Switzerland."
-
-url: http://sachaschmid.ch
-permalink: articles/:title/
-
-paginate: 10
-paginate_path: articles/page/:num/
+url: http://sacha.me
+permalink: :categories/:title/
+description: "Sacha Schmid is a front-end developer from Switzerland, designing and building websites for private clients and small companies using modern HTML, CSS and JavaScript."
 
 timezone: Europe/Zurich
-
-author:
-  name: Sacha Schmid
-  social:
-    - network: Twitter
-      url: https://twitter.com/sachaschmid
-    - network: GitHub
-      url: https://github.com/radlikewhoa
-    - network: Pinboard
-      url: https://pinboard.in/u:sachaschmid
-    - network: Dribbble
-      url: http://dribbble.com/sachaschmid
-    - network: Instagram
-      url: https://instagram.com/radlikewhoa_
-    - network: lastfm
-      url: http://last.fm/user/HawkFire21
-    - network: Spotify
-      url: http://open.spotify.com/user/sachaschmid
 
 links:
   - title: Home
     url: /
     icon_class: home
+  - title: Projects
+    url: /projects
+    icon_class: case
   - title: Articles
     url: /articles
     icon_class: archive
-  - title: RSS
-    url: /feed.xml
-    icon_class: rss
-  # - title: Projects
-    # url: /projects
-    # icon_class: case
-  # - title: About
-    # url: /about
-    # icon_class: person
-  # - title: Contact
-    # url: /contact
-    # icon_class: envelope
+  - title: About
+    url: /about
+    icon_class: person
 
-markdown: rdiscount
-highlight: true
+markdown: kramdown
+highlighter: pygments
 
-rdiscount:
-  extensions:
-    # - footnotes
-    - smart
+kramdown:
+  enable_coderay: false
+  header_offset: 2
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: articles
+    values:
+      navigation_match: /articles
+  -
+    scope:
+      path: articles
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: projects
+    values:
+      navigation_match: /projects
+  -
+    scope:
+      path: projects
+      type: posts
+    values:
+      layout: project

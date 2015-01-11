@@ -1,0 +1,29 @@
+[data-block] {
+  @extend %wide-bordered;
+
+  padding: 0.75em 1.5em;
+
+  code {
+    background-color: $code;
+  }
+}
+
+[data-block="warning"] {
+  color: darken($warning, 30%);
+  background-color: rgba($warning, 0.05);
+  border-color: rgba(darken($warning, 10%), 0.1);
+}
+
+[data-block="info"] {
+  font-style: italic;
+  color: darken($info, 30%);
+  background-color: rgba($info, 0.05);
+  border-color: rgba(darken($info, 10%), 0.1);
+}
+
+[data-block="share"] {
+  padding: 1.5em;
+  color: darken($share, 30%);
+  background-color: rgba($share, 0.05);
+  border-color: rgba(darken($share, 10%), 0.1);
+}

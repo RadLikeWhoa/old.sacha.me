@@ -1,34 +1,30 @@
 ---
+layout: null
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-
-  <title type="text">{{ site.name }}</title>
-  <link rel="self" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
-  <link rel="alternate" type="text/html" href="{{ site.url }}" />
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
-
-  <author>
-    <name>{{ site.author.name }}</name>
-    <uri>{{ site.url }}/</uri>
-  </author>
-
-  <rights>Copyright (c) 2013, Sacha Schmid; all rights reserved.</rights>
-
-  {% for post in site.posts limit:20 %}
-  <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ site.url }}{{ post.url }}"></link>
-    <id>{{ site.url }}{{ post.id }}</id>
-    <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <author>
-      <name>{{ site.author.name }}</name>
-      <uri>{{ site.url }}</uri>
-    </author>
-    <content type="html">{{ post.content | xml_escape }}</content>
-  </entry>
-  {% endfor %}
-
-</feed>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Sacha Schmid, Front-End Developer</title>
+    <description>{{ site.description }}</description>
+    <link>{{ site.url }}</link>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+    <managingEditor>schmid.sacha@gmail.com (Sacha Schmid)</managingEditor>
+    <copyright>Copyright (c) 2015, Sacha Schmid; all rights reserved.</copyright>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {% for post in site.categories.articles limit:20 %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <dc:creator>Sacha Schmid</dc:creator>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      {% if post.excerpt %}
+        <description>{{ post.excerpt | xml_escape }}</description>
+      {% else %}
+        <description>{{ post.content | xml_escape }}</description>
+      {% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

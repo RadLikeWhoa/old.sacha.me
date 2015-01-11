@@ -1,0 +1,21 @@
+$media-queries: () !default;
+
+@function _mq ($name) {
+  @if map-has-key($media-queries, $name) {
+    @return map-get($media-queries, $name)
+  } @else {
+    @warn 'No media query called `#{$name}` could be found.';
+  }
+}
+
+@mixin at-least ($point) {
+  @media (min-width: _mq($point)) {
+    @content;
+  }
+}
+
+@mixin up-to ($point) {
+  @media (max-width: _mq($point)) {
+    @content;
+  }
+}

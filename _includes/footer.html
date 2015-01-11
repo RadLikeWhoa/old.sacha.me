@@ -1,36 +1,28 @@
     </section>
     <footer class="site-footer">
-      <div class="wrap wrap-wide">
-        <div class="grid">
-          <div class="footer-info">
-            <img src="http://www.gravatar.com/avatar/41846240bdcfece48077ca4f21eb4ae9.png" class="avatar">
+      <div class="wrap">
+        <div data-grid>
+          <div data-col="1-3">
+            <a href="/feed.xml" data-button="block dark" title="RSS feed for all articles on this site">
+              <span data-icon="rss"></span><span class="label opt-label">RSS</span>
+            </a>
           </div>
-          <div class="footer-info">
-            <h4>About</h4>
-            <p>{{ site.short_description }}</p>
-            <!--<p><a href="/about" class="button button-dark">Read more <span class="icon icon-right"></span></a></p>-->
+          <div data-col="1-3">
+            <a href="https://github.com/RadLikeWhoa/radlikewhoa.github.io" data-button="block dark" title="GitHub repository for this site">
+              <span data-icon="github"></span><span class="label opt-label">GitHub</span>
+            </a>
           </div>
-          <div class="footer-info">
-            <h4>Navigation</h4>
-            <ul class="unstyled">
-              {% for link in site.links %}
-                <li><a href="{{ link.url }}" class="button button-dark button-small"><span class="icon icon-{{ link.icon_class }}"></span><span class="label">{{ link.title }}</span></a></li>
-              {% endfor %}
-            </ul>
+          <div data-col="1-3">
+            <a href="https://twitter.com/sachaschmid" data-button="block dark" title="Personal Twitter account">
+              <span data-icon="twitter"></span><span class="label opt-label">Twitter</span>
+            </a>
+          </div>
+          <div data-col>
+            <a href="#" id="topLink" data-button="dark center">
+              <span class="label">Back to top</span>
+            </a>
           </div>
         </div>
-        {% if site.author.social %}
-          <ul class="social-links grid">
-            {% for link in site.author.social %}
-              <li class="social-link-item">
-                <a href="{{ link.url }}" class="{{ link.network | downcase }} button button-dark button-center" title="{{ link.network }}">
-                  <span class="icon icon-{{ link.network | downcase }}"></span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        <p class="copyright text-center faded small">Copyright 2014 — Sacha Schmid. Icons by Daniel Bruce — www.entypo.com.</p>
       </div>
     </footer>
     <script src="/assets/js/main.js"></script>

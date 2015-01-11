@@ -1,0 +1,27 @@
+.social-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.social-item:nth-child(-n+2) {
+  @include up-to(m) {
+    margin-bottom: 1.5em;
+  }
+}
+
+$networks:
+  Dribbble #ea4c89,
+  Pinboard #4545E6,
+  GitHub #4183c4,
+  Twitter #55acee;
+
+@each $network in $networks {
+  .social-item [title="#{nth($network, 1)}"] {
+    background-color: nth($network, 2);
+
+    &:hover,
+    &:focus {
+      background-color: darken(nth($network, 2), 10%);
+    }
+  }
+}

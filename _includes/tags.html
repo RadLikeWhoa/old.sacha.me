@@ -1,0 +1,5 @@
+<ul data-tags="{% if include.style %}inline{% else %}full{% endif %}">
+  {% for tag in include.tags %}
+    <li class="tag">{{ tag }}</li>
+  {% endfor %}
+</ul>

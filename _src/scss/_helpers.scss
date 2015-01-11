@@ -1,0 +1,53 @@
+@mixin rem ($property, $values) {
+  $px-values: ();
+  $leave: auto 0 inherit initial;
+
+  @each $value in $values {
+    @if index($leave, $value) == false {
+      $px-values: append($px-values, $value / 1rem * $rem-fallback);
+    } @else {
+      $px-values: append($px-values, $value);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $values;
+}
+
+%unstyled-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.small {
+  font-size: 0.75em;
+  line-height: 2;
+}
+
+%truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%wide {
+  margin-left: -1.5em;
+  margin-right: -1.5em;
+}
+
+%wide-bordered {
+  @extend %wide;
+
+  border: 1px solid;
+  border-radius: 3px;
+
+  @include up-to(m) {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+  }
+}
+
+.faded {
+  color: darken($main, 40%);
+}

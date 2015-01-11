@@ -1,0 +1,52 @@
+.post-full {
+  margin-bottom: 1.5em;
+}
+
+.post-inline,
+.post-archive {
+  border-bottom: 1px solid rgba(#ccc, 0.45);
+
+  &:last-of-type {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.post-inline {
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+
+  @include at-least(m) {
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+  }
+}
+
+.post-archive {
+  margin-bottom: 1.5em;
+}
+
+.post-links {
+  margin-top: 1.5em;
+}
+
+.post-link-entry {
+  margin-bottom: 1.5em;
+  width: 100%;
+
+  @include at-least(m) {
+    width: 50%;
+  }
+}
+
+.post-link {
+  @extend %truncate;
+
+  display: inline-block;
+  max-width: 100%;
+}
+
+.post-meta {
+  margin-bottom: 1.5em;
+  color: #aaa;
+}

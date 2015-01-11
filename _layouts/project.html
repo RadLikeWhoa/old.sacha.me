@@ -1,0 +1,41 @@
+{% include header.html %}
+<article class="post-full wrap">
+  <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+  <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
+  {% if page.hero %}
+    <div class="hero-img-wrapper">
+      <img src="/assets/img/{{ page.hero }}" class="hero-img">
+    </div>
+  {% endif %}
+  <div class="project-meta" data-grid="gutterless">
+    <div class="project-meta-item" data-col="M1-5">
+      <div class="project-meta-label small faded">Start year</div>
+      <time class="project-meta-body" datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time>
+    </div>
+    <div class="project-meta-item" data-col="M2-5">
+      {% if page.type == "personal" %}
+        <div class="project-meta-label small faded">Source</div>
+        <div class="project-meta-body">
+          <a href="{{page.repo }}">{{ page.repo }}</a>
+        </div>
+      {% else %}
+        <div class="project-meta-label small faded">Client</div>
+        <div class="project-meta-body">{{ page.client }}</div>
+      {% endif %}
+    </div>
+    <div class="project-meta-item" data-col="M2-5">
+      <div class="project-meta-label small faded">URL</div>
+      <div class="project-meta-body">
+        <a href="{{page.link }}">{{ page.link }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="post-body">
+    {{ content | remove: page.excerpt }}
+  </div>
+  <p data-block="share">
+    If you enjoyed reading this case study you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>, or you can <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. You should also <a href="{{ page.link }}">take a look at the project's website</a>, if you haven't already. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
+  </p>
+  <a href="/projects" data-button="center">View more projects</a>
+</article>
+{% include footer.html %}

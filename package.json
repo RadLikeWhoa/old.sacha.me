@@ -1,17 +1,20 @@
 {
-  "name": "sachaschmid.ch",
+  "name": "sacha.me",
   "version": "1.0.0",
-  "author": "Sacha Schmid <schmid.sacha@gmail.com>",
+  "author": "Sacha Schmid (sacha.me)",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-autoprefixer": "~0.3.0",
-    "grunt-jekyll": "~0.4.0",
-    "matchdep": "~0.1.2"
+    "connect-livereload": "^0.5.0",
+    "express": "^4.9.8",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-combine-media-queries": "^0.2.0",
+    "gulp-csso": "^0.2.9",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-newer": "^0.5.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-svg2png": "^0.3.0",
+    "gulp-uglify": "^1.0.1",
+    "opn": "^1.0.0",
+    "tiny-lr": "^0.1.4"
   }
 }

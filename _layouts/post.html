@@ -1,55 +1,17 @@
----
-navigation_match: /articles
-page_class: page-post
----
-
-{% capture words %}
-  {{ page.content | strip_html | number_of_words | minus: 250 }}
-{% endcapture %}
-
 {% include header.html %}
-<article class="post post-full wrap">
+<article class="post-full wrap">
   <div class="post-meta">
     <time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%B %d, %Y" }}</time>
-    {% unless words contains "-" %}
-      &bull;
-      {{ words | plus: 250 | divided_by: 180 | append: ' minute read' }}
-    {% endunless %}
   </div>
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
   <div class="post-body">{{ content }}</div>
   <div class="post-links" style="display: none;">
-    <h4>Links in this post</h4>
-    <ol></ol>
+    <h3>Links in this post</h3>
+    <div id="post-links-list" data-grid></div>
   </div>
-  <p class="share content-block share-block">
-    If you enjoyed this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
+  <p data-block="share">
+    If you enjoyed reading this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>. You can also <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
   </p>
+  <a href="/articles" data-button="center">View more articles</a>
 </article>
-<div class="wrap">
-  <ul class="pagination post-pagination unstyled grid">
-    <li>
-      {% if page.next %}
-        <a href="{{ page.next.url }}" class="button button-block">
-          <span class="icon icon-left"></span> <div class="label-truncate"><span class="label">{{ page.next.title }}</span></div>
-        </a>
-      {% else %}
-      <a class="button button-block button-disabled">
-        <span class="icon icon-left"></span> <div class="label-truncate"><span class="label">No newer post found</span></div>
-      </a>
-      {% endif %}
-    </li>
-    <li class="text-right">
-      {% if page.previous %}
-        <a href="{{ page.previous.url }}" class="button button-block">
-          <div class="label-truncate"><span class="label">{{ page.previous.title }}</span></div> <span class="icon icon-right"></span>
-        </a>
-      {% else %}
-      <a class="button button-block button-disabled">
-        <div class="label-truncate"><span class="label">No older post found</span></div> <span class="icon icon-right"></span>
-      </a>
-      {% endif %}
-    </li>
-  </ul>
-</div>
 {% include footer.html %}

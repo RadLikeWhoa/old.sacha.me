@@ -1,6 +1,31 @@
 ---
-layout: default
-navigation_match: /projects
+title: Projects
+description: "Read about web projects Sacha Schmid was involved with and learn about his experiences."
 ---
 
-<p>Nothing to see here yet.</p>
+{% assign personal = site.categories.projects | where: "type", "personal" %}
+{% assign client = site.categories.projects | where: "type", "client" %}
+
+<div class="wrap content">
+  <section class="home-section personal-projects">
+    <h2 class="section-heading">Personal projects</h2>
+    {% for project in personal %}
+      {% capture class %}{% cycle "personal": "", "rev" %}{% endcapture %}
+      {% include project.html project = project class = class %}
+    {% endfor %}
+  </section>
+  <section class="home-section client-works">
+    <h2 class="section-heading">Client work</h2>
+    {% for project in client %}
+      {% capture class %}{% cycle "client": "", "rev" %}{% endcapture %}
+      {% include project.html project = project class = class %}
+    {% endfor %}
+  </section>
+  <section class="home-section experiments">
+    <h2 class="section-heading">Experiments</h2>
+    <p>The web is a playground where everything is possible. So if I need a break from other projects I like to come up with ideas for fun little experiments. And of course, the best place to share those things is <a href="http://codepen.io/">CodePen</a>.</p>
+    <a href="http://codepen.io/sacha" data-button="center">
+      <span class="label">View on CodePen</span>
+    </a>
+  </section>
+</div>
