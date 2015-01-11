@@ -32,10 +32,11 @@
 
 .post-link-entry {
   margin-bottom: 1.5em;
-  width: 100%;
 
   @include at-least(m) {
-    width: 50%;
+    &:nth-child(3n) {
+      clear: both;
+    }
   }
 }
 

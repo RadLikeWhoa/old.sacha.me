@@ -44,7 +44,7 @@
         // The final HTML is one half-width column, including the link itself,
         // the title and the backref.
 
-        html += '<div class="post-link-entry" data-col data-col="1-2">' +
+        html += '<div class="post-link-entry" data-col="M1-2">' +
                   '<a class="post-link" href="' + href + '">' + href + '</a>' +
                   '<div>' + (title ? backref + ' ' + title : backref) + '</div>' +
                 '</div>'

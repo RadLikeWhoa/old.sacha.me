@@ -105,6 +105,11 @@ a {
   }
 }
 
+abbr {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
 .hero-text {
   font-size: 1.3em;
   line-height: 1.54;
