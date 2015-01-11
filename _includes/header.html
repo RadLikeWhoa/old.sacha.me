@@ -6,7 +6,7 @@
     <title>{% if page.title %}{{ page.title }} — {% endif %}Sacha Schmid, Front-End Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Sacha Schmid">
-    <meta name="description" content="Sacha Schmid is a front-end developer from Switzerland, designing and building websites for private clients and small companies using modern HTML, CSS and JavaScript.">
+    <meta name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}Sacha Schmid is a front-end developer from Switzerland, designing and building websites for private clients and small companies using modern HTML, CSS and JavaScript.{% endif %}">
     <meta name="theme-color" content="#eb724c">
     <meta name="msapplication-TileColor" content="#eb724c">
     <link rel="alternate" href="{{ site.url }}/feed.xml" type="application/atom+xml" title="Sacha Schmid, Front-End Developer">

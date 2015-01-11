@@ -32,13 +32,23 @@ defaults:
       layout: default
   -
     scope:
-      path: "articles"
-      type: "posts"
+      path: articles
+    values:
+      navigation_match: /articles
+  -
+    scope:
+      path: articles
+      type: posts
     values:
       layout: post
   -
     scope:
-      path: "projects"
-      type: "posts"
+      path: projects
+    values:
+      navigation_match: /projects
+  -
+    scope:
+      path: projects
+      type: posts
     values:
       layout: project
