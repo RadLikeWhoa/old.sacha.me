@@ -7,8 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Sacha Schmid">
     <meta name="description" content="{% if page.description %}{{ page.description | truncate: 160, '…' }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160, '…' }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.png">
+    <link rel="icon" sizes="192x192" href="/apple-touch-icon.png">
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
     <meta name="theme-color" content="#eb724c">
     <meta name="msapplication-TileColor" content="#eb724c">
+    <meta name="msapplication-TileImage" content="/apple-touch-icon.png">
     <link rel="alternate" href="{{ site.url }}/feed.xml" type="application/atom+xml" title="Sacha Schmid, Front-End Developer">
     <!--[if lte IE 8]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
