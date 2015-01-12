@@ -1,3 +1,4 @@
 _site/
 _drafts/
-node_modules
+node_modules/
+assets/css/style.css.map
