@@ -119,18 +119,19 @@
   }
 }
 
-.project-meta-label {
+.project-meta-label,
+.project-meta-body {
   display: block;
   padding: 0.25em 0.75em;
+}
+
+.project-meta-label {
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .project-meta-body {
-  display: block;
-  padding: 0.25em 0.75em;
-
   a {
     display: inline-block;
   }

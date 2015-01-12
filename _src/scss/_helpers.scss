@@ -3,7 +3,7 @@
   $leave: auto 0 inherit initial;
 
   @each $value in $values {
-    @if index($leave, $value) == false {
+    @if not index($leave, $value) {
       $px-values: append($px-values, $value / 1rem * $rem-fallback);
     } @else {
       $px-values: append($px-values, $value);

@@ -38,7 +38,7 @@ gulp.task('css', function () {
     .on('error', function (err) { console.log(err) })
     .pipe(autoprefixer('last 2 version'))
     .pipe(cmq())
-    .pipe(csso())
+    .pipe(csso(true))
     .pipe(gulp.dest('assets/css'))
     .pipe(gulp.dest('_site/assets/css'))
 })

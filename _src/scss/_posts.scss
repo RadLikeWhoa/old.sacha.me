@@ -14,7 +14,6 @@
 
 .post-inline {
   padding-bottom: 1.5em;
-  margin-bottom: 1.5em;
 
   @include at-least(m) {
     padding-bottom: 3em;
@@ -22,6 +21,7 @@
   }
 }
 
+.post-inline,
 .post-archive {
   margin-bottom: 1.5em;
 }
