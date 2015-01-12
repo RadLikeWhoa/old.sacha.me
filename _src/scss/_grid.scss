@@ -43,7 +43,7 @@ $gutters: 1.5em !default;
   display: block;
   margin-left: -$gutters;
 
-  &::after {
+  &:after {
     content: "";
     display: table;
     clear: both;

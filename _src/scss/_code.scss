@@ -30,8 +30,8 @@ code {
   border-color: rgba(darken($code, 10%), 0.7);
   margin-bottom: 1.5em;
 
-  &::before,
-  &::after {
+  &:before,
+  &:after {
     content: "";
     position: absolute;
     top: 0;
@@ -41,12 +41,12 @@ code {
     z-index: 10;
   }
 
-  &::before {
+  &:before {
     left: 0;
     background-image: linear-gradient(to right, $code, rgba($code, 0));
   }
 
-  &::after {
+  &:after {
     right: 0;
     background-image: linear-gradient(to left, $code, rgba($code, 0));
   }
