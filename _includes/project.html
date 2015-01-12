@@ -1,14 +1,20 @@
 {% capture style %}
   {% for prop in include.project.pattern %}
-    background-{{ prop[0] }}: {{ prop[1] }};
+    {% if prop[0] == "image" %}
+      background: {{ prop[1] }};
+    {% else %}
+      background-{{ prop[0] }}: {{ prop[1] }};
+    {% endif %}
   {% endfor %}
 {% endcapture %}
+
+{% capture icon %}/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}{% endcapture %}
 
 <article class="post-inline">
   <div data-grid="{{ include.class }}">
     <div data-col="M1-3">
       <a href="{{ include.project.url }}">
-        <div class="icon-well" style="{{ style }}"><img src="/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}.svg" onerror="this.src='/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}.png'"></div>
+        <div class="icon-well" style="{{ style }}"><img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;"></div>
       </a>
     </div>
     <div data-col="M2-3">
