@@ -1,8 +1,14 @@
+{% capture style %}
+  {% for prop in include.project.pattern %}
+    background-{{ prop[0] }}: {{ prop[1] }};
+  {% endfor %}
+{% endcapture %}
+
 <article class="post-inline">
   <div data-grid="{{ include.class }}">
     <div data-col="M1-3">
       <a href="{{ include.project.url }}">
-        <div class="icon-well" style="background: {{ include.project.pattern.gradient }}; background-size: {{ include.project.pattern.size }}; background-position: {{ include.project.pattern.position }}"><img src="/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}.svg" onerror="this.src='/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}.png'"></div>
+        <div class="icon-well" style="{{ style }}"><img src="/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}.svg" onerror="this.src='/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}.png'"></div>
       </a>
     </div>
     <div data-col="M2-3">

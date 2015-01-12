@@ -15,7 +15,8 @@ technologies:
   - CSS
   - Sass
 pattern:
-  gradient: linear-gradient(135deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px), linear-gradient(225deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px)0 64px, rgb(235, 164, 76)
+  color: rgb(235, 164, 76)
+  image: linear-gradient(135deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px), linear-gradient(225deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px)0 64px
   size: 64px 128px
 type: personal
 link: http://sacha.me/Countable
