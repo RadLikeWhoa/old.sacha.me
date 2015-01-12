@@ -6,7 +6,7 @@ $main: #f9f9f9;
 $code: #FDF6E3;
 $warning: #FA3232;
 $info: adjust-hue($warning, -150deg);
-$share: adjust-hue($warning, -230deg);
+$share: adjust-hue($warning, -240deg);
 $footer: #444;
 $control-light: darken($main, 6%);
 $control-dark: darken($footer, 10%);
