@@ -18,6 +18,7 @@ pattern:
 type: client
 link: http://chirurgie-am-rhein.ch
 client: Dr. med. Tibor Horvath
+hero: chirurgie-home.png
 ---
 
 Dr. med. Tibor Horvath is a surgeon in Switzerland and he's had the desire for a website of his own for a while. He wanted to be able to just refer to his website when colleagues or clients asked about things like contact information or opening times.
