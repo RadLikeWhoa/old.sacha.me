@@ -54,7 +54,8 @@ gulp.task('images', function () {
   return gulp.src('_src/img/**/*.*')
     .pipe(newer('assets/img'))
     .pipe(imagemin({
-      progressive: true
+      progressive: true,
+      svgoPlugins: [{ removeTitle: true }, { removeDesc: true }]
     }))
     .pipe(gulp.dest('assets/img'))
     .pipe(gulp.dest('_site/assets/img'))
