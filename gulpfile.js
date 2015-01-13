@@ -45,9 +45,10 @@ gulp.task('css', function () {
 
 gulp.task('svg', function () {
   return gulp.src('_src/img/**/*.svg')
-    .pipe(newer('_src/img'))
+    .pipe(newer('assets/img'))
     .pipe(svg2png())
-    .pipe(gulp.dest('_src/img'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('assets/img'))
 })
 
 gulp.task('images', function () {
