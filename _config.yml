@@ -9,13 +9,13 @@ links:
     url: /
     icon_class: home
   - title: Projects
-    url: /projects
+    url: /projects/
     icon_class: case
   - title: Articles
-    url: /articles
+    url: /articles/
     icon_class: archive
   - title: About
-    url: /about
+    url: /about/
     icon_class: person
 
 markdown: kramdown
