@@ -28,7 +28,7 @@ gulp.task('js', function () {
     .pipe(newer('assets/js'))
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'))
-    .pipe(gulp.dest('_site/assets/js/'))
+    .pipe(gulp.dest('_site/assets/js'))
 })
 
 gulp.task('css', function () {
@@ -46,17 +46,22 @@ gulp.task('css', function () {
 gulp.task('svg', function () {
   return gulp.src('_src/img/**/*.svg')
     .pipe(newer('assets/img'))
+    .pipe(imagemin({
+      svgoPlugins: [{ removeTitle: true }, { removeDesc: true }]
+    }))
+    .pipe(gulp.dest('assets/img'))
+    .pipe(gulp.dest('_site/assets/img'))
     .pipe(svg2png())
     .pipe(imagemin())
     .pipe(gulp.dest('assets/img'))
+    .pipe(gulp.dest('_site/assets/img'))
 })
 
 gulp.task('images', function () {
-  return gulp.src('_src/img/**/*.*')
+  return gulp.src('_src/img/**/*.{jpg,png}')
     .pipe(newer('assets/img'))
     .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{ removeTitle: true }, { removeDesc: true }]
+      progressive: true
     }))
     .pipe(gulp.dest('assets/img'))
     .pipe(gulp.dest('_site/assets/img'))
@@ -80,9 +85,10 @@ gulp.task('watch', function () {
   gulp.watch([ '_config.yml', 'feed.xml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
   gulp.watch('_src/scss/*.scss', [ 'css' ])
   gulp.watch('_src/js/*.js', [ 'js' ])
-  gulp.watch('_src/img/**/*.*', [ 'images' ])
-  gulp.watch('_src/img/**/*.svg', [ 'svg', 'images' ])
-  gulp.watch([ 'assets/js/*.js', 'assets/css/*.css', 'assets/img/**/.*', '_site/**/*.html' ], notifyLivereload)
+  gulp.watch('_src/img/**/*.{jpg,png}', [ 'images' ])
+  gulp.watch('_src/img/**/*.svg', [ 'svg' ])
+  gulp.watch([ '_site/assets/js/*.js', '_site/assets/css/*.css', '_site/assets/img/**/*.*', '_site/**/*.html' ], notifyLivereload)
 })
 
-gulp.task('default', [ 'css', 'js', 'svg', 'images', 'jekyll', 'webserver', 'watch' ])
+gulp.task('build', [ 'css', 'js', 'svg', 'images', 'jekyll' ])
+gulp.task('default', [ 'build', 'webserver', 'watch' ])
