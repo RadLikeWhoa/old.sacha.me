@@ -64,7 +64,7 @@
 }
 
 html {
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", sans-serif;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 
   @include at-least(s) {
     font-size: 112.5%;
@@ -82,7 +82,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: Montserrat, "Source Sans Pro", "Helvetica Neue", sans-serif;
+  font-family: Montserrat, "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 h1,
