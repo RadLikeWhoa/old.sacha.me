@@ -16,11 +16,11 @@ h1,
 h2,
 h3,
 p,
-pre,
 ul,
-ol {
+ol,
+pre {
   margin-top: 0;
-  @include rem(margin-bottom, 1.5rem);
+  margin-bottom: 1.5em;
 }
 
 .wrap {
@@ -42,8 +42,8 @@ ol {
 }
 
 .section-heading {
-  @include rem(padding, 1.5rem 0);
-  @include rem(margin-bottom, 3rem);
+  padding: 0.882em 0;
+  margin-bottom: 1.765em;
   text-align: center;
   background-color: $control-light;
   border-radius: 5px;

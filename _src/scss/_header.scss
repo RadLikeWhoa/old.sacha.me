@@ -30,7 +30,7 @@
   margin-bottom: 0;
 
   a {
-    @include rem(padding, 1.5rem 0);
+    padding: 1.5em 0;
     background-color: transparent;
     border-bottom: 0;
     transition: background-color 0.25s ease-in-out;
@@ -50,7 +50,7 @@
     }
 
     @include at-least(s) {
-      @include rem(padding, 2rem 0);
+      padding: 2em 0;
     }
   }
 }

@@ -1,6 +1,6 @@
 [data-button] {
-  @include rem(padding, 0.75rem 1.5rem);
   display: inline-block;
+  padding: 0.75em 1.5em;
   font-weight: bold;
   color: $main;
   background-color: $highlight;

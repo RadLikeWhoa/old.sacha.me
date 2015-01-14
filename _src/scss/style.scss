@@ -3,16 +3,17 @@
 @import "grid";
 @import "helpers";
 
+@import "base";
 @import "typography";
+@import "header";
+@import "footer";
+
 @import "buttons";
 @import "icons";
 @import "code";
 @import "blocks";
 
-@import "base";
-@import "header";
 @import "posts";
 @import "projects";
 @import "styleguide";
 @import "social";
-@import "footer";
