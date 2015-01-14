@@ -6,11 +6,12 @@ description: "Read articles on web design, web development and many other things
 <section class="posts wrap">
   <h2 class="section-heading">All articles</h2>
   {% for post in site.categories.articles %}
-    <article class="post-archive">
-      <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}" class="h3 faded">{{ post.date | date: "%b %d, %Y" }}</time>
-      <h3 class="post-title">
+    <article class="post-archive hentry">
+      <time datetime="{{ page.date | date: '%Y-%m-%d %T' }}" pubdate title="{{ post.date | date: 'Posted on %A, %d %B %Y' }}" class="h3 faded updated">{{ post.date | date: "%b %d, %Y" }}</time>
+      <h3 class="post-title entry-title">
         <a href="{{ post.url }}">{{ post.title }}</a>
       </h3>
+      <a class="include" href="#author"></a>
     </article>
   {% endfor %}
 </section>
