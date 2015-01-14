@@ -7,6 +7,7 @@ var csso = require('gulp-csso')
 var imagemin = require('gulp-imagemin')
 var svg2png = require('gulp-svg2png')
 var newer = require('gulp-newer')
+var pngquant = require('imagemin-pngquant')
 var lr
 
 function notifyLivereload (event) {
@@ -61,7 +62,8 @@ gulp.task('images', function () {
   return gulp.src('_src/img/**/*.{jpg,png}')
     .pipe(newer('assets/img'))
     .pipe(imagemin({
-      progressive: true
+      progressive: true,
+      use: [pngquant()]
     }))
     .pipe(gulp.dest('assets/img'))
     .pipe(gulp.dest('_site/assets/img'))
