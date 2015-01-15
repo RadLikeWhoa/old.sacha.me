@@ -24,7 +24,7 @@ gulp.task('jekyll', function () {
   require('child_process').spawn('jekyll', [ 'build' ], { stdio: 'inherit' })
 })
 
-gulp.task('js', function () {
+gulp.task('scripts', function () {
   return gulp.src('_src/js/*.js')
     .pipe(newer('assets/js'))
     .pipe(uglify())
@@ -32,7 +32,7 @@ gulp.task('js', function () {
     .pipe(gulp.dest('_site/assets/js'))
 })
 
-gulp.task('css', function () {
+gulp.task('styles', function () {
   return gulp.src('_src/scss/*.scss')
     .pipe(newer('assets/css'))
     .pipe(sass({ style: 'compressed' }))
@@ -44,7 +44,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest('_site/assets/css'))
 })
 
-gulp.task('svg', function () {
+gulp.task('vectors', function () {
   return gulp.src('_src/img/**/*.svg')
     .pipe(newer('assets/img'))
     .pipe(imagemin({
@@ -69,7 +69,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('_site/assets/img'))
 })
 
-gulp.task('webserver', function () {
+gulp.task('server', function () {
   var express = require('express')
   var app = express()
 
@@ -85,12 +85,12 @@ gulp.task('webserver', function () {
 
 gulp.task('watch', function () {
   gulp.watch([ '_config.yml', 'feed.xml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/**/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md' ], [ 'jekyll' ])
-  gulp.watch('_src/scss/*.scss', [ 'css' ])
-  gulp.watch('_src/js/*.js', [ 'js' ])
+  gulp.watch('_src/scss/*.scss', [ 'styles' ])
+  gulp.watch('_src/js/*.js', [ 'scripts' ])
   gulp.watch('_src/img/**/*.{jpg,png}', [ 'images' ])
-  gulp.watch('_src/img/**/*.svg', [ 'svg' ])
+  gulp.watch('_src/img/**/*.svg', [ 'vectors' ])
   gulp.watch([ '_site/assets/js/*.js', '_site/assets/css/*.css', '_site/assets/img/**/*.*' ], notifyLivereload)
 })
 
-gulp.task('build', [ 'css', 'js', 'svg', 'images', 'jekyll' ])
-gulp.task('default', [ 'build', 'webserver', 'watch' ])
+gulp.task('build', [ 'styles', 'scripts', 'vectors', 'images', 'jekyll' ])
+gulp.task('default', [ 'build', 'server', 'watch' ])
