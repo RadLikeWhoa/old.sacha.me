@@ -1,52 +1,48 @@
-(function () {
+(function (d, w) {
 
   // This fixes the sometimes jumping animation of the active navigation item
   // backdrop.
 
   setTimeout(function () {
-    document.getElementById('activeItem').className += ' transitioning'
+    d.getElementById('activeItem').className += ' transitioning'
   }, 0)
 
   // Get all the links on post pages and create a list of all in-post URLs.
   // querySelector is a requirement for this function. If it's not available,
   // the function won't run.
 
-  if ('querySelector' in document) {
-    var links = document.querySelectorAll('.post-body a'),
-        list = document.getElementById('post-links-list'),
-        counter = 1,
-        html = ''
+  if ('querySelector' in d) {
+    var links = d.querySelectorAll('.post-body a')
+    var list = d.getElementById('post-links-list')
+    var counter = 0
+    var html = ''
 
     if (links && list) {
       for (var i = 0, j = links.length; i < j; i++) {
-        var link = links[i],
-            href = link.href.replace(/https?:\/\//, ''),
-            title = link.title,
-            backref
+        var link = links[i]
+        var href = link.href
 
         // If the link doesn't have an href or if it's a link on the same page,
         // ignore it and continue.
 
-        if (!href || window.location.origin + window.location.pathname === link.href.replace(/#(.*)/, '')) {
-          continue
-        }
-
-        link.id = link.id || 'post-reference-' + counter
-        counter += 1
+        if (!href || href.indexOf(w.location.host + w.location.pathname) !== -1) continue
 
         // All links get an auto-incremented counter, unless they already have
         // a defined ID.
 
-        backref = '<a href="#' + link.id + '" title="Jump to context">' +
-                    '<span data-icon="up"></span>' +
-                  '</a>'
+        link.id = link.id || 'p-ref-' + (counter++)
 
         // The final HTML is one half-width column, including the link itself,
         // the title and the backref.
 
         html += '<div class="post-link-entry" data-col="M1-2">' +
-                  '<a class="post-link" href="' + href + '">' + href + '</a>' +
-                  '<div>' + (title ? backref + ' ' + title : backref) + '</div>' +
+                  '<a class="post-link" href="' + href + '">' + href.replace(/https?:\/\//, '') + '</a>' +
+                  '<div>' +
+                    '[<a href="#' + link.id + '" title="Jump to context">' +
+                      '<span data-icon="up"></span>' +
+                    '</a>]' +
+                    ' ' + link.title +
+                  '</div>' +
                 '</div>'
       }
 
@@ -64,12 +60,11 @@
   // Both requestAnimationFrame and addEventListener are required for this
   // function to run.
 
-  if ('requestAnimationFrame' in window && 'addEventListener' in window) {
-    document.getElementById('topLink').addEventListener('click', function (e) {
-      var start = window.pageYOffset
-      var distance = start * -1
+  if ('requestAnimationFrame' in w && 'addEventListener' in w) {
+    d.getElementById('topLink').addEventListener('click', function (e) {
+      var position = w.pageYOffset
       var time = 0
-      var raf, percentage, position
+      var raf, percentage
 
       e.preventDefault()
 
@@ -84,13 +79,10 @@
       // can achieve 30fps.
 
       var scroll = function () {
-        time += 30
+        percentage = (time += 60) / 3000
 
-        percentage = time / 1000
-        percentage = percentage > 1 ? 1 : percentage
-
-        position = start + (distance * easing(percentage))
-        window.scrollTo(0, Math.floor(position))
+        position -= (position * easing(Math.min(1, percentage)))
+        w.scrollTo(0, Math.floor(position))
 
         if (position > 0) {
           raf = requestAnimationFrame(scroll)
@@ -100,4 +92,4 @@
       raf = requestAnimationFrame(scroll)
     })
   }
-}())
+}(document, window))
