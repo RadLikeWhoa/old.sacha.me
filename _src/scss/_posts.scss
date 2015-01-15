@@ -26,15 +26,11 @@
   margin-bottom: 1.5em;
 }
 
-.post-links {
-  margin-top: 1.5em;
-}
-
 .post-link-entry {
   margin-bottom: 1.5em;
 
   @include at-least(m) {
-    &:nth-child(3n) {
+    &:nth-child(2n+1) {
       clear: both;
     }
   }
