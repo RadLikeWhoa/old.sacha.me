@@ -5,9 +5,9 @@ caption: "Many blogs on the web are centred around code so syntax highlighting i
 
 Code, no matter what language it is in, can be complicated to read. That's why many blogs use syntax highlighting on their code blocks to help their readers better understand the displayed code.
 
-Jekyll was created with this in mind so it offers easy integration with tools like [Pygments](http://pygments.org "Pygments' project page") to automatically highlight all code blocks in your posts. However, Pygments is written in Python, while Jekyll is written in Ruby. Because of this a Ruby wrapper for the Python tool is needed, slowing builds down significantly. Also, Pygments has support for an enormous amount of languages, most of which lots of bloggers have never even heard of.
+Jekyll was created with this in mind so it offers easy integration with tools like [Pygments](http://pygments.org "Pygments' project page") to automatically highlight all code blocks in your posts. However, Pygments is written in Python, while Jekyll is written in Ruby. Because of this a [Ruby wrapper](https://github.com/tmm1/pygments.rb "Pygments.rb on GitHub") for the Python tool is needed, slowing builds down significantly.
 
-Those are two of the reasons why developers have come up with alternatives. One of those is called [Rouge](https://github.com/jneen/rouge "Rouge on GitHub") and in this post I will show you how you can (and why you should) integrate Rouge into your Jekyll setup.
+Because of this, developers have come up with alternatives. One of those is called [Rouge](https://github.com/jneen/rouge "Rouge on GitHub") and in this post I will show you how you can (and why you should) integrate Rouge into your Jekyll setup.
 
 # Benefits of using Rouge
 
