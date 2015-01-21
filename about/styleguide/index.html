@@ -50,12 +50,16 @@ navigation_match: /about/
     </div>
     <h2 class="section-heading">Code</h2>
     <div class="home-section">
-      <p>Inline code snippets are displayed like this: `&lt;div class="inline"&gt;&lt;/div&gt;`.</p>
-      ``` css
-        [data-block="warning"] {
+      {% capture inline %}`<div class="inline"></div>`{% endcapture %}
+      <p>Inline code snippets are displayed like this: {{ inline | markdownify | remove: '<p>' | remove: '</p>' }}.</p>
+      {% capture code %}
+```css
+[data-block="warning"] {
   color: red;
 }
-      ```
+```
+      {% endcapture %}
+      {{ code | markdownify }}
     </div>
     <h2 class="section-heading">Icons</h2>
     <div class="home-section sg-section">
