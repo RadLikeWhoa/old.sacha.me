@@ -18,6 +18,7 @@
 
 .site-header {
   background-color: $highlight;
+  background-image: linear-gradient(to bottom right, #cd1363, $highlight);
   text-align: center;
 
   a {
