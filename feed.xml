@@ -14,7 +14,7 @@ layout: null
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     {% for post in site.categories.articles limit:20 %}
     <item>
-      <title>{{ post.title | xml_escape }}</title>
+      <title>{{ post.title | xml_escape }}</title>
       <dc:creator>Sacha Schmid</dc:creator>
       <link>{{ site.url }}{{ post.url }}</link>
       <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>

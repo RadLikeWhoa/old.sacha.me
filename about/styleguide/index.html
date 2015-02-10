@@ -51,7 +51,7 @@ navigation_match: /about/
     <h2 class="section-heading">Code</h2>
     <div class="home-section">
       {% capture inline %}`<div class="inline"></div>`{% endcapture %}
-      <p>Inline code snippets are displayed like this: {{ inline | markdownify | remove: '<p>' | remove: '</p>' }}.</p>
+      <p>Inline code snippets are displayed like this: {{ inline | markdownify | remove: '<p>' | remove: '</p>' }}.</p>
       {% capture code %}
 ```css
 [data-block="warning"] {

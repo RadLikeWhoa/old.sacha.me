@@ -57,4 +57,4 @@ defaults:
     values:
       layout: project
 
-exclude: [ 'gulpfile.js', 'package.json', 'LICENSE.md', 'README.md' ]
+exclude: [ 'gulpfile.js', 'package.json', 'LICENSE.md', 'README.md', 'node_modules' ]
