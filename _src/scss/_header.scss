@@ -104,9 +104,9 @@
 
 .site-nav-item {
   @for $i from 2 through $nav-item-count + 1 {
-    #{"&:nth-child(#{$i}).is-active ~ .active-nav-item"},
-    #{"&:nth-child(#{$i}):hover ~ li.active-nav-item"},
-    #{"&:nth-child(#{$i}):focus ~ li.active-nav-item"} {
+    &:nth-child(#{$i}).is-active ~ .active-nav-item,
+    &:nth-child(#{$i}):hover ~ li.active-nav-item,
+    &:nth-child(#{$i}):focus ~ li.active-nav-item {
       transform: translateX(($i - 2) * 100%);
     }
   }

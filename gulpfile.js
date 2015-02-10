@@ -1,6 +1,6 @@
 var gulp = require('gulp')
 var uglify = require('gulp-uglify')
-var sass = require('gulp-ruby-sass')
+var sass = require('gulp-sass')
 var autoprefixer = require('gulp-autoprefixer')
 var cmq = require('gulp-combine-media-queries')
 var csso = require('gulp-csso')
