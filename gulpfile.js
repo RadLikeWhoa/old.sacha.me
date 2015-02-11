@@ -1,13 +1,14 @@
 var gulp = require('gulp')
 var uglify = require('gulp-uglify')
 var sass = require('gulp-sass')
-var autoprefixer = require('gulp-autoprefixer')
-var cmq = require('gulp-combine-media-queries')
 var csso = require('gulp-csso')
 var imagemin = require('gulp-imagemin')
 var svg2png = require('gulp-svg2png')
 var newer = require('gulp-newer')
 var pngquant = require('imagemin-pngquant')
+var postcss = require('gulp-postcss')
+var autoprefixer = require('autoprefixer-core')
+var mqpacker = require('css-mqpacker')
 var lr
 
 function notifyLivereload (event) {
@@ -39,8 +40,7 @@ gulp.task('styles', function () {
       style: 'compressed',
       errLogToConsole: true
     }))
-    .pipe(autoprefixer('last 2 version'))
-    .pipe(cmq())
+    .pipe(postcss([ autoprefixer('last 3 version'), mqpacker ]))
     .pipe(csso(true))
     .pipe(gulp.dest('assets/css'))
     .pipe(gulp.dest('_site/assets/css'))
@@ -91,7 +91,7 @@ gulp.task('watch', function () {
   gulp.watch('_src/js/*.js', [ 'scripts' ])
   gulp.watch('_src/img/**/*.{jpg,png}', [ 'images' ])
   gulp.watch('_src/img/**/*.svg', [ 'vectors' ])
-  gulp.watch([ '_site/assets/js/*.js', '_site/assets/css/*.css', '_site/assets/img/**/*.*' ], notifyLivereload)
+  gulp.watch([ '_site/assets/js/*.js', '_site/assets/css/*.css', '_site/assets/img/**/*.*', '_site/**/*.html' ], notifyLivereload)
 })
 
 gulp.task('build', [ 'styles', 'scripts', 'vectors', 'images', 'jekyll' ])
