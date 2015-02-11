@@ -6,9 +6,8 @@ var imagemin = require('gulp-imagemin')
 var svg2png = require('gulp-svg2png')
 var newer = require('gulp-newer')
 var pngquant = require('imagemin-pngquant')
-var postcss = require('gulp-postcss')
-var autoprefixer = require('autoprefixer-core')
-var mqpacker = require('css-mqpacker')
+var autoprefixer = require('gulp-autoprefixer')
+var cmq = require('gulp-combine-media-queries')
 var lr
 
 function notifyLivereload (event) {
@@ -40,7 +39,8 @@ gulp.task('styles', function () {
       style: 'compressed',
       errLogToConsole: true
     }))
-    .pipe(postcss([ autoprefixer('last 3 version'), mqpacker ]))
+    .pipe(autoprefixer('last 2 version'))
+    .pipe(cmq())
     .pipe(csso(true))
     .pipe(gulp.dest('assets/css'))
     .pipe(gulp.dest('_site/assets/css'))
