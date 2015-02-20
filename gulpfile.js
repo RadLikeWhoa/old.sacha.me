@@ -8,6 +8,7 @@ var newer = require('gulp-newer')
 var pngquant = require('imagemin-pngquant')
 var autoprefixer = require('gulp-autoprefixer')
 var cmq = require('gulp-combine-media-queries')
+var hashFiles = require('hash-files')
 var lr
 
 function notifyLivereload (event) {
@@ -20,7 +21,7 @@ function notifyLivereload (event) {
   })
 }
 
-gulp.task('jekyll', function () {
+gulp.task('jekyll', [ 'version' ], function () {
   require('child_process').spawn('jekyll', [ 'build', '--drafts' ], { stdio: 'inherit' })
 })
 
@@ -71,6 +72,13 @@ gulp.task('images', function () {
     .pipe(gulp.dest('_site/assets/img'))
 })
 
+gulp.task('version', [ 'styles', 'scripts' ], function () {
+  return require('fs').writeFileSync('_data/assets.json', JSON.stringify({
+    'style': hashFiles.sync({ files: [ '_site/assets/css/style.css' ] }),
+    'script': hashFiles.sync({ files: [ '_site/assets/js/main.js' ] })
+  }))
+})
+
 gulp.task('server', function () {
   var express = require('express')
   var app = express()
@@ -87,12 +95,12 @@ gulp.task('server', function () {
 
 gulp.task('watch', function () {
   gulp.watch([ '_config.yml', 'feed.xml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/**/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md', '_drafts/*.md' ], [ 'jekyll' ])
-  gulp.watch('_src/scss/*.scss', [ 'styles' ])
-  gulp.watch('_src/js/*.js', [ 'scripts' ])
+  gulp.watch('_src/scss/*.scss', [ 'styles', 'version' ])
+  gulp.watch('_src/js/*.js', [ 'scripts', 'version' ])
   gulp.watch('_src/img/**/*.{jpg,png}', [ 'images' ])
   gulp.watch('_src/img/**/*.svg', [ 'vectors' ])
   gulp.watch([ '_site/assets/js/*.js', '_site/assets/css/*.css', '_site/assets/img/**/*.*', '_site/**/*.html' ], notifyLivereload)
 })
 
-gulp.task('build', [ 'styles', 'scripts', 'vectors', 'images', 'jekyll' ])
+gulp.task('build', [ 'styles', 'scripts', 'version', 'vectors', 'images', 'jekyll' ])
 gulp.task('default', [ 'build', 'server', 'watch' ])
