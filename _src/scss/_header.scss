@@ -90,6 +90,12 @@
 .menu-toggle {
   @include up-to(m) {
     background-color: $main;
+    transition: background-color 0.25s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: darken($main, 3%);
+    }
 
     a {
       color: $highlight;
