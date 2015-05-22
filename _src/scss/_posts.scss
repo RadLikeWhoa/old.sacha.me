@@ -47,3 +47,32 @@
   margin-bottom: 1.5em;
   color: #aaa;
 }
+
+.entry-content {
+  position: relative;
+}
+
+[data-marginalia] {
+  @extend .faded;
+
+  font-size: 0.75em;
+  line-height: 2;
+
+  @include at-least(xl) {
+    position: absolute;
+    width: 10em;
+  }
+}
+
+@include at-least(xl) {
+  [data-marginalia~="left"] {
+    right: 100%;
+    margin-right: 1.5em;
+    text-align: right;
+  }
+
+  [data-marginalia~="right"] {
+    left: 100%;
+    margin-left: 1.5em;
+  }
+}
