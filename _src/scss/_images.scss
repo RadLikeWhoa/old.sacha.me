@@ -1,0 +1,21 @@
+figure {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5em;
+}
+
+figcaption {
+  text-align: center;
+
+  @include at-least(xl) {
+    top: 0;
+    text-align: left;
+  }
+}
