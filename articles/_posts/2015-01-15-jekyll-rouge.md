@@ -29,7 +29,7 @@ gem install kramdown rouge
 
 If you already have a version of kramdown on your machine, make sure it's at least on version **1.5.0**. If you've followed these steps so far you're now ready to use kramdown and Rouge within your Jekyll setup.
 
-GitHub Pages uses version 1.3.1 of kramdown, so if you're using it to host your Jekyll site, you'll have live without syntax highlighting for a bit. I've already submitted a [pull request](https://github.com/github/pages-gem/pull/113 "Pull request to bump kramdown version").
+GitHub Pages uses version 1.3.1 of kramdown, so if you're using it to host your Jekyll site, you'll have live without syntax highlighting for a bit. I've already submitted a [pull request](https://github.com/github/pages-gem/pull/113 "Pull request to bump kramdown version"). UPDATE: As of January 21, 2015, GitHub Pages uses a more recent version of kramdown. However, Rouge is still not enabled, so you'll have to wait a little longer.
 {: data-block="warning" }
 
 By the way, if, like me, you're always getting errors doing anything with Rouge, remember _it's called Rouge, not Rogue_.
