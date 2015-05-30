@@ -1,5 +1,5 @@
 ---
-title: "Hello, World"
+title: "Hello World"
 caption: "A new home to better show myself on the web."
 ---
 
