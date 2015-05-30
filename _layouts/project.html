@@ -2,6 +2,13 @@
 <article class="post-full wrap">
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
   <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
+  {% if page.hero %}
+    <div class="hero-img-wrapper">
+      <a href="{{ page.link }}">
+        <img src="/assets/img/{{ page.hero }}" class="hero-img" alt="Image from the {{ page.title }} website">
+      </a>
+    </div>
+  {% endif %}
   <div class="project-meta" data-grid="gutterless">
     <div class="project-meta-item" data-col="M1-5">
       <div class="project-meta-label small faded">Start year</div>
@@ -25,13 +32,6 @@
       </div>
     </div>
   </div>
-  {% if page.hero %}
-    <div class="hero-img-wrapper">
-      <a href="{{ page.link }}">
-        <img src="/assets/img/{{ page.hero }}" class="hero-img" alt="Image from the {{ page.title }} website">
-      </a>
-    </div>
-  {% endif %}
   <div class="post-body">
     {{ content | remove: page.excerpt }}
   </div>
