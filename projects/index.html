@@ -10,14 +10,14 @@ description: "Read about web projects Sacha Schmid was involved with and learn a
   <section class="home-section personal-projects">
     <h2 class="section-heading">Personal projects</h2>
     {% for project in personal %}
-      {% capture class %}{% cycle "personal": "", "rev" %}{% endcapture %}
+      {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
       {% include project.html project = project class = class %}
     {% endfor %}
   </section>
   <section class="home-section client-works">
     <h2 class="section-heading">Client work</h2>
     {% for project in client %}
-      {% capture class %}{% cycle "client": "", "rev" %}{% endcapture %}
+      {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
       {% include project.html project = project class = class %}
     {% endfor %}
   </section>
