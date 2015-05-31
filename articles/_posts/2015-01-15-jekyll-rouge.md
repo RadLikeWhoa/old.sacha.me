@@ -29,8 +29,8 @@ gem install kramdown rouge
 
 If you already have a version of kramdown on your machine, make sure it's at least on version **1.5.0**. If you've followed these steps so far you're now ready to use kramdown and Rouge within your Jekyll setup.
 
-GitHub Pages uses version 1.3.1 of kramdown, so if you're using it to host your Jekyll site, you'll have live without syntax highlighting for a bit. I've already submitted a [pull request](https://github.com/github/pages-gem/pull/113 "Pull request to bump kramdown version"). UPDATE: As of January 21, 2015, GitHub Pages uses a more recent version of kramdown. However, Rouge is still not enabled, so you'll have to wait a little longer.
-{: data-block="warning" }
+An earlier version of this article stated that GitHub could enable Rouge as an alternative syntax highlighter on GitHub Pages. However, due to [security concerns](https://github.com/github/pages-gem/pull/79#issuecomment-85997762 "Explanation on why GitHub isn't using Rouge for Pages"), it appears that they have decided not to add Rouge to the available toolset, but rather focus on their own highlighter, called PrettyLights. That highlighter is also written in Ruby, so most of the benefits of Rouge apply here as well. As of May 31, 2015 it is still not known when PrettyLights will be released, or when we'll be able to use it on GitHub Pages.
+{: data-block="info" }
 
 By the way, if, like me, you're always getting errors doing anything with Rouge, remember _it's called Rouge, not Rogue_.
 
