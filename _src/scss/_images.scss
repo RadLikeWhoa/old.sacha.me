@@ -1,7 +1,7 @@
 figure {
   position: relative;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: -1.5em;
+  margin-right: -1.5em;
 }
 
 figure img {
@@ -9,6 +9,11 @@ figure img {
   max-width: 100%;
   height: auto;
   margin-bottom: 1.5em;
+  border-radius: 3px;
+
+  @include up-to(m) {
+    border-radius: 0;
+  }
 }
 
 figcaption {
