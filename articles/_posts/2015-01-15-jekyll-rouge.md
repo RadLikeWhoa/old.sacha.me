@@ -23,9 +23,9 @@ The easiest way to use Rouge is using the [kramdown](http://kramdown.gettalong.o
 
 First, make sure you're using a recent version of Jekyll (for example **2.5.0**). You can check your installed version using `jekyll -v`. Next up, you need to install kramdown and Rouge.
 
-```
+{% highlight bash %}
 gem install kramdown rouge
-```
+{% endhighlight %}
 
 If you already have a version of kramdown on your machine, make sure it's at least on version **1.5.0**. If you've followed these steps so far you're now ready to use kramdown and Rouge within your Jekyll setup.
 
@@ -38,21 +38,21 @@ By the way, if, like me, you're always getting errors doing anything with Rouge,
 
 As with all options concerning your builds, the place to add them is in your `_config.yml`. You might have an entry like `highlighter: pygments` in there, make sure to remove that. In my site's configuration I'm using the following options:
 
-```
+{% highlight yaml %}
 markdown: kramdown
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-```
+{% endhighlight %}
 
 This tells Jekyll to use kramdown when parsing markdown files and to pass the two settings to kramdown whenever it's run. `input: GFM` allows me to use the same syntax for markdown files I'd use on GitHub, which is especially useful for code blocks. You can now write code blocks like this:
 
-```
+{% highlight liquid %}
 `​`` html
 <a href="#">Hello world</a>
 `​``
-```
+{% endhighlight %}
 
 Note the `html` after the first pair of triple backticks (`). This tells Rouge what language to use for the code block. You can view all supported languages with samples on [Rouge's demo site](http://rouge.jayferd.us/demo "Rouge language demos").
 
