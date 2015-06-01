@@ -17,6 +17,7 @@ figure img {
 }
 
 figcaption {
+  margin: 0 2em;
   text-align: center;
 
   @include at-least(xl) {
