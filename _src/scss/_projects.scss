@@ -25,6 +25,19 @@
   }
 }
 
+.project-link {
+  display: block;
+  transition: opacity 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
 .hero-img-wrapper {
   @extend %wide-bordered;
 

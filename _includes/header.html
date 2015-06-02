@@ -66,9 +66,7 @@
               </label>
             </li>
             {% for link in site.links %}
-              <li class="site-nav-item {% if link.url == page.navigation_match %} is-active {% endif %}" data-col="M1-4">
-                <a href="{{ link.url }}" title="{{ link.title }}"><span class="label">{{ link.title }}</span> <span data-icon="{{ link.icon_class }}"></span></a>
-              </li>
+              <a href="{{ link.url }}" title="{{ link.title }}" class="site-nav-item {% if link.url == page.navigation_match %} is-active {% endif %}" data-col="M1-4"><span class="label">{{ link.title }}</span> <span data-icon="{{ link.icon_class }}"></span></a>
             {% endfor %}
             <li id="activeItem" class="active-nav-item" data-col="M1-4"></li>
           </ul>

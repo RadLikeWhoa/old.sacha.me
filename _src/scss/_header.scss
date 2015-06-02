@@ -74,10 +74,13 @@
   }
 
   @include at-least(m) {
-    &:hover .site-nav-item a,
-    &:focus .site-nav-item a {
+    &:hover .site-nav-item.is-active {
       color: $main;
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .site-nav-item.is-active:hover {
+      color: $highlight;
     }
   }
 }
@@ -86,19 +89,20 @@
   display: none;
 }
 
-.site-nav-item,
+.site-nav .site-nav-item,
 .menu-toggle {
   @include up-to(m) {
+    color: $highlight;
     background-color: $main;
     transition: background-color 0.25s ease-in-out;
+
+    a {
+      color: $highlight;
+    }
 
     &:hover,
     &:focus {
       background-color: darken($main, 3%);
-    }
-
-    a {
-      color: $highlight;
     }
 
     [data-icon] {
@@ -108,7 +112,13 @@
   }
 }
 
-.site-nav-item {
+.site-nav .site-nav-item {
+  position: relative;
+  padding: 0.75em 1.5em;
+  border-bottom: 0;
+  z-index: 10;
+  transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+
   @for $i from 2 through $nav-item-count + 1 {
     &:nth-child(#{$i}).is-active ~ .active-nav-item,
     &:nth-child(#{$i}):hover ~ li.active-nav-item,
@@ -121,28 +131,23 @@
     text-align: left;
     border-top: 1px solid $control-light;
 
-    &.is-active a {
+    &.is-active {
       font-weight: bold;
     }
   }
 
   @include at-least(m) {
-    &.is-active a,
-    .site-nav &:hover a,
-    .site-nav &:focus a {
+    padding: 1.5em 0;
+
+    &.is-active,
+    &:hover,
+    &:focus {
       color: $highlight;
     }
-  }
 
-  a {
-    position: relative;
-    padding: 0.75em 1.5em;
-    border-bottom: 0;
-    z-index: 10;
-    transition: color 0.35s ease-in-out;
-
-    @include at-least(m) {
-      padding: 1.5em 0;
+    &.is-active {
+      background-color: rgba($main, 0.5);
+      border-radius: 5px 5px 0 0;
     }
   }
 
