@@ -148,6 +148,7 @@
     &.is-active {
       background-color: rgba($main, 0.5);
       border-radius: 5px 5px 0 0;
+      transition: background-color 0.25s ease-in-out 0.25s, color 0.25s ease-in-out;
     }
   }
 
@@ -155,6 +156,12 @@
     @include at-least(m) {
       display: none;
     }
+  }
+}
+
+.site-nav:hover .site-nav-item {
+  @include at-least(m) {
+    transition: color 0.25s ease-in-out;
   }
 }
 
