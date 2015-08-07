@@ -92,4 +92,12 @@
       raf = requestAnimationFrame(scroll)
     })
   }
+
+  if ('addEventListener' in w) {
+    document.getElementById('skip').addEventListener('click', function () {
+      var anchor = document.getElementById('content-start')
+      anchor.tabIndex = -1
+      anchor.focus()
+    })
+  }
 }(document, window))
