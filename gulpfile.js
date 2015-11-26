@@ -7,7 +7,6 @@ var svg2png = require('gulp-svg2png')
 var newer = require('gulp-newer')
 var pngquant = require('imagemin-pngquant')
 var autoprefixer = require('gulp-autoprefixer')
-var cmq = require('gulp-combine-media-queries')
 var hashFiles = require('hash-files')
 var lr
 
@@ -41,7 +40,6 @@ gulp.task('styles', function () {
       errLogToConsole: true
     }))
     .pipe(autoprefixer('last 2 version'))
-    .pipe(cmq())
     .pipe(csso(true))
     .pipe(gulp.dest('assets/css'))
     .pipe(gulp.dest('_site/assets/css'))
