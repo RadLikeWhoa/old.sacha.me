@@ -47,31 +47,30 @@
   </head>
   <body>
     <a id="skip" href="#content-start" tabindex="1" class="skip-to-content">Skip to content</a>
-    <header class="site-header">
-      <div class="wrap">
+    <header class="site-header" data-grid>
+      <div data-col="M1-2">
         <h1 class="site-heading">
           <span class="author vcard" id="author">
             <a href="{{ site.url }}" class="url">
               <span class="fn">Sacha Schmid</span>
-              <span class="role mf-hidden">Front-End Developer</span>
-              <span class="adr country-name mf-hidden">Switzerland</span>
+              <span class="sub-text"><span class="role">Front-End Developer</span> from <span class="adr country-name">Switzerland</span></span>
             </a>
           </span>
         </h1>
-        <nav>
-          <input type="checkbox" class="cb-hack" id="menuToggle">
-          <ul class="site-nav" data-grid="gutterless">
-            <li class="menu-toggle col">
-              <label for="menuToggle">
-                <a>Menu <span data-icon="list"></span></a>
-              </label>
-            </li>
-            {% for link in site.links %}
-              <a href="{{ link.url }}" title="{{ link.title }}" class="site-nav-item {% if link.url == page.navigation_match %} is-active {% endif %}" data-col="M1-4"><span class="label">{{ link.title }}</span> <span data-icon="{{ link.icon_class }}"></span></a>
-            {% endfor %}
-            <li id="activeItem" class="active-nav-item" data-col="M1-4"></li>
-          </ul>
-        </nav>
       </div>
+      <nav data-col="M1-2">
+        <input type="checkbox" class="cb-hack" id="menuToggle">
+        <ul class="site-nav" data-grid="gutterless">
+          <li class="menu-toggle col">
+            <label for="menuToggle">
+              <a>Menu <span data-icon="list"></span></a>
+            </label>
+          </li>
+          {% for link in site.links %}
+            <a href="{{ link.url }}" title="{{ link.title }}" class="site-nav-item {% if link.url == page.navigation_match %} is-active {% endif %}" data-col="M1-4"><span class="label">{{ link.title }}</span> <span data-icon="{{ link.icon_class }}"></span></a>
+          {% endfor %}
+          <li id="activeItem" class="active-nav-item" data-col="M1-4"></li>
+        </ul>
+      </nav>
     </header>
     <section class="main" id="content-start">

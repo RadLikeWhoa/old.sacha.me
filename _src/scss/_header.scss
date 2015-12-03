@@ -19,7 +19,6 @@
 .site-header {
   background-color: $highlight;
   background-image: linear-gradient(to bottom right, $highlight, #F3A183);
-  text-align: center;
 
   a {
     display: block;
@@ -32,6 +31,7 @@
 
   a {
     padding: 0.75em 0;
+    font-weight: normal;
     background-color: transparent;
     border-bottom: 0;
     transition: background-color 0.25s ease-in-out;
@@ -50,10 +50,20 @@
       border-bottom-color: currentColor;
     }
 
+    @include up-to(m) {
+      text-align: center;
+    }
+
     @include at-least(s) {
-      padding: 1em 0;
+      padding: 0.75em;
     }
   }
+}
+
+.sub-text {
+  display: block;
+  font-size: 0.5em;
+  font-weight: normal;
 }
 
 .site-nav {
@@ -61,6 +71,7 @@
 
   position: relative;
   margin-bottom: 0;
+  text-align: center;
 
   .cb-hack:checked + & {
     max-height: 18em;
@@ -68,12 +79,16 @@
 
   @include up-to(m) {
     max-height: 3em;
+    margin: 0 1.5em;
     overflow: hidden;
     transition: max-height 0.25s ease-in-out;
     z-index: 10;
   }
 
   @include at-least(m) {
+    margin-top: 1.5em;
+    margin-right: 0.75em;
+
     &:hover .site-nav-item.is-active {
       color: $main;
       background-color: rgba(255, 255, 255, 0);
@@ -147,7 +162,7 @@
 
     &.is-active {
       background-color: rgba($main, 0.5);
-      border-radius: 5px 5px 0 0;
+      border-radius: 5px;
       transition: background-color 0.25s ease-in-out 0.25s, color 0.25s ease-in-out;
     }
   }
@@ -170,8 +185,9 @@
     position: absolute;
     height: 4.5em;
     background-color: $main;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     pointer-events: none;
+    box-shadow: 0 0 5px rgba(#333, 0.3);
     z-index: 5;
 
     &.transitioning {
@@ -198,10 +214,4 @@
   @include at-least(m) {
     display: none;
   }
-}
-
-.mf-hidden {
-  position: absolute;
-  top: -100%;
-  font-size: 0;
 }
