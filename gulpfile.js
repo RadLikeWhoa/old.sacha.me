@@ -92,7 +92,7 @@ gulp.task('server', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch([ '_config.yml', 'feed.xml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/**/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md', '_drafts/*.md' ], [ 'jekyll' ])
+  gulp.watch([ '_config.yml', 'feed.xml', '*.html', '_includes/*.html', '_layouts/*.html', 'articles/*.html', 'projects/*.html', 'about/**/*.html', 'wolfswood/**/*.html', 'articles/_posts/*.md', 'projects/_posts/*.md', '_drafts/*.md' ], [ 'jekyll' ])
   gulp.watch('_src/scss/*.scss', [ 'styles', 'version' ])
   gulp.watch('_src/js/*.js', [ 'scripts', 'version' ])
   gulp.watch('_src/img/**/*.{jpg,png}', [ 'images' ])
