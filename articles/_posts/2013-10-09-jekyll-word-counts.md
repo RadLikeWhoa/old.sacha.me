@@ -12,11 +12,11 @@ If you just want to get to the snippets without the explanations, they're availa
 
 Luckily Jekyll provides a handy liquid filter called `number_of_words`. So displaying the actual word count is as simple as that:
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {{ page.content | number_of_words }}
 {% endraw %}
-{% endhighlight %}
+```
 
 While this works just nicely it's not very solid. You might want to hide word counts on shorter posts, for example as they're of little value in such posts. This is a little more complex as you can not directly use Liquid filters in a conditional block.
 
@@ -26,7 +26,7 @@ In Liquid there are two ways to create variables. You can `{% raw %}{% assign %}
 
 Assigning a value to a variable means that you take any kind of data (e.g. a string, a number, a boolean) and Liquid knows that you want to access that exact data when you refer to this variable. An assigned variable is fixed, that means you can not use the value returned from other Liquid tags.
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% assign awesome = true %}
 
@@ -34,17 +34,17 @@ Assigning a value to a variable means that you take any kind of data (e.g. a str
   <p>Yay, awesome!</p>
 {% endif %}
 {% endraw %}
-{% endhighlight %}
+```
 
 But what if you want to store a Liquid tags's return value in a variable? That's exactly what the `{% raw %}{% capture %}{% endraw %}` block is for. Unlike assigned variables, captured variables can only hold strings — which will cause us some trouble later on. This is simply because Liquid tags return strings by default.
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% capture value %}
   {{ page.title | upcase }} from {{ page.date | date: "%b %d, %y" }}
 {% endcapture %}
 {% endraw %}
-{% endhighlight %}
+```
 
 As you can see in the above example, you can capture any number of strings into a variable, be it strings returned from a Liquid tag or fixed strings.
 
@@ -54,27 +54,27 @@ Now that you know about `{% raw %}{% assign %}{% endraw %}` and `{% raw %}{% cap
 
 It should be clear by now that we'll have to capture the value as it's returned from a Liquid tag. That gives us something like this:
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% capture words %}
   {{ page.content | number_of_words }}
 {% endcapture %}
 {% endraw %}
-{% endhighlight %}
+```
 
 Let's say we considered posts that are shorter than 250 words not worthy of getting the word count. A good example for this would be 'link list'-style post that consist of mostly a quote from the original article and a comment spanning a sentence or two. Ideally, this would be taken care of using a simple conditional block.
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% if words > 250 %}
   {{ words }}
 {% endif %}
 {% endraw %}
-{% endhighlight %}
+```
 
 But you'll soon see that this won't work as intended as Jekyll will throw you this error an error saying you've attempted to compare a string (the words) with a number (250), which is entirely true, and also, sadly, entirely not possible. There is, however, a simple workaround.
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% capture words %}
   {{ page.content | number_of_words | minus: 250 }}
@@ -83,7 +83,7 @@ But you'll soon see that this won't work as intended as Jekyll will throw you th
   {{ words | plus: 250 }}
 {% endunless %}
 {% endraw %}
-{% endhighlight %}
+```
 
 You can use Liquid filters to substract your minimum number from the word count to see if it falls below 0. If it does it will contain a '-' at the beginning, which means the post is too short and won't get the word number displayed. If our variable doesn't contain a '-' we can simply add our minimum number back to the word count and display it. Quite simple, right?
 
@@ -91,11 +91,11 @@ You can use Liquid filters to substract your minimum number from the word count 
 
 Now that we finally have our word number along with the conditional to hide it from short posts we can move on to make the output a bit nicer. You do this using Liquid filters like `append` or `prepend`. For a complete list of available filters you can check Shopify's [Liquid for Designers guide](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters "Shopify's guide for Liquid").
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {{ words | plus: 250 | append: " words" }}
 {% endraw %}
-{% endhighlight %}
+```
 
 The above snippet results in something like _'There are 250 words in this post'_. You can go crazy with filters, they offer lots of possibilities.
 
@@ -103,17 +103,17 @@ The above snippet results in something like _'There are 250 words in this post'_
 
 You might have noticed that I display an estimated reading time on this blog instead of just a word count. Personally, I just think this is a more useful guideline. Doing this is as easy as putting the `divided_by` filter into our final word count construct. The number to divide by is arbitrary, but 180 is the avarage number of words a person reads per minute.
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {{ words | plus: 250 | divided_by: 180 | append: " minutes to read" }}
 {% endraw %}
-{% endhighlight %}
+```
 
 # Summing it up
 
 Instead of making you pick up all the pieces scattered all over this post, here are the two snippets to display the word count and the reading time.
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% capture words %}
   {{ page.content | number_of_words | minus: 250 }}
@@ -122,9 +122,9 @@ Instead of making you pick up all the pieces scattered all over this post, here 
   {{ words | plus: 250 | append: " words" }}
 {% endunless %}
 {% endraw %}
-{% endhighlight %}
+```
 
-{% highlight liquid %}
+``` liquid
 {% raw %}
 {% capture words %}
   {{ page.content | number_of_words | minus: 250 }}
@@ -133,4 +133,4 @@ Instead of making you pick up all the pieces scattered all over this post, here 
   {{ words | plus: 250 | divided_by: 180 | append: " minute read" }}
 {% endunless %}
 {% endraw %}
-{% endhighlight %}
+```

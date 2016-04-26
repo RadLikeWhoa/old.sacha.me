@@ -9,13 +9,13 @@ Now, you might be wondering what's wrong with using plain JSON. Most browsers fo
 
 Knowing that we can use this trick to get around the same origin policy we can embed a script file served from a different domain containing something a little like the following.
 
-{% highlight html %}
+``` html
 <script src="http://example.com/people/1234?callback=awesome"></script>
-{% endhighlight %}
+```
 
-{% highlight javascript %}
+``` javascript
 awesome({"Id": 1234, "Name": "Foo", "Job": "Bar"});
-{% endhighlight %}
+```
 
 What exactly have we done here? We've added a script tag with its source set to a JSON resource on a different domain. But in the src-attribute we specify a callback parameter—`callback=`, sometimes also `jsonp=`—which you'll notice again in the actual response. This is the "P" in JSONP, the padding. Ideally, the callback you specify should exist before requesting the external resource.
 
@@ -31,15 +31,15 @@ It can be very much cumbersome to always go through the following steps:
 
 That's why libraries like jQuery have [made it easy](http://api.jquery.com/jQuery.getJSON/ "jQuery's getJSON function") to request JSONP data. Note the callback parameter. This tells jQuery that it should perform a JSONP request, otherwise you'd get an error because it would try to perform an AJAX request.
 
-{% highlight javascript %}
+``` javascript
 $.getJSON('http://example.com/people/1234?callback=?', function (data) {
   // ...
 })
-{% endhighlight %}
+```
 
 But in the end it's pretty easy to define such a function to properly understand it. So let's do just that. Don't worry, I'll walk you through it step by step in just a second.
 
-{% highlight javascript %}
+``` javascript
 (function () {
   var _callbacks = 0
 
@@ -60,27 +60,27 @@ But in the end it's pretty easy to define such a function to properly understand
     _callbacks += 1
   }
 }())
-{% endhighlight %}
+```
 
 This piece of code adds a `jsonp` function to the `window` that accepts the url you want to send a request to and a callback to exectue once this request has finished. The callback you specify is attached to the window so the requested script has no problem finding and calling it. After the callback has finished, both the external resource and the `window`'s newly attached callback function will be removed.
 
 First off, we wrap everything in an [immediately-invoked function expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/ "Ben Alman on IIFE") so we can mind our own business without interfering with any other scripts on the page.
 
-{% highlight javascript %}
+``` javascript
 (function () {
   // ...
 }())
-{% endhighlight %}
+```
 
 Next we'll take care of the ID. We need a unique identifier to name our callback so we don't clash with any other callbacks. We use the `_callbacks` variable to store a simple number which we'll increment with every function call.
 
 In the actual `jsonp` function we set up our variables first.
 
-{% highlight javascript %}
+``` javascript
 var id = 'jsonp_cb_' + _callbacks,
     existing = document.getElementsByTagName('script')[0],
     script = document.createElement('script')
-{% endhighlight %}
+```
 
 `id` holds the string "jsonp_cb_" joined with our previously defined number because, as you might know, variables in JavaScript must not start with a number. Also, just the number might not be so unique after all. The next two variables are references to the first script on the page (`existing`) which we'll use insert our new script (`script`).
 
@@ -88,10 +88,10 @@ var id = 'jsonp_cb_' + _callbacks,
 
 After setting all our variables we'll have to build up the scripts source and actually insert it into the page.
 
-{% highlight javascript %}
+``` javascript
 script.src = url + (~url.indexOf('?') ? '&' : '?') + 'callback=' + id
 existing.parentNode.insertBefore(script, existing)
-{% endhighlight %}
+```
 
 When setting the src-attribute we check if it contains a question mark already. If it does we'll have to add the callback parameter preceded by an ampersand, otherwise preceded by a question mark. This is simply how query strings are handled. The callback parameter is set to a function with the unique name we have stored in our ID. You'll see this function in a second.
 
@@ -99,13 +99,13 @@ Inserting a DOM node isn't the prettiest thing in JavaScript, but it's easy. We'
 
 At this point we'll have to attach the callback function to the window.
 
-{% highlight javascript %}
+``` javascript
 window[id] = function (data) {
   script.parentNode.removeChild(script)
   callback(data)
   delete window[id]
 }
-{% endhighlight %}
+```
 
 You might be suprised that this is not the function you actually define when calling `jsonp`. This is because this function also handles the cleaning up for you. First it removes the requested script from the page, then it calls your callback from the function call and at the end it will remove itself from the window. That means that there are no unnecessary traces left from your request and you can handle the data however you want.
 
