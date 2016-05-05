@@ -3,6 +3,9 @@ title: "Syntax Highlighting in Jekyll With Rouge"
 caption: "Many blogs on the web are centred around code so syntax highlighting in code blocks is useful to help readers better understand the displayed code. Jekyll offers easy ways to integrate highlighting into the build chain, for example using Rouge."
 ---
 
+You can now use Rouge in combination with Jekyll on GitHub pages natively. See [the last section](#using-rouge-in-jekyll-3-on-github-pages) of this article for more details.
+{: data-block="info" }
+
 Code, no matter what language it is in, can be complicated to read. That's why many blogs use syntax highlighting on their code blocks to help their readers better understand the displayed code.
 
 Jekyll was created with this in mind so it offers easy integration with tools like [Pygments](http://pygments.org "Pygments' project page") to automatically highlight all code blocks in your posts. However, Pygments is written in Python, while Jekyll is written in Ruby. Because of this a [Ruby wrapper](https://github.com/tmm1/pygments.rb "Pygments.rb on GitHub") for the Python tool is needed, slowing builds down significantly.
@@ -28,9 +31,6 @@ gem install kramdown rouge
 ```
 
 If you already have a version of kramdown on your machine, make sure it's at least on version **1.5.0**. If you've followed these steps so far you're now ready to use kramdown and Rouge within your Jekyll setup.
-
-An earlier version of this article stated that GitHub could enable Rouge as an alternative syntax highlighter on GitHub Pages. However, due to [security concerns](https://github.com/github/pages-gem/pull/79#issuecomment-85997762 "Explanation on why GitHub isn't using Rouge for Pages"), it appears that they have decided not to add Rouge to the available toolset, but rather focus on their own highlighter, called PrettyLights. That highlighter is also written in Ruby, so most of the benefits of Rouge apply here as well. As of May 31, 2015 it is still not known when PrettyLights will be released, or when we'll be able to use it on GitHub Pages.
-{: data-block="info" }
 
 By the way, if, like me, you're always getting errors doing anything with Rouge, remember _it's called Rouge, not Rogue_.
 
@@ -59,3 +59,14 @@ Note the `html` after the first pair of triple backticks (`). This tells Rouge w
 Rouge adds classes to your code blocks, allowing you to style parts of your code from a stylesheet. Rouge has the added benefit of being compatible with stylesheets created for Pygments (of which there are _[lots](https://github.com/search?q=pygments+style "Find new Pygments themes")_).
 
 The only drawback for now is that kramdown only lets you define the standard language to use for your code blocks, all other options are not yet supported. This also means that line numbers are not yet supported. If you absolutely want that feature, you'll have to wait for a little while.
+
+# Using Rouge in Jekyll 3 on GitHub Pages
+
+Ever since GitHub pages have upgraded Jekyll to version 3 you can use Rouge as your default syntax highlighter. Enabling it is as easy as including the following two lines in your `_config.yml`. In fact, GitHub will even send you a warning if you're trying to use anything other than Rouge.
+
+```yaml
+markdown: kramdown
+highlighter: rouge
+```
+
+This gives you both the performance benefits from using a Ruby-based syntax highlighter, while also allowing you to include your code blocks using the GitHub Flavored Markdown syntax.
