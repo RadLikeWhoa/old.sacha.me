@@ -20,7 +20,7 @@
     <div data-col="M2-3">
       <h3 class="project-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>
       <div class="project-intro">
-        <p><span class="faded">{{ project.date | date: "%Y" }} – {% if project.end %}{{ project.end }}{% else %}<script>document.write((new Date()).getFullYear())</script>{% endif %} —</span> {{ include.project.excerpt | strip_html }}</p>
+        <p><span class="faded">{% unless project.end %}since {% endunless %}{{ project.date | date: "%Y" }}{% if project.end %} – {{ project.end }}{% endif %} —</span> {{ include.project.excerpt | strip_html }}</p>
       </div>
       {% include tags.html tags = project.category %}
       <a href="{{ include.project.url }}">Read more &raquo;</a>

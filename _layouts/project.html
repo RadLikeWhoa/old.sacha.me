@@ -12,24 +12,24 @@
   <div class="project-meta" data-grid="gutterless">
     <div class="project-meta-item" data-col="M1-5">
       <div class="project-meta-label small faded">Years</div>
-      <div class="project-meta-body">
-        <time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time> – {% if page.end %}{{ page.end }}{% else %}<script>document.write((new Date()).getFullYear())</script>{% endif %}
+      <div class="project-meta-body small">
+        {% unless project.end %}since {% endunless %}<time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time>{% if page.end %} – {{ page.end }}{% endif %}
       </div>
     </div>
     <div class="project-meta-item" data-col="M2-5">
       {% if page.type == "personal" %}
         <div class="project-meta-label small faded">Source</div>
-        <div class="project-meta-body">
+        <div class="project-meta-body small">
           <a href="{{page.repo }}">{{ page.repo }}</a>
         </div>
       {% else %}
         <div class="project-meta-label small faded">Client</div>
-        <div class="project-meta-body">{{ page.client }}</div>
+        <div class="project-meta-body small">{{ page.client }}</div>
       {% endif %}
     </div>
     <div class="project-meta-item" data-col="M2-5">
       <div class="project-meta-label small faded">URL</div>
-      <div class="project-meta-body">
+      <div class="project-meta-body small">
         <a href="{{page.link }}">{{ page.link }}</a>
       </div>
     </div>
