@@ -14,11 +14,8 @@ technologies:
   - HTML
   - CSS
   - Sass
-pattern:
-  image: radial-gradient(closest-side, rgba(255, 255, 255, 0.1) 98%, rgb(133, 184, 68) 99%), radial-gradient(closest-side, rgba(255, 255, 255, 0.1) 98%, rgb(133, 184, 68) 99%)
-  color: rgb(133, 184, 68)
-  size: 70px 70px
-  position: 0 0, 35px 35px
+pattern: stripe-diagonal
+background: rgb(133, 184, 68)
 type: client
 link: http://chirurgie-am-rhein.ch
 client: Dr. med. Tibor Horvath

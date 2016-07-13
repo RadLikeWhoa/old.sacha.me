@@ -18,10 +18,8 @@ technologies:
   - HTML
   - CSS
   - Sass
-pattern:
-  image: linear-gradient(135deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px), linear-gradient(225deg, transparent 22px, rgba(255, 255, 255, 0.15) 22px, rgba(255, 255, 255, 0.15) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.15) 67px, rgba(255, 255, 255, 0.15) 69px, transparent 69px)0 64px
-  color: rgb(235, 164, 76)
-  size: 64px 128px
+pattern: cloth
+background: rgb(235, 164, 76)
 type: personal
 link: http://sacha.me/Countable
 repo: https://github.com/RadLikeWhoa/Countable
