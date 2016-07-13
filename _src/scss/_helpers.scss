@@ -32,6 +32,10 @@
   }
 }
 
+.clear {
+  clear: both;
+}
+
 .faded {
   color: darken($main, 40%);
 }
