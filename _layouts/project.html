@@ -1,6 +1,9 @@
 {% include header.html %}
+{% capture icon %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}{% endcapture %}
+
 <article class="post-full wrap">
   <h2 class="h1 post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+  <div class="icon-well full-well" data-pattern="{{ page.pattern }}" style="background-color: {{ page.background }}"><img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;" alt="{{ page.title }} icon"></div>
   <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
   {% if page.hero %}
     <div class="hero-img-wrapper">
@@ -13,7 +16,7 @@
     <div class="project-meta-item" data-col="M1-5">
       <div class="project-meta-label small faded">Years</div>
       <div class="project-meta-body small">
-        {% unless project.end %}since {% endunless %}<time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time>{% if page.end %} – {{ page.end }}{% endif %}
+        {% unless page.end %}since {% endunless %}<time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time>{% if page.end %} – {{ page.end }}{% endif %}
       </div>
     </div>
     <div class="project-meta-item" data-col="M2-5">

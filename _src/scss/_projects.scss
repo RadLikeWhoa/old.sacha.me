@@ -25,6 +25,15 @@
   }
 }
 
+.full-well {
+  margin: 0 -1.5em 1.5em;
+  animation-play-state: running;
+
+  @include up-to(m) {
+    border-radius: 0;
+  }
+}
+
 .project-link {
   display: block;
   transition: opacity 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
