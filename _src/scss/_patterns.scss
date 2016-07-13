@@ -1,8 +1,10 @@
 [data-pattern] {
-  animation-play-state: paused;
+  @include at-least(m) {
+    animation-play-state: paused;
 
-  &:hover {
-    animation-play-state: running;
+    &:hover {
+      animation-play-state: running;
+    }
   }
 }
 
