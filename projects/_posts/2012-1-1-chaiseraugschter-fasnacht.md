@@ -1,10 +1,10 @@
 ---
 title: Chaiseraugschter Fasnacht
-category:
+tags:
   - Web
   - Site
   - Assemble.io
-tags:
+learned:
   - Content Creation
   - Templating
   - Performance
@@ -41,7 +41,7 @@ However, I was not content. So later that year, I decided to drop the old versio
 
 # Things I've learned
 
-{% include tags.html tags = page.tags %}
+{% include tags.html tags = page.learned %}
 
 I was responsible for much of the content and free to decide which information needs to be included and which doesn't. This was interesting, considering I'm not that involved with the carnival itself, and using my outside perspective I was able to streamline the site very much. Of course, the comittee had its own ideas and official texts that ended up on the site, but other than that I was free to create the site however I wanted.
 

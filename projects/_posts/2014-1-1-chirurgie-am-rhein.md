@@ -1,10 +1,10 @@
 ---
 title: Chirurgie am Rhein
-category:
+tags:
   - Web
   - Site
   - HTML
-tags:
+learned:
   - Communication
   - Design
   - Development
@@ -33,7 +33,7 @@ First reactions in both Dr. Horvath's professional and personal circles were pos
 
 # Things I've learned
 
-{% include tags.html tags = page.tags %}
+{% include tags.html tags = page.learned %}
 
 The thing I learned most about during this project was communication with the client. Whether it was through email or at one of our meetings, I learned more about discovering the client's requirements and wishes and how to note them correctly and efficiently. I also learned how to discover what content was needed and how to communicate this to the client.
 

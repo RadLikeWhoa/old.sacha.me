@@ -1,10 +1,10 @@
 ---
 title: bookmarklets
-category:
+tags:
   - Web
   - App
   - Node.js
-tags:
+learned:
   - Open Source
   - Build Processes
   - Templating
@@ -34,7 +34,7 @@ I first released a demo on [CodePen](http://codepen.io), but later I decided to 
 
 # Things I've learned
 
-{% include tags.html tags = page.tags %}
+{% include tags.html tags = page.learned %}
 
 The most interesting part about this project is working with the community. As a single person, I can't even begin to cover a decent amount of bookmarklets, so I depend on other people adding their own contributions. So far, those collaborative efforts have been very enjoyable and they've helped the site grow quite a bit.
 

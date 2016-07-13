@@ -1,10 +1,10 @@
 ---
 title: Countable
-category:
+tags:
   - Web
   - Library
   - JavaScript
-tags:
+learned:
   - Development
   - Open Source
   - Testing
@@ -38,7 +38,7 @@ Apparently there was a strong desire in the web development community for a proj
 
 # Things I've learned
 
-{% include tags.html tags = page.tags %}
+{% include tags.html tags = page.learned %}
 
 When I first started out working on the project I assumed it would be rather simple, but it didn't take long until I ran into the first problems. Luckily, the open source community was [very interested](https://github.com/RadLikeWhoa/Countable/pulls?q=is%3Apr+is%3Aclosed) in Countable so there were lots of people willing to help improve the library.
 
