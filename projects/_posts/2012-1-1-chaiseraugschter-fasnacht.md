@@ -3,6 +3,7 @@ title: Chaiseraugschter Fasnacht
 category:
   - Web
   - Site
+  - Assemble.io
 tags:
   - Content Creation
   - Templating
@@ -53,5 +54,3 @@ On the development site I learned the most when I started work on the second ver
 The first version of the site used PHP, mainly for things like including parts of the site. It was a bit of an overkill, because the rest of the site was mostly static.
 
 That's why I decided to drop the old approach in favour of a static setup, heavily relying on [Grunt](http://gruntjs.com), which was the new shiny thing back then. With Grunt, combined with [Assemble](http://assemble.io), I was able to automate most of the site's generation, allowing me to forget about PHP's includes.
-
-Nowadays, the site is a bit of a playground for me. I can use new technologies (right now I'm thinking of switching over the project to [gulp](http://gulpjs.com)) and optimise performance as much as I like. All this means that the site is highly maintainable and very fast, two of my key priorities for the project.

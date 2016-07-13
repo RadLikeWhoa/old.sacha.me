@@ -3,7 +3,7 @@ title: Countable
 category:
   - Web
   - Library
-  - Open Source
+  - JavaScript
 tags:
   - Development
   - Open Source
