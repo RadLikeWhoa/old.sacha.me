@@ -1,5 +1,8 @@
 ---
 title: Chirurgie am Rhein
+category:
+  - Web
+  - Site
 tags:
   - Communication
   - Design

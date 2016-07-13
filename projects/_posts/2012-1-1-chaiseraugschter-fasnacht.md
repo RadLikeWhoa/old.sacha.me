@@ -1,5 +1,8 @@
 ---
 title: Chaiseraugschter Fasnacht
+category:
+  - Web
+  - Site
 tags:
   - Content Creation
   - Templating
@@ -24,6 +27,7 @@ type: client
 link: http://chaiseraugschter-fasnacht.ch
 client: Fasnachtscomité Kaiseraugst
 hero: fasnacht-home.png
+end: 2016
 ---
 
 The local carnival (or "Fasnacht", as it's called in German) is a big deal, even in small Swiss towns. It is a long and proud tradition that's cherished by both younger and older people.

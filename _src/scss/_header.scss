@@ -36,7 +36,8 @@
     border-bottom: 0;
     transition: background-color 0.25s ease-in-out;
 
-    span {
+    .fn,
+    .sub-text {
       border-bottom: 1px solid transparent;
       transition: border-bottom-color 0.25s ease-in-out;
     }
@@ -46,7 +47,8 @@
       background-color: rgba(#000, 0.06);
     }
 
-    &:focus span {
+    &:focus .fn,
+    &:focus .sub-text {
       border-bottom-color: currentColor;
     }
 
@@ -81,8 +83,11 @@
     max-height: 3em;
     margin: 0 1.5em;
     overflow: hidden;
-    transition: max-height 0.25s ease-in-out;
     z-index: 10;
+
+    &.transitioning {
+      transition: max-height 0.25s ease-in-out;
+    }
   }
 
   @include at-least(m) {
@@ -90,12 +95,27 @@
     margin-right: 0.75em;
 
     &:hover .site-nav-item.is-active {
-      color: $main;
       background-color: rgba(255, 255, 255, 0);
-    }
+
+      .label {
+        transform: translateY(1.5em);
+        opacity: 0;
+      }
+
+      [data-icon] {
+        opacity: 1;
+      }
+     }
 
     .site-nav-item.is-active:hover {
-      color: $highlight;
+      .label {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      [data-icon] {
+        opacity: 0;
+      }
     }
   }
 }
@@ -132,7 +152,7 @@
   padding: 0.75em 1.5em;
   border-bottom: 0;
   z-index: 10;
-  transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out;
 
   @for $i from 2 through $nav-item-count + 1 {
     &:nth-child(#{$i}).is-active ~ .active-nav-item,
@@ -154,10 +174,34 @@
   @include at-least(m) {
     padding: 1.5em 0;
 
+    .label {
+      position: absolute;
+      top: 1.5em;
+      left: 0;
+      right: 0;
+      bottom: 1.5em;
+      transform: translateY(1.5em);
+      opacity: 0;
+      color: $highlight;
+    }
+
+    [data-icon],
+    .label {
+      will-change: opacity, transform;
+      transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    }
+
     &.is-active,
     &:hover,
     &:focus {
-      color: $highlight;
+      [data-icon] {
+        opacity: 0;
+      }
+
+      .label {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     &.is-active {
@@ -166,17 +210,11 @@
       transition: background-color 0.25s ease-in-out 0.25s, color 0.25s ease-in-out;
     }
   }
-
-  .label {
-    @include at-least(m) {
-      display: none;
-    }
-  }
 }
 
 .site-nav:hover .site-nav-item {
   @include at-least(m) {
-    transition: color 0.25s ease-in-out;
+    transition: none;
   }
 }
 
@@ -200,6 +238,7 @@
   text-align: left;
   border-radius: 5px 5px 0 0;
   cursor: pointer;
+  transition: none;
 
   label {
     display: block;

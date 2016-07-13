@@ -11,8 +11,10 @@
   {% endif %}
   <div class="project-meta" data-grid="gutterless">
     <div class="project-meta-item" data-col="M1-5">
-      <div class="project-meta-label small faded">Start year</div>
-      <time class="project-meta-body" datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time>
+      <div class="project-meta-label small faded">Years</div>
+      <div class="project-meta-body">
+        <time datetime="{{ page.date }}" pubdate>{{ page.date | date: "%Y" }}</time> – {% if page.end %}{{ page.end }}{% else %}<script>document.write((new Date()).getFullYear())</script>{% endif %}
+      </div>
     </div>
     <div class="project-meta-item" data-col="M2-5">
       {% if page.type == "personal" %}

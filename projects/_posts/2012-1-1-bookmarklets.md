@@ -1,5 +1,9 @@
 ---
 title: bookmarklets
+category:
+  - Web
+  - App
+  - Open Source
 tags:
   - Open Source
   - Build Processes

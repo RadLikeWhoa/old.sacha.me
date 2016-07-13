@@ -5,6 +5,7 @@
 
   setTimeout(function () {
     d.getElementById('activeItem').className += ' transitioning'
+    d.getElementById('siteNav').className += ' transitioning'
   }, 0)
 
   // Get all the links on post pages and create a list of all in-post URLs.
