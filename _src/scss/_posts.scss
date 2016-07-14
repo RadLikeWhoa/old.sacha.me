@@ -4,6 +4,7 @@
 
 .post-inline,
 .post-archive {
+  margin-bottom: 1.5em;
   border-bottom: 1px solid rgba(#ccc, 0.45);
 
   &:last-of-type {
@@ -19,10 +20,6 @@
     padding-bottom: 3em;
     margin-bottom: 3em;
   }
-}
-
-.post-archive {
-  margin-bottom: 1.5em;
 }
 
 .post-link-entry {

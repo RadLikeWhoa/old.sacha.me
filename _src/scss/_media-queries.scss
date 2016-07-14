@@ -15,7 +15,7 @@ $media-queries: () !default;
 }
 
 @mixin up-to ($point) {
-  @media (max-width: _mq($point)) {
+  @media (max-width: _mq($point) - 0.05em) {
     @content;
   }
 }
