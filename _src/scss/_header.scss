@@ -52,7 +52,7 @@
       border-bottom-color: currentColor;
     }
 
-    @include up-to(m) {
+    @include up-to(l) {
       text-align: center;
     }
 
@@ -91,8 +91,7 @@
   }
 
   @include at-least(m) {
-    margin-top: 1.5em;
-    margin-right: 0.75em;
+    margin: 0 1.5em;
 
     &:hover .site-nav-item.is-active {
       background-color: rgba(255, 255, 255, 0);
@@ -117,6 +116,12 @@
         opacity: 0;
       }
     }
+  }
+
+  @include at-least(l) {
+    margin: 1.5em 0.75em 0 0;
+    padding: 0;
+    max-width: none;
   }
 }
 
@@ -223,14 +228,18 @@
     position: absolute;
     height: 4.5em;
     background-color: $main;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     pointer-events: none;
-    box-shadow: 0 0 5px rgba(#333, 0.3);
     z-index: 5;
 
     &.transitioning {
       transition: transform 0.35s ease-in-out;
     }
+  }
+
+  @include at-least(l) {
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(#333, 0.3);
   }
 }
 
