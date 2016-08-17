@@ -1,4 +1,4 @@
-{% capture icon %}/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}{% endcapture %}
+{% capture icon %}/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}/icon{% endcapture %}
 {% capture start %}{{ project.date | date: "%Y" }}{% endcapture %}
 {% assign start = start | plus: 0 %}
 
@@ -6,7 +6,7 @@
   <div data-grid="{{ include.class }}">
     <div data-col="M1-3">
       <a href="{{ include.project.url }}" class="project-link">
-        <div class="icon-well" data-pattern="{{ include.project.pattern }}" style="background-color: {{ include.project.background }}"><img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;" alt="{{ include.project.title }} icon"></div>
+        <div class="icon-well" data-pattern="{{ include.project.pattern }}" style="background-color: {{ include.project.background }}"><img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.svg'; this.onerror = null;" alt="{{ include.project.title }} icon"></div>
       </a>
     </div>
     <div data-col="M2-3">

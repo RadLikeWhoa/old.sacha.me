@@ -20,7 +20,6 @@ pattern: checker
 background: rgb(122, 124, 115)
 link: http://sacha.me/bookmarklets/
 repo: https://github.com/RadLikeWhoa/bookmarklets
-hero: bookmarklets-highlight.png
 ---
 
 Many internet users, even casual ones, use bookmarklets on a regular basis. bookmarklets are little links that reside in the browser's bookmarks bar that, when clicked, do things like tweeting the current website or saving a site's images to [Pinterest](https://pinterest.com).
@@ -36,7 +35,7 @@ I first released a demo on [CodePen](http://codepen.io), but later I decided to 
 The most interesting part about this project is working with the community. As a single person, I can't even begin to cover a decent amount of bookmarklets, so I depend on other people adding their own contributions. So far, those collaborative efforts have been very enjoyable and they've helped the site grow quite a bit.
 
 <figure>
-  <img src="/assets/img/bookmarklets-overview.png">
+  <img src="/assets/img/bookmarklets/overview.png">
   <figcaption data-marginalia="right">Colour is an important part of the project. It helps users quickly discover their favourite networks.</figcaption>
 </figure>
 

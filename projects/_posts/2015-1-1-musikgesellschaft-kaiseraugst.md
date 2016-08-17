@@ -18,7 +18,6 @@ pattern: stripe-vertical
 background: rgb(214, 102, 175)
 client: Musikgesellschaft Kaiseraugst
 link: http://mgkaiseraugst.ch/
-hero: mgk-highlight.png
 ---
 
 Many organisations seek to showcase their members and their achievements or handle administrative tasks through a website. So does the brass band of Kaiseraugst, which is why they approached me for the project.

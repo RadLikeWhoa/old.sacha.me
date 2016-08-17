@@ -24,7 +24,6 @@ pattern: zigzag
 background: rgb(189, 40, 94)
 link: http://chaiseraugschter-fasnacht.ch
 client: Fasnachtscomité Kaiseraugst
-hero: fasnacht-highlight.png
 end: 2016
 ---
 
@@ -35,7 +34,7 @@ For a while, the organising comittee wanted to offer the residents of Kaiseraugs
 The schedule was tight. We wanted to be ready for the 2012 carnival season, starting late February so a basic version of the site needed to be complete in a short amount of time. This first version relied on bad techniques and its design wouldn't win any awards, but it worked just fine. The people of Kaiseraugst liked the new website and they appreciated the ease of finding information.
 
 <figure>
-  <img src="/assets/img/fasnacht-overview.png">
+  <img src="/assets/img/chaiseraugschter-fasnacht/overview.png">
   <figcaption data-marginalia="right">Big and vibrant images are used throughout the site to show the emotion of the carnival.</figcaption>
 </figure>
 

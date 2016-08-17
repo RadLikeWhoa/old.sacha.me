@@ -20,7 +20,6 @@ technologies:
 pattern: argyle
 background: rgb(86, 137, 194)
 repo: https://github.com/RadLikeWhoa/whatthefuckshouldiwatchtonight
-hero: wtfsiwt-highlight.png
 end: 2016
 ---
 
@@ -29,7 +28,7 @@ What The Fuck Should I Watch Tonight is an app for spontaneously finding a movie
 As part of the Web Engineering course at the FHNW we were tasked with creating a web application that offers a REST API coupled to a database, while also using a third-party API. The exercise's goal was to strengthen our skills in HTML, CSS, JavaScript, and PHP, while also giving us an opportunity to brainstorm for an appropriate idea.
 
 <figure>
-  <img src="/assets/img/wtfsiwt-emotions.png">
+  <img src="/assets/img/what-the-fuck-should-i-watch-tonight/emotions.png">
   <figcaption data-marginalia="right">Concept art showing all of the available emotions which are the core of the experience.</figcaption>
 </figure>
 
@@ -40,7 +39,7 @@ Picking the right movie for the right situation can sometimes be an overwhelming
 We went on to collect a list of basic emotions that a movie might make you feel. These six emotions — amused, sad, excited, scared, inspired, weird — were to be the core of the experience. A user visits the site and is presented with these emotions. They then select one option and can view a list of movies that match this emotion. This list can then be sorted by various criteria, such as release date, percentage of match or when they were added to the database.
 
 <figure>
-  <img src="/assets/img/wtfsiwt-search.png">
+  <img src="/assets/img/what-the-fuck-should-i-watch-tonight/search.png">
   <figcaption data-marginalia="right">Search functionality is using <abbr title="The Movie Database">TMDB</abbr> data. Movies are only added to our own database if they are not already present.</figcaption>
 </figure>
 
@@ -53,7 +52,7 @@ All movies are added by the users. They can search for a movie by its name and t
 I decided to use this as an opportunity to finally learn more about React by using it in a real world project. Setting up the project was a bit of a chore, but it did not take too long for me to fully appreciate React and all its core principles.
 
 <figure>
-  <img src="/assets/img/wtfsiwt-react.png">
+  <img src="/assets/img/what-the-fuck-should-i-watch-tonight/react.png">
   <figcaption data-marginalia="right">A slide I used in the review presentation at the end of the semester showing my appreciation of React and its concepts.</figcaption>
 </figure>
 

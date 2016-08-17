@@ -16,7 +16,6 @@ technologies:
 pattern: shippo
 background: rgb(40, 45, 49)
 link: https://itunes.apple.com/us/app/wolfswood-companion/id1091989511?ls=1&mt=8
-hero: wolfswood-highlight.png
 end: 2016
 ---
 
@@ -27,7 +26,7 @@ I've been interested in native application development for a long time, especial
 While playing Destiny's Iron Banner event I came up with the idea for this app, which fell into a uncovered category in the App Store. Admittedly, it is not a completely new idea as similar applications already exist on the web or on other platforms, but I set out to create something new with a focus on design.
 
 <figure>
-  <img src="/assets/img/wolfswood-shaders.png">
+  <img src="/assets/img/wolfswood-companion/shaders.png">
   <figcaption data-marginalia="right">A selection of shaders, custom themes resembling Destiny-related subjects, which are available as <abbr title="In App Purchase">IAP</abbr> inside the application.</figcaption>
 </figure>
 
@@ -42,7 +41,7 @@ This was an entirely new experience for me, developing a native application for 
 Getting into iOS development seems like an overwhelming task at the beginning, but there are lots of great tutorials and guides on the internet. I picked up pieces of information all around and tied them together to create a first working prototype, covering just the absolutely essential functionality. From there on I kept learning new things, using new frameworks, and including more and more functionality.
 
 <figure>
-  <img src="/assets/img/wolfswood-interface.png">
+  <img src="/assets/img/wolfswood-companion/interface.png">
   <figcaption data-marginalia="right">The application works regardless of platform, number of characters. Players can customise and make the application their own using various shaders.</figcaption>
 </figure>
 

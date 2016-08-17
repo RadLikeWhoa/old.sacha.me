@@ -20,7 +20,6 @@ technologies:
 pattern: stripe-horizontal
 background: rgb(147, 40, 145)
 client: Pfadi Allschwil
-hero: memberdatabase-highlight.png
 end: 2016
 ---
 

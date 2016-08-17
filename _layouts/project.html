@@ -1,5 +1,6 @@
 {% include header.html %}
-{% capture icon %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}{% endcapture %}
+{% capture icon %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}/icon{% endcapture %}
+{% capture hero %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}/hero.png{% endcapture %}
 {% capture start %}{{ page.date | date: "%Y" }}{% endcapture %}
 {% assign start = start | plus: 0 %}
 
@@ -7,13 +8,11 @@
   <h2 class="h1 post-title project-full-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
   <div class="icon-well full-well" data-pattern="{{ page.pattern }}" style="background-color: {{ page.background }}"><img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;" alt="{{ page.title }} icon"></div>
   <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
-  {% if page.hero %}
-    <div class="hero-img-wrapper">
-      <a href="{{ page.link }}">
-        <img src="/assets/img/{{ page.hero }}" class="hero-img" alt="Image from the {{ page.title }} website">
-      </a>
-    </div>
-  {% endif %}
+  <div class="hero-img-wrapper">
+    <a href="{{ page.link }}">
+      <img src="{{ hero }}" class="hero-img" alt="Image from the {{ page.title }} website">
+    </a>
+  </div>
   <div class="project-meta" data-grid="gutterless">
     <div class="project-meta-item" data-col="{% if page.repo or page.client or page.link %}M1-5{% endif %}">
       <div class="project-meta-label small faded">Years</div>
