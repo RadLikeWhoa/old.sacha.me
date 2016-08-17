@@ -18,23 +18,27 @@ technologies:
   - Node.js
 pattern: checker
 background: rgb(122, 124, 115)
-type: personal
-link: http://sacha.me/bookmarklets
+link: http://sacha.me/bookmarklets/
 repo: https://github.com/RadLikeWhoa/bookmarklets
-hero: bookmarklets-home.png
+hero: bookmarklets-highlight.png
 ---
 
-Many internet users, even casual ones, use bookmarklets on a regular basis. bookmarklets are ittle links that reside in the browser's bookmarks bar that, when clicked, do things like tweeting the current website or saving a site's images to [Pinterest](https://pinterest.com).
+Many internet users, even casual ones, use bookmarklets on a regular basis. bookmarklets are little links that reside in the browser's bookmarks bar that, when clicked, do things like tweeting the current website or saving a site's images to [Pinterest](https://pinterest.com).
 
 The idea came to me when I read some articles by [Federico Viticci](http://macstories.net) about his workflows and techniques for automation. A huge part of those techniques relied on bookmarklets. I decided to look for a nice website that collected those little tools and when I couldn't find one I liked, I decided to come up with my own.
 
-I first released a demo on [CodePen](http://codepen.io), but later I decided to turn it into a full-fledged website. People like it, there's a steady stream of visitors to the site and since the intial release, the open source community added several new bookmarklets.
+I first released a demo on [CodePen](http://codepen.io), but later I decided to turn it into a full-fledged website. People like it, there's a steady stream of visitors to the site and since the initial release, the open source community added several new bookmarklets.
 
 # Things I've learned
 
 {% include tags.html tags = page.learned %}
 
 The most interesting part about this project is working with the community. As a single person, I can't even begin to cover a decent amount of bookmarklets, so I depend on other people adding their own contributions. So far, those collaborative efforts have been very enjoyable and they've helped the site grow quite a bit.
+
+<figure>
+  <img src="/assets/img/bookmarklets-overview.png">
+  <figcaption data-marginalia="right">Colour is an important part of the project. It helps users quickly discover their favourite networks.</figcaption>
+</figure>
 
 Other than that, this was one of my first projects to rely on a build system, specifically [gulp](http://gulpjs.com). While this involved lots of head-scratching at first, it didn't take very long until I started seeing the benefits of my setup. And now, I would never create this site without a build system again.
 

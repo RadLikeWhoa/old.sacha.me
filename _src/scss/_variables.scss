@@ -25,4 +25,4 @@ $column-prefixes: (
   'L': '(min-width: #{map-get($media-queries, "l")})'
 );
 
-$columns: 2 (1), 3 (1, 2), 4 (1), 5 (1, 2);
+$columns: 2, 3, 4, 5;

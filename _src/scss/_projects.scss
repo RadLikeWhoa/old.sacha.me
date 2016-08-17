@@ -70,6 +70,10 @@
   max-width: 100%;
 }
 
+.project-full-title {
+  text-align: center;
+}
+
 %fadeout {
   position: relative;
   overflow: hidden;
@@ -156,24 +160,7 @@
 
 [data-tags] {
   @extend %unstyled-list;
-}
 
-[data-tags="inline"] {
-  @extend %fadeout;
-
-  height: 2em;
-  white-space: nowrap;
-
-  &:after {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 1.5em;
-    background-image: linear-gradient(to right, rgba($main, 0), $main);
-  }
-}
-
-[data-tags="full"] {
   display: flex;
   margin-right: -0.5em;
   margin-bottom: 1em;
@@ -193,11 +180,7 @@
     margin-left: 0;
   }
 
-  [data-tags="inline"] &:last-child {
-    margin-right: 0;
-  }
-
-  [data-tags="full"] & {
+  [data-tags] & {
     display: block;
     flex: 1 0 auto;
     margin-left: 0;

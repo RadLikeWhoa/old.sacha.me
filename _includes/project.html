@@ -1,4 +1,6 @@
 {% capture icon %}/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}{% endcapture %}
+{% capture start %}{{ project.date | date: "%Y" }}{% endcapture %}
+{% assign start = start | plus: 0 %}
 
 <article class="post-inline">
   <div data-grid="{{ include.class }}">
@@ -10,7 +12,7 @@
     <div data-col="M2-3">
       <h3 class="project-title"><a href="{{ include.project.url }}">{{ include.project.title }}</a></h3>
       <div class="project-intro">
-        <p><span class="faded">{% unless project.end %}since {% endunless %}{{ project.date | date: "%Y" }}{% if project.end %} – {{ project.end }}{% endif %} —</span> {{ include.project.excerpt | strip_html }}</p>
+        <p><span class="faded">{% unless project.end %}since {% endunless %}{{ start }}{% if project.end and project.end != start %} – {{ project.end }}{% endif %} —</span> {{ include.project.excerpt | strip_html }}</p>
       </div>
       {% include tags.html tags = project.tags %}
       <a href="{{ include.project.url }}">Read more &raquo;</a>

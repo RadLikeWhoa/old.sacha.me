@@ -2,7 +2,8 @@
   @include at-least(m) {
     animation-play-state: paused;
 
-    &:hover {
+    &:hover,
+    .project-link:focus & {
       animation-play-state: running;
     }
   }
@@ -72,5 +73,74 @@
 @keyframes zigzag {
   100% {
     background-position: -250px -200px, -250px -200px, -200px -200px, -200px -200px;
+  }
+}
+
+[data-pattern="argyle"] {
+  background-image: repeating-linear-gradient(120deg, rgba(#fff, 0.05), rgba(#fff, 0.05) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(#fff, 0.05), rgba(#fff, 0.05) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(#000, 0.05) 25%, transparent 25%, transparent 75%, rgba(#000, 0.05) 75%, rgba(#000, 0.05)),
+    linear-gradient(120deg, rgba(#000, 0.05) 25%, transparent 25%, transparent 75%, rgba(#000, 0.05) 75%, rgba(#000, 0.05));
+  background-size: 70px 120px;
+  animation: argyle 7s linear infinite;
+}
+
+@keyframes argyle {
+  100% {
+    background-position: -140px 240px, -140px 240px, -140px 240px, -140px 240px;
+  }
+}
+
+[data-pattern="shippo"] {
+  background-image: radial-gradient(closest-side, transparent 98%, rgba(#fff, 0.025) 99%),
+    radial-gradient(closest-side, transparent 98%, rgba(#fff, 0.025) 99%);
+  background-size: 80px 80px;
+  background-position: 5px 5px, 45px 45px;
+  animation: shippo 5s linear infinite;
+}
+
+@keyframes shippo {
+  100% {
+    background-position: 5px 165px, 45px 205px;
+  }
+}
+
+[data-pattern="blueprint"] {
+  background-image: linear-gradient(rgba(#fff, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(#fff, 0.05) 2px, transparent 2px),
+    linear-gradient(rgba(#fff, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(#fff, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -22px -22px, -22px -22px, -21px -21px, -21px -21px;
+  animation: blueprint 6s linear infinite;
+}
+
+@keyframes blueprint {
+  100% {
+    background-position: -122px -122px, -122px -122px, -121px -121px, -121px -121px;
+  }
+}
+
+[data-pattern="stripe-vertical"] {
+  background-image: linear-gradient(90deg, transparent 50%, rgba(#fff, 0.05) 50%);
+  background-size: 50px 50px;
+  animation: stripe-vertical 3s linear infinite;
+}
+
+@keyframes stripe-vertical {
+  100% {
+    background-position: 50px 0;
+  }
+}
+
+[data-pattern="stripe-horizontal"] {
+  background-image: linear-gradient(transparent 50%, rgba(#fff, 0.05) 50%);
+  background-size: 50px 50px;
+  animation: stripe-horizontal 3s linear infinite;
+}
+
+@keyframes stripe-horizontal {
+  100% {
+    background-position: 0 50px;
   }
 }
