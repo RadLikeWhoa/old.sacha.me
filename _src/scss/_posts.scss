@@ -15,6 +15,7 @@
 
 .post-inline {
   padding-bottom: 1.5em;
+  will-change: opacity;
 
   @include at-least(m) {
     padding-bottom: 3em;

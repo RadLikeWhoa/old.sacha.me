@@ -1,7 +1,6 @@
 .icon-well {
   margin-bottom: 1.5em;
   border-radius: 5px;
-  transform-style: preserve-3d;
 
   img {
     display: block;
@@ -36,14 +35,15 @@
 
 .project-link {
   display: block;
-  transition: opacity 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+  border-bottom: 0;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  border-radius: 5px;
+  will-change: transform, box-shadow;
 
-  &:hover {
-    border-bottom-color: transparent;
-  }
-
+  &:hover,
   &:focus {
-    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(#333, 0.35);
   }
 }
 
