@@ -5,8 +5,10 @@
 {% assign start = start | plus: 0 %}
 
 <article class="post-full wrap">
-  <h2 class="h1 post-title project-full-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
-  <div class="icon-well full-well" data-pattern="{{ page.pattern }}" style="background-color: {{ page.background }}"><img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;" alt="{{ page.title }} icon"></div>
+  <div class="icon-well full-well" data-pattern="{{ page.pattern }}" style="background-color: {{ page.background }}">
+    <img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;" alt="{{ page.title }} icon">
+    <h2 class="h1 post-title project-full-title">{{ page.title }}</h2>
+  </div>
   <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
   <div class="hero-img-wrapper">
     <a href="{{ page.link }}">
