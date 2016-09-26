@@ -1,6 +1,11 @@
 .icon-well {
   margin-bottom: 1.5em;
   border-radius: 5px;
+  animation-play-state: paused;
+
+  &:hover {
+    animation-play-state: running;
+  }
 
   img {
     display: block;
