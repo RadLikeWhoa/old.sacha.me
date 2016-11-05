@@ -177,11 +177,11 @@
   }
 
   @include at-least(m) {
-    padding: 1.5em 0;
+    padding: 0.75em 0;
 
     .label {
       position: absolute;
-      top: 1.5em;
+      top: 0.75em;
       left: 0;
       right: 0;
       bottom: 1.5em;
@@ -226,7 +226,7 @@
 .active-nav-item {
   @include at-least(m) {
     position: absolute;
-    height: 4.5em;
+    height: 3em;
     background-color: $main;
     border-radius: 5px 5px 0 0;
     pointer-events: none;
@@ -239,7 +239,6 @@
 
   @include at-least(l) {
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(#333, 0.3);
   }
 }
 
