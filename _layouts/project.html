@@ -1,55 +1,78 @@
-{% include header.html %}
+{% include top.html %}
 {% capture icon %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}/icon{% endcapture %}
 {% capture hero %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}/hero.png{% endcapture %}
 {% capture start %}{{ page.date | date: "%Y" }}{% endcapture %}
 {% assign start = start | plus: 0 %}
 
-<article class="post-full wrap">
-  <div class="icon-well full-well" data-pattern="{{ page.pattern }}" style="background-color: {{ page.background }}">
-    <img src="{{ icon }}.svg" onerror="this.src='{{ icon }}.png'; this.onerror = null;" alt="{{ page.title }} icon">
-    <h2 class="h1 post-title project-full-title">{{ page.title }}</h2>
-  </div>
-  <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
-  <div class="hero-img-wrapper">
-    <a href="{{ page.link }}">
-      <img src="{{ hero }}" class="hero-img" alt="Image from the {{ page.title }} website">
-    </a>
-  </div>
-  <div class="project-meta" data-grid="gutterless">
-    <div class="project-meta-item" data-col="{% if page.repo or page.client or page.link %}M1-5{% endif %}">
-      <div class="project-meta-label small faded">Years</div>
-      <div class="project-meta-body small">
-        {% unless page.end %}since {% endunless %}<time datetime="{{ page.date }}" pubdate>{{ start }}</time>{% if page.end and start != page.end %} – {{ page.end }}{% endif %}
-      </div>
+<header class="site-header">
+  {% include header.html %}
+  <div class="project-header" data-pattern="{{ page.pattern }}">
+    <div class="wrap">
+      <h2 class="h1 post-title">{{ page.title }}</h2>
+      <p class="hero-text">{{ page.excerpt | remove: "<p>" | remove: "</p>" }}</p>
     </div>
-    {% if page.client or page.repo %}
-      <div class="project-meta-item" data-col="{% if page.link %}M2-5{% else %}M4-5{% endif %}">
-        {% if page.client %}
-          <div class="project-meta-label small faded">Client</div>
-          <div class="project-meta-body small">{{ page.client }}</div>
-        {% else %}
-          <div class="project-meta-label small faded">Source</div>
-          <div class="project-meta-body small">
-            {% if page.repo %}<a href="{{page.repo }}">{{ page.repo }}</a>{% else %}n/a{% endif %}
-          </div>
-        {% endif %}
-      </div>
-    {% endif %}
-    {% if page.link %}
-      <div class="project-meta-item" data-col="{% if page.client or page.repo %}M2-5{% else %}M4-5{% endif %}">
-        <div class="project-meta-label small faded">URL</div>
+  </div>
+  <style>
+    .site-header {
+      background-color: {{ page.background }};
+      background-image: none;
+    }
+
+    .site-nav .site-nav-item .label {
+      color: {{ page.background }};
+    }
+
+    @media (max-width: 45em) {
+      .site-nav .site-nav-item,
+      .menu-toggle a {
+        color: {{ page.background }};
+      }
+    }
+  </style>
+</header>
+<section class="main" id="content-start">
+  <article class="post-full wrap">
+    <div class="hero-img-wrapper" style="border-color: {{ page.border }}">
+      <a href="{{ page.link }}" target="_blank">
+        <img src="{{ hero }}" class="hero-img" alt="Image from the {{ page.title }} website">
+      </a>
+    </div>
+    <div class="project-meta" data-grid="gutterless">
+      <div class="project-meta-item" data-col="{% if page.repo or page.client or page.link %}M1-5{% endif %}">
+        <div class="project-meta-label small faded">Years</div>
         <div class="project-meta-body small">
-          {% if page.link %}<a href="{{ page.link }}">{{ page.link }}</a>{% else %}n/a{% endif %}
+          {% unless page.end %}since {% endunless %}<time datetime="{{ page.date }}" pubdate>{{ start }}</time>{% if page.end and start != page.end %} – {{ page.end }}{% endif %}
         </div>
       </div>
-    {% endif %}
-  </div>
-  <div class="post-body">
-    {{ content | remove: page.excerpt }}
-  </div>
-  <p data-block="share">
-    If you enjoyed reading this case study you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>, or you can <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. You should also <a href="{{ page.link }}">take a look at the project's website</a>, if you haven't already. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
-  </p>
-  <a href="/projects/" data-button="center"><span class="label">View more projects</span></a>
-</article>
+      {% if page.client or page.repo %}
+        <div class="project-meta-item" data-col="{% if page.link %}M2-5{% else %}M4-5{% endif %}">
+          {% if page.client %}
+            <div class="project-meta-label small faded">Client</div>
+            <div class="project-meta-body small">{{ page.client }}</div>
+          {% else %}
+            <div class="project-meta-label small faded">Source</div>
+            <div class="project-meta-body small">
+              {% if page.repo %}<a href="{{page.repo }}" target="_blank">{{ page.repo }}</a>{% else %}n/a{% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if page.link %}
+        <div class="project-meta-item" data-col="{% if page.client or page.repo %}M2-5{% else %}M4-5{% endif %}">
+          <div class="project-meta-label small faded">URL</div>
+          <div class="project-meta-body small">
+            {% if page.link %}<a href="{{ page.link }}" target="_blank">{{ page.link }}</a>{% else %}n/a{% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="post-body">
+      {{ content | remove: page.excerpt }}
+    </div>
+    <p data-block="share">
+      If you enjoyed reading this case study you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>, or you can <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. You should also <a href="{{ page.link }}">take a look at the project's website</a>, if you haven't already. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
+    </p>
+    <a href="/projects/" data-button="center"><span class="label">View more projects</span></a>
+  </article>
+</section>
 {% include footer.html %}

@@ -1,7 +1,7 @@
 [data-block] {
   @extend %wide-bordered;
 
-  padding: 0.75em 1.5em;
+  padding: 1.5em;
 
   code {
     background-color: $code;
@@ -21,7 +21,6 @@
 }
 
 [data-block="share"] {
-  padding: 1.5em;
   color: darken($share, 30%);
   background-color: rgba($share, 0.05);
   border-color: rgba(darken($share, 10%), 0.2);

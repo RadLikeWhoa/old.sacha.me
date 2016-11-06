@@ -29,29 +29,6 @@
   }
 }
 
-.full-well {
-  position: relative;
-  height: auto;
-  margin: 0 -1.5em 1.5em;
-  animation-play-state: running;
-
-  img {
-    position: static;
-    top: 0;
-    transform: none;
-  }
-
-  .post-title {
-    padding: 0 0.75em 0.75em;
-    color: #fff;
-    text-align: center;
-  }
-
-  @include up-to(m) {
-    border-radius: 0;
-  }
-}
-
 .project-link {
   display: block;
   border-bottom: 0;
@@ -71,6 +48,10 @@
 
   margin-bottom: 1.5em;
   border-color: #e5e5e5;
+
+  @include at-least(m) {
+    margin-top: -4.5em;
+  }
 }
 
 .hero-img {
@@ -120,6 +101,25 @@
       height: 3em;
       background-image: linear-gradient(to bottom, rgba($main, 0), $main 50%);
     }
+  }
+}
+
+.project-header {
+  padding: 3em 0 1.5em;
+  color: $main;
+  border-top: 1px solid rgba(#fff, 0.35);
+  animation: none;
+
+  @include at-least(m) {
+    padding: 3em 0;
+  }
+
+  .post-title {
+    padding-bottom: 0.375em;
+    margin-bottom: 0.375em;
+    font-size: 4em;
+    line-height: 1.125;
+    border-bottom: 5px solid;
   }
 }
 

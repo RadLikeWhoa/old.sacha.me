@@ -14,8 +14,9 @@ technologies:
   - HTML
   - CSS
   - Sass
-pattern: stripe-diagonal
+pattern: dots
 background: rgb(133, 184, 68)
+border: "#77a43d"
 link: http://chirurgie-am-rhein.ch
 client: Dr. med. Tibor Horvath
 ---

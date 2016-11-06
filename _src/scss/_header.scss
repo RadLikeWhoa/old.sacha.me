@@ -81,7 +81,7 @@
 
   @include up-to(m) {
     max-height: 3em;
-    margin: 0 1.5em;
+    margin: 0 1.5em 1.5em;
     overflow: hidden;
     z-index: 10;
 
@@ -138,6 +138,14 @@
 
     a {
       color: $highlight;
+    }
+
+    &:nth-child(2) {
+      border-radius: 5px 5px 0 0;
+    }
+
+    &:nth-last-child(2) {
+      border-radius: 0 0 5px 5px;
     }
 
     &:hover,
@@ -243,8 +251,9 @@
 }
 
 .menu-toggle {
+  margin-bottom: 1.5em;
   text-align: left;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   cursor: pointer;
   transition: none;
 

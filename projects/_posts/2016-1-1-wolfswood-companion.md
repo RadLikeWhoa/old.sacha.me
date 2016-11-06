@@ -15,11 +15,12 @@ technologies:
   - StoreKit
 pattern: shippo
 background: rgb(40, 45, 49)
+border: "#444"
 link: https://itunes.apple.com/us/app/wolfswood-companion/id1091989511?ls=1&mt=8
 end: 2016
 ---
 
-Wolfswood Companion is a planning utility for the console game Destiny. It helps players with planning the monthly Iron Banner event and how to achieve the maximum level in order to obtain all the rewards.
+Wolfswood Companion is a planning utility for the console game Destiny. It helps players with planning the monthly Iron Banner event and achieving the maximum level in order to obtain all the rewards.
 
 I've been interested in native application development for a long time, especially on iOS since most of my devices are from that ecosystem.
 

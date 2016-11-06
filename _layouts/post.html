@@ -1,18 +1,23 @@
-{% include header.html %}
-<article class="post-full wrap hentry">
-  <a class="include" href="#author"></a>
-  <h2 class="h1 post-title entry-title">{{ page.title }}</h2>
-  <div class="post-meta">
-    <time datetime="{{ page.date | date: "%Y-%m-%d %T" }}" pubdate class="updated">{{ page.date | date: "%d %B %Y" }}</time>
-  </div>
-  <div class="post-body entry-content">{{ content }}</div>
-  <div class="post-links" style="display: none;">
-    <h3>Links in this post</h3>
-    <div id="post-links-list" data-grid></div>
-  </div>
-  <p data-block="share">
-    If you enjoyed reading this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>. You can also <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
-  </p>
-  <a href="/articles/" data-button="center"><span class="label">View more articles</span></a>
-</article>
+{% include top.html %}
+<header class="site-header">
+  {% include header.html %}
+</header>
+<section class="main" id="content-start">
+  <article class="post-full wrap hentry">
+    <a class="include" href="#author"></a>
+    <h2 class="h1 post-title entry-title">{{ page.title }}</h2>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date: "%Y-%m-%d %T" }}" pubdate class="updated">{{ page.date | date: "%d %B %Y" }}</time>
+    </div>
+    <div class="post-body entry-content">{{ content }}</div>
+    <div class="post-links" style="display: none;">
+      <h3>Links in this post</h3>
+      <div id="post-links-list" data-grid></div>
+    </div>
+    <p data-block="share">
+      If you enjoyed reading this article you might want to <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">share it on Twitter</a> or <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>. You can also <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">save it to your Pinboard</a>. For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
+    </p>
+    <a href="/articles/" data-button="center"><span class="label">View more articles</span></a>
+  </article>
+</section>
 {% include footer.html %}

@@ -22,7 +22,7 @@ link: http://sacha.me/bookmarklets/
 repo: https://github.com/RadLikeWhoa/bookmarklets
 ---
 
-Many internet users, even casual ones, use bookmarklets on a regular basis. bookmarklets are little links that reside in the browser's bookmarks bar that, when clicked, do things like tweeting the current website or saving a site's images to [Pinterest](https://pinterest.com).
+Many internet users, even casual ones, use bookmarklets on a regular basis. bookmarklets are little links that reside in the browser's bookmarks bar that, when clicked, do things like tweeting the current website or saving a site's images to *Pinterest*.
 
 The idea came to me when I read some articles by [Federico Viticci](http://macstories.net) about his workflows and techniques for automation. A huge part of those techniques relied on bookmarklets. I decided to look for a nice website that collected those little tools and when I couldn't find one I liked, I decided to come up with my own.
 

@@ -19,6 +19,7 @@ technologies:
   - PHP
 pattern: argyle
 background: rgb(86, 137, 194)
+border: "#333"
 repo: https://github.com/RadLikeWhoa/whatthefuckshouldiwatchtonight
 end: 2016
 ---

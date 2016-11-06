@@ -14,7 +14,7 @@ technologies:
   - CSS
   - PHP
   - Wordpress
-pattern: stripe-vertical
+pattern: cloth
 background: rgb(214, 102, 175)
 client: Musikgesellschaft Kaiseraugst
 link: http://mgkaiseraugst.ch/

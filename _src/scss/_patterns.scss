@@ -9,18 +9,6 @@
   }
 }
 
-[data-pattern="stripe-diagonal"] {
-  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(#fff, 0.05) 35px, rgba(#fff, 0.05) 70px);
-  background-size: 200% 200%;
-  animation: stripe-diagonal 3s linear infinite;
-}
-
-@keyframes stripe-diagonal {
-  100% {
-    background-position: -100px 0;
-  }
-}
-
 [data-pattern="dots"] {
   background-image: radial-gradient(rgba(#fff, 0.05) 15%, transparent 16%),
     radial-gradient(rgba(#fff, 0.05) 15%, transparent 16%);
@@ -118,29 +106,5 @@
 @keyframes blueprint {
   100% {
     background-position: -122px -122px, -122px -122px, -121px -121px, -121px -121px;
-  }
-}
-
-[data-pattern="stripe-vertical"] {
-  background-image: linear-gradient(90deg, transparent 50%, rgba(#fff, 0.05) 50%);
-  background-size: 50px 50px;
-  animation: stripe-vertical 3s linear infinite;
-}
-
-@keyframes stripe-vertical {
-  100% {
-    background-position: 50px 0;
-  }
-}
-
-[data-pattern="stripe-horizontal"] {
-  background-image: linear-gradient(transparent 50%, rgba(#fff, 0.05) 50%);
-  background-size: 50px 50px;
-  animation: stripe-horizontal 3s linear infinite;
-}
-
-@keyframes stripe-horizontal {
-  100% {
-    background-position: 0 50px;
   }
 }

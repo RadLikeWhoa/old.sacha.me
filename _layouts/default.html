@@ -2,6 +2,11 @@
 page_class: page-default
 ---
 
-{% include header.html %}
-{{ content }}
+{% include top.html %}
+<header class="site-header">
+  {% include header.html %}
+</header>
+<section class="main" id="content-start">
+  {{ content }}
+</section>
 {% include footer.html %}
