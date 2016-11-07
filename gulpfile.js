@@ -36,9 +36,8 @@ gulp.task('styles', function () {
   return gulp.src('_src/scss/*.scss')
     .pipe(newer('assets/css'))
     .pipe(sass({
-      style: 'compressed',
-      errLogToConsole: true
-    }))
+      style: 'compressed'
+    }).on('err', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(csso(true))
     .pipe(gulp.dest('assets/css'))

@@ -6,13 +6,13 @@ navigation_match: /
   <p class="site-intro hero-text">Hi there, my name is Sacha Schmid and I am a front-end developer from Switzerland. I design and build websites for private clients and small companies using modern HTML, CSS and JavaScript.</p>
 </section>
 <section class="home-section wrap">
-  <h2 class="section-heading">Latest project</h2>
+  <h2 class="section-heading">Latest Project</h2>
   {% assign project = site.categories.projects.first %}
   {% include project.html project = project %}
   <a href="/projects" data-button="center"><span class="label">View all projects</span></a>
 </section>
 <section class="home-section wrap">
-  <h2 class="section-heading">Latest article</h2>
+  <h2 class="section-heading">Latest Article</h2>
   {% assign post = site.categories.articles.first %}
   <article class="post-inline">
     <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
