@@ -5,7 +5,7 @@ description: "Read about web projects Sacha Schmid was involved in and learn abo
 
 <div class="wrap content">
   <section class="home-section personal-projects">
-    <h2 class="section-heading">Personal projects</h2>
+    <h2 class="section-heading">Personal Projects</h2>
     {% for project in site.categories.projects %}
       {% if project.client %}{% continue %}{% endif %}
       {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
@@ -13,7 +13,7 @@ description: "Read about web projects Sacha Schmid was involved in and learn abo
     {% endfor %}
   </section>
   <section class="home-section client-works">
-    <h2 class="section-heading">Client work</h2>
+    <h2 class="section-heading">Client Work</h2>
     {% for project in site.categories.projects %}
       {% unless project.client %}{% continue %}{% endunless %}
       {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
