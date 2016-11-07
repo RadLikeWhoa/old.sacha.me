@@ -1,5 +1,5 @@
 ---
-title: "JSONP, Demystified"
+title: "JSONP Demystified"
 caption: "When dealing with APIs, JSONP is all the rage these days. There is a number of reasons as to why this specification reached such popularity, but there's also a lot of uncertainity when it comes to actually using it. Most people would be all like 'Ugh, JSONP is easy, just use jQuery!' But as usual, 'just use jQuery' is not an acceptable answer for everyone."
 ---
 

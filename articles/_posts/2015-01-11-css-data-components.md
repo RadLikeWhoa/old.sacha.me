@@ -1,5 +1,5 @@
 ---
-title: "How I'm Using Data Attributes to Write CSS Components"
+title: "Using Data Attributes to Write CSS Components"
 caption: "With BEM, SMACSS, OOCSS and other methodologies for CSS architecture there's been a lot of debating around which method is better than the others. AMCSS is a new contender for the throne and in this post I will outline how I'm using it to write CSS components."
 ---
 
