@@ -48,10 +48,10 @@
 
   margin-bottom: 1.5em;
   border-color: #ededed;
-  border-radius: 3px;
 
   @include at-least(m) {
     margin-top: -6em;
+    border-radius: 3px;
     box-shadow: 0 0 0 5px $main;
   }
 }
