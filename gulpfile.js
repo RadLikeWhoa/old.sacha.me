@@ -3,7 +3,6 @@ var uglify = require('gulp-uglify')
 var sass = require('gulp-sass')
 var csso = require('gulp-csso')
 var imagemin = require('gulp-imagemin')
-var svg2png = require('gulp-svg2png')
 var newer = require('gulp-newer')
 var pngquant = require('imagemin-pngquant')
 var autoprefixer = require('gulp-autoprefixer')
@@ -50,10 +49,6 @@ gulp.task('vectors', function () {
     .pipe(imagemin({
       svgoPlugins: [{ removeTitle: true }, { removeDesc: true }]
     }))
-    .pipe(gulp.dest('assets/img'))
-    .pipe(gulp.dest('_site/assets/img'))
-    .pipe(svg2png())
-    .pipe(imagemin())
     .pipe(gulp.dest('assets/img'))
     .pipe(gulp.dest('_site/assets/img'))
 })
