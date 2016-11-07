@@ -39,7 +39,7 @@
   &:hover,
   &:focus {
     transform: scale(1.05);
-    box-shadow: 0 5px 10px rgba(#333, 0.35);
+    box-shadow: 0 5px 10px rgba($default, 0.35);
   }
 }
 
@@ -47,10 +47,12 @@
   @extend %wide-bordered;
 
   margin-bottom: 1.5em;
-  border-color: #e5e5e5;
+  border-color: #ededed;
+  border-radius: 3px;
 
   @include at-least(m) {
-    margin-top: -4.5em;
+    margin-top: -6em;
+    box-shadow: 0 0 0 5px $main;
   }
 }
 
@@ -111,7 +113,7 @@
   animation: none;
 
   @include at-least(m) {
-    padding: 3em 0;
+    padding: 3em 0 4.5em;
   }
 
   .post-title {

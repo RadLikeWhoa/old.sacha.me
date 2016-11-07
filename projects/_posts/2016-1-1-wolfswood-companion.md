@@ -15,7 +15,6 @@ technologies:
   - StoreKit
 pattern: shippo
 background: rgb(40, 45, 49)
-border: "#444"
 link: https://itunes.apple.com/us/app/wolfswood-companion/id1091989511?ls=1&mt=8
 end: 2016
 ---

@@ -66,6 +66,17 @@
   width: 1.1em;
   position: relative;
   top: 0.15em;
+  will-change: transform;
+
+  .site-heading:hover & {
+    animation: boink 0.25s ease-in-out;
+  }
+}
+
+@keyframes boink {
+  50% {
+    transform: rotateZ(-5deg);
+  }
 }
 
 .site-nav {
@@ -196,6 +207,7 @@
       transform: translateY(1.5em);
       opacity: 0;
       color: $highlight;
+      pointer-events: none;
     }
 
     [data-icon],

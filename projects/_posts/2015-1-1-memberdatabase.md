@@ -19,7 +19,6 @@ technologies:
   - MySQL
 pattern: shippo
 background: rgb(147, 40, 145)
-border: "#80237f"
 client: Pfadi Allschwil
 end: 2016
 ---
