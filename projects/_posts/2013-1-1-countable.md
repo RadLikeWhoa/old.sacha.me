@@ -20,7 +20,7 @@ technologies:
   - Sass
 pattern: cloth
 background: rgb(235, 164, 76)
-link: http://sacha.me/Countable/
+link: https://sacha.me/Countable/
 repo: https://github.com/RadLikeWhoa/Countable
 ---
 

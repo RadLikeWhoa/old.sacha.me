@@ -18,7 +18,7 @@ technologies:
   - Node.js
 pattern: checker
 background: rgb(122, 124, 115)
-link: http://sacha.me/bookmarklets/
+link: https://sacha.me/bookmarklets/
 repo: https://github.com/RadLikeWhoa/bookmarklets
 ---
 
