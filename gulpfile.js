@@ -20,7 +20,7 @@ function notifyLivereload (event) {
 }
 
 gulp.task('jekyll', [ 'version' ], function () {
-  require('child_process').spawn('jekyll', [ 'build', '--drafts' ], { stdio: 'inherit' })
+  require('child_process').spawn('jekyll', [ 'build', '--drafts', '--incremental' ], { stdio: 'inherit' })
 })
 
 gulp.task('scripts', function () {

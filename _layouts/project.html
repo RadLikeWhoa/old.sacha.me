@@ -19,7 +19,7 @@
     }
 
     .site-nav .site-nav-item .label {
-      color: {{ page.background }};
+      color: {{ page.background }};
     }
 
     @media (max-width: 45em) {
@@ -38,7 +38,7 @@
       </a>
     </div>
     <div class="project-meta" data-grid="gutterless">
-      <div class="project-meta-item" data-col="{% if page.repo or page.client or page.link %}M1-5{% endif %}">
+      <div class="project-meta-item" data-col="{% if page.repo or page.client or page.link %}M1-5{% endif %}">
         <div class="project-meta-label small faded">Years</div>
         <div class="project-meta-body small">
           {% unless page.end %}since {% endunless %}<time datetime="{{ page.date }}" pubdate>{{ start }}</time>{% if page.end and start != page.end %} – {{ page.end }}{% endif %}
