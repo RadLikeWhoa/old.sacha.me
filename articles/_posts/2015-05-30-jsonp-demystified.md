@@ -115,7 +115,7 @@ As a last step we have to increase the ID. Now we can be sure that our request w
 
 # Even JSONP has downsides
 
-JSONP has downsides. Some pretty major downsides, even. First off, there is no proper error handling. As there are no satus codes and no response codes sent, you'll have to hope for the best to happen. And there is more than one place where things can go wrong.
+JSONP has downsides. Some pretty major downsides, even. First off, there is no proper error handling. As there are no status codes and no response codes sent, you'll have to hope for the best to happen. And there is more than one place where things can go wrong.
 
 The url you requested can be outdated or simply contain a typo. The `jsonp` function has no way to know about this as it just insterts a script onto the page. But even if the request is successful you'll have to check if the data returned is correct and there is no standardised way to do this. Some APIs offer error messages, some don't. And usually, no two API providers structure their content the same way.
 
