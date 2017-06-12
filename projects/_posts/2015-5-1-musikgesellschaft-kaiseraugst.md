@@ -15,7 +15,7 @@ technologies:
   - PHP
   - Wordpress
 pattern: cloth
-background: rgb(214, 102, 175)
+background: rgb(0, 0, 0)
 client: Musikgesellschaft Kaiseraugst
 link: http://mgkaiseraugst.ch/
 ---
