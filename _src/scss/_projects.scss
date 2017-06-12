@@ -76,7 +76,7 @@
   position: relative;
   overflow: hidden;
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -87,7 +87,7 @@
   @extend %fadeout;
 
   @include up-to(m) {
-    &:after {
+    &::after {
       content: none;
     }
   }
@@ -96,7 +96,7 @@
     height: 7.5em;
     overflow: hidden;
 
-    &:after {
+    &::after {
       right: 0;
       bottom: 0;
       left: 0;

@@ -1,5 +1,7 @@
 $media-queries: () !default;
 
+/* stylelint-disable */
+
 @function _mq ($name) {
   @if map-has-key($media-queries, $name) {
     @return map-get($media-queries, $name)
@@ -7,6 +9,8 @@ $media-queries: () !default;
     @warn 'No media query called `#{$name}` could be found.';
   }
 }
+
+/* stylelint-enable */
 
 @mixin at-least ($point) {
   @media (min-width: _mq($point)) {
