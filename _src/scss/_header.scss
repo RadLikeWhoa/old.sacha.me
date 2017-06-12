@@ -71,6 +71,12 @@
   .site-heading:hover & {
     animation: boink 0.25s ease-in-out;
   }
+
+  @include at-least(l) {
+    top: 0.2em;
+    float: left;
+    margin-right: 0.5em;
+  }
 }
 
 @keyframes boink {
