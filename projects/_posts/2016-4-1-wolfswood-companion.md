@@ -13,7 +13,7 @@ technologies:
   - Swift
   - Cocoa
   - StoreKit
-pattern: shippo
+pattern: checker
 background: rgb(40, 45, 49)
 link: https://itunes.apple.com/us/app/wolfswood-companion/id1091989511?ls=1&mt=8
 end: 2016
