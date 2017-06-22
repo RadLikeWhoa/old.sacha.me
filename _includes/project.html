@@ -1,4 +1,4 @@
-{% capture icon %}/assets/img/{{ include.project.title | downcase | replace: ' ', '-' }}/icon{% endcapture %}
+{% capture icon %}/assets/img/{{ include.project.title | downcase | replace: ' ', '-' | replace: '?', '' | replace: '!', '' }}/icon{% endcapture %}
 {% capture start %}{{ project.date | date: "%Y" }}{% endcapture %}
 {% assign start = start | plus: 0 %}
 
