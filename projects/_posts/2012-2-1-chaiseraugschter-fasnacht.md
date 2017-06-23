@@ -25,6 +25,7 @@ background: rgb(189, 40, 94)
 link: http://chaiseraugschter-fasnacht.ch
 client: Fasnachtscomité Kaiseraugst
 end: 2016
+team: 1
 ---
 
 The local carnival (or "Fasnacht", as it's called in German) is a big deal, even in small Swiss towns. It is a long and proud tradition that's cherished by both younger and older people.

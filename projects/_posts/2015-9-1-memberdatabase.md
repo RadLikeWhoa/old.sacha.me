@@ -21,6 +21,7 @@ pattern: shippo
 background: rgb(147, 40, 145)
 client: Pfadi Allschwil
 end: 2016
+team: 8
 ---
 
 The goal of this project was to get rid of an old and bloated piece of software and replace it with a new and efficient solution in order to help the scouts organisation of Allschwil reduce their administrative effort.

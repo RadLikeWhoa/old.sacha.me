@@ -142,11 +142,12 @@
   }
 
   @include at-least(m) {
-    border-right: 1px solid #e5e5e5;
-    border-bottom: 0;
+    &:first-child {
+      border-right: 1px solid #e5e5e5;
+    }
 
-    &:last-child {
-      border-right: 0;
+    &:nth-child(n+3) {
+      clear: both;
     }
   }
 }
@@ -160,7 +161,7 @@
 .project-meta-label {
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
 }
 
 .project-meta-body {

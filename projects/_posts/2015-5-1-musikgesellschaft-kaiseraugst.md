@@ -18,6 +18,7 @@ pattern: cloth
 background: rgb(20, 20, 20)
 client: Musikgesellschaft Kaiseraugst
 link: http://mgkaiseraugst.ch/
+team: 1
 ---
 
 Many organisations seek to showcase their members and their achievements or handle administrative tasks through a website. So does the brass band of Kaiseraugst, which is why they approached me for the project.

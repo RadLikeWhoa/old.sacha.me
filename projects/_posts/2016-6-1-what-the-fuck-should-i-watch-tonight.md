@@ -21,6 +21,7 @@ pattern: argyle
 background: rgb(86, 137, 194)
 repo: https://github.com/RadLikeWhoa/whatthefuckshouldiwatchtonight
 end: 2016
+team: 3
 ---
 
 What The Fuck Should I Watch Tonight is an app for spontaneously finding a movie to watch. It is based on the concept of selecting a movie that will make you feel a certain way, instead of combing through endless lists of movies sorted by arbitrary ratings.

@@ -17,6 +17,7 @@ pattern: checker
 background: rgb(40, 45, 49)
 link: https://itunes.apple.com/us/app/wolfswood-companion/id1091989511?ls=1&mt=8
 end: 2016
+team: 1
 ---
 
 Wolfswood Companion is a planning utility for the console game Destiny. It helps players with planning the monthly Iron Banner event and achieving the maximum level in order to obtain all the rewards.
