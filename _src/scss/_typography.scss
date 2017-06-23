@@ -50,7 +50,6 @@ a {
   color: $highlight;
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
-  transition: border-bottom-color 0.15s ease-in-out;
   text-decoration: none;
 
   &:hover,
@@ -62,6 +61,10 @@ a {
   &:target {
     outline: none;
     background-color: rgba($highlight, 0.15);
+  }
+
+  .has-transitions & {
+    transition: border-bottom-color 0.15s ease-in-out;
   }
 }
 

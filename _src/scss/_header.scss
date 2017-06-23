@@ -102,7 +102,7 @@
     overflow: hidden;
     z-index: 10;
 
-    &.transitioning {
+    .has-transitions & {
       transition: max-height 0.25s ease-in-out;
     }
   }
@@ -258,7 +258,7 @@
     pointer-events: none;
     z-index: 5;
 
-    .transitioning & {
+    .has-transitions & {
       transition: transform 0.35s ease-in-out;
     }
   }

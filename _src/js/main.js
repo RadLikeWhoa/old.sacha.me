@@ -4,7 +4,7 @@
   // backdrop.
 
   setTimeout(function () {
-    document.getElementById('siteNav').className += ' transitioning'
+    document.body.className += 'has-transitions'
   }, 0)
 
   // Get all the links on post pages and create a list of all in-post URLs.
