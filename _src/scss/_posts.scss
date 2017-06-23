@@ -17,6 +17,10 @@
   padding-bottom: 1.5em;
   will-change: opacity;
 
+  &:last-of-type {
+    margin-bottom: 1.5em;
+  }
+
   @include at-least(m) {
     padding-bottom: 3em;
     margin-bottom: 3em;
