@@ -1,6 +1,6 @@
 {% include top.html %}
-{% capture icon %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}/icon{% endcapture %}
-{% capture hero %}/assets/img/{{ page.title | downcase | replace: ' ', '-' }}/hero.png{% endcapture %}
+{% capture icon %}/assets/img/{{ page.title | downcase | replace: ' ', '-' | replace: '?', '' | replace: '!', '' }}/icon{% endcapture %}
+{% capture hero %}/assets/img/{{ page.title | downcase | replace: ' ', '-' | replace: '?', '' | replace: '!', '' }}/hero.png{% endcapture %}
 {% capture start %}{{ page.date | date: "%Y" }}{% endcapture %}
 {% assign start = start | plus: 0 %}
 

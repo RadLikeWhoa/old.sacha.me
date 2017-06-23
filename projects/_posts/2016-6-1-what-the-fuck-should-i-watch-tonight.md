@@ -25,7 +25,7 @@ end: 2016
 
 What The Fuck Should I Watch Tonight is an app for spontaneously finding a movie to watch. It is based on the concept of selecting a movie that will make you feel a certain way, instead of combing through endless lists of movies sorted by arbitrary ratings.
 
-As part of the Web Engineering course at the FHNW we were tasked with creating a web application that offers a REST API coupled to a database, while also using a third-party API. The exercise's goal was to strengthen our skills in HTML, CSS, JavaScript, and PHP, while also giving us an opportunity to brainstorm for an appropriate idea.
+As part of the Web Engineering course at the UAS we were tasked with creating a web application that offers a REST API coupled to a database, while also using a third-party API. The exercise's goal was to strengthen our skills in HTML, CSS, JavaScript, and PHP, while also giving us an opportunity to brainstorm for an appropriate idea.
 
 <figure>
   <img src="/assets/img/what-the-fuck-should-i-watch-tonight/emotions.png">
