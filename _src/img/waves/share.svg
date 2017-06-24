@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="70px" viewBox="0 0 360 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>share</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="share">
+            <rect id="Rectangle-2" fill="#FFFFFF" x="0" y="0" width="360" height="70"></rect>
+            <path d="M0,14.0006077 C93.1312332,14.0006077 125.624004,43.6997595 150.320123,43.1493055 C182.38078,42.4347026 229.635979,17.859227 270.956119,18.0006077 C320.619171,18.1705344 335.155762,39 360,39 L360,70 L0,70 L0,14.0006077 Z" id="Rectangle-Copy" fill-opacity="0.6" fill="#6EE95D"></path>
+            <path d="M-1.13686838e-13,39 C29.5976441,39.1493053 37.4261485,13.8633134 98.8838466,14.0006077 C157.792761,14.1322081 211.183768,39.6997595 240.313963,39.1493055 C278.130966,38.4347026 310.870621,13.859227 360,14.0006077 L360,70 L-5.8730798e-14,70 L-1.13686838e-13,39 Z" id="Rectangle-Copy-2" fill-opacity="0.6" fill="#6EE95D"></path>
+            <path d="M5.68434189e-14,57 C17.8937829,57 39.139525,41.8633134 81.7691422,42.0006077 C122.630817,42.1322081 166.601457,61.6997595 186.807373,61.1493055 C213.03882,60.4347026 241.702165,41.859227 275.509552,42.0006077 C316.142958,42.1705344 336.727997,57 360,57 L360,70 L5.68434189e-14,70 L5.68434189e-14,57 Z" id="Rectangle" fill="#6EE95D"></path>
+        </g>
+    </g>
+</svg>

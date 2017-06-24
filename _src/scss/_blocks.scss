@@ -1,27 +1,40 @@
 [data-block] {
   @extend %wide-bordered;
 
-  padding: 1.5em;
+  padding: 90px 1.5em 1.5em;
+  color: #fff;
+  background-repeat: repeat-x, no-repeat;
+  border: none;
+  box-shadow: 0 2px 4px rgba(#333, 0.15);
 
   code {
     background-color: $code;
   }
 }
 
-[data-block="warning"] {
-  color: darken($warning, 30%);
-  background-color: rgba($warning, 0.05);
-  border-color: rgba(darken($warning, 10%), 0.1);
-}
+$blocks: (
+  "warning": (
+    "background": #e85d5d,
+    "link": #e8c65d
+  ),
+  "info": (
+    "background": #5db3e8,
+    "link": #e8c65d
+  ),
+  "share": (
+    "background": #6ee95d,
+    "link": #e95e7a
+  )
+);
 
-[data-block="info"] {
-  color: darken($info, 30%);
-  background-color: rgba($info, 0.05);
-  border-color: rgba(darken($info, 10%), 0.1);
-}
+@each $name, $block in $blocks {
+  [data-block="#{$name}"] {
+    background-image:
+      url(/assets/img/waves/#{$name}.svg),
+      linear-gradient(to bottom, #fff 70px, map-get($block, "background") 70px);
 
-[data-block="share"] {
-  color: darken($share, 30%);
-  background-color: rgba($share, 0.05);
-  border-color: rgba(darken($share, 10%), 0.2);
+    a {
+      color: map-get($block, "link");
+    }
+  }
 }
