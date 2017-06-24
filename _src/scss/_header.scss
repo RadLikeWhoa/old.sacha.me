@@ -34,21 +34,11 @@
     background-color: transparent;
     border-bottom: 0;
     transition: background-color 0.25s ease-in-out;
-
-    .fn,
-    .sub-text {
-      border-bottom: 1px solid transparent;
-      transition: border-bottom-color 0.25s ease-in-out;
-    }
+    will-change: background-color;
 
     &:hover,
     &:focus {
       background-color: rgba(#000, 0.06);
-    }
-
-    &:focus .fn,
-    &:focus .sub-text {
-      border-bottom-color: currentColor;
     }
 
     @include up-to(l) {
@@ -152,6 +142,7 @@
     color: $highlight;
     background-color: $main;
     transition: background-color 0.25s ease-in-out;
+    will-change: background-color;
 
     a {
       color: $highlight;
@@ -180,9 +171,11 @@
 .site-nav .site-nav-item {
   position: relative;
   padding: 0.75em 1.5em;
+  margin-bottom: 0;
   border-bottom: 0;
   z-index: 10;
   transition: background-color 0.35s ease-in-out;
+  will-change: background-color;
 
   @for $i from 2 through $nav-item-count + 1 {
     &:nth-child(#{$i}).is-active ~ .active-nav-item,
@@ -195,6 +188,19 @@
   @include up-to(m) {
     text-align: left;
     border-top: 1px solid $control-light;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    transition-delay: 0.1s;
+    will-change: opacity;
+
+    .cb-hack:checked + & {
+      opacity: 1;
+      transition-delay: 0;
+    }
+
+    &:first-of-type {
+      border-top: none;
+    }
 
     &.is-active {
       font-weight: bold;
@@ -218,8 +224,8 @@
 
     [data-icon],
     .label {
-      will-change: opacity, transform;
       transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+      will-change: opacity, transform;
     }
 
     &.is-active,
@@ -239,6 +245,7 @@
       background-color: rgba($main, 0.5);
       border-radius: 5px;
       transition: background-color 0.25s ease-in-out 0.25s, color 0.25s ease-in-out;
+      will-change: background-color, color;
     }
   }
 }
@@ -260,6 +267,7 @@
 
     .has-transitions & {
       transition: transform 0.35s ease-in-out;
+      will-change: transform;
     }
   }
 
