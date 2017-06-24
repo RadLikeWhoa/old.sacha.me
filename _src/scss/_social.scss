@@ -4,12 +4,12 @@
 }
 
 $networks:
-  Dribbble #ea4c89,
-  Pinboard #4C4CBF,
-  GitHub #4183c4,
-  Twitter #55acee,
-  Instagram #4A85B5,
-  "last.fm" #CC4E56;
+  "Dribbble" #ea4c89,
+  "Pinboard" #4c4cbf,
+  "GitHub" #4183c4,
+  "Twitter" #55acee,
+  "Instagram" #4a85b5,
+  "last.fm" #cc4e56;
 
 @each $network in $networks {
   .social-item [title="#{nth($network, 1)}"] {
@@ -18,6 +18,11 @@ $networks:
     &:hover,
     &:focus {
       background-color: darken(nth($network, 2), 10%);
+    }
+
+    &::before,
+    &::after {
+      border-color: nth($network, 2);
     }
   }
 }
