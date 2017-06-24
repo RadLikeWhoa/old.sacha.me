@@ -26,8 +26,9 @@ div.highlighter-rouge {
   @extend %wide-bordered;
 
   position: relative;
-  border-color: rgba(darken($code, 10%), 0.8);
   margin-bottom: 1.5em;
+  box-shadow: 0 2px 4px rgba(#333, 0.15);
+  border: none;
 
   &::before,
   &::after {
@@ -43,11 +44,13 @@ div.highlighter-rouge {
   &::before {
     left: 0;
     background-image: linear-gradient(to right, $code, rgba($code, 0));
+    border-radius: 3px 0 0 3px;
   }
 
   &::after {
     right: 0;
     background-image: linear-gradient(to left, $code, rgba($code, 0));
+    border-radius: 0 3px 3px 0;
   }
 
   pre {
@@ -58,7 +61,7 @@ div.highlighter-rouge {
     -webkit-overflow-scrolling: touch;
 
     @include at-least(m) {
-      border-radius: 2px;
+      border-radius: 3px;
     }
   }
 
