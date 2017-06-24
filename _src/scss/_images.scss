@@ -28,15 +28,3 @@ figcaption {
     text-align: left;
   }
 }
-
-.avatar {
-  display: block;
-  width: 10em;
-  margin: 0 auto 3em;
-  border-radius: 50em;
-
-  @include at-least(m) {
-    float: left;
-    margin: 0 1.5em 1.5em 0;
-  }
-}
