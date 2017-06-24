@@ -27,7 +27,7 @@ div.highlighter-rouge {
 
   position: relative;
   margin-bottom: 1.5em;
-  box-shadow: 0 2px 4px rgba(#333, 0.075);
+  box-shadow: 0 2px 4px rgba($default, 0.075);
   border: none;
 
   &::before,

@@ -5,7 +5,7 @@
   color: #fff;
   background-repeat: repeat-x, no-repeat;
   border: none;
-  box-shadow: 0 2px 4px rgba(#333, 0.15);
+  box-shadow: 0 2px 4px rgba($default, 0.15);
   animation: wave 20s linear infinite;
   animation-play-state: paused;
   will-change: background-position;
@@ -20,11 +20,7 @@
 }
 
 @keyframes wave {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
+  to {
     background-position: -360px 0, 0 0;
   }
 }
@@ -40,7 +36,7 @@ $blocks: (
   ),
   "share": (
     "background": #6ee95d,
-    "link": #e95e7a
+    "link": #755de9
   )
 );
 

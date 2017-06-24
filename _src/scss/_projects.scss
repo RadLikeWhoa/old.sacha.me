@@ -34,6 +34,7 @@
   border-bottom: 0;
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out !important;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba($default, 0.25);
   will-change: transform, box-shadow;
 
   &:hover,
