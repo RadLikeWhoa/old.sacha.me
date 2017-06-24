@@ -1,11 +1,12 @@
 [data-button] {
+  position: relative;
   display: inline-block;
   padding: 0.75em 1.5em;
   margin-bottom: 0;
   font-weight: bold;
   color: $main;
   background-color: $highlight;
-  border-radius: 5px;
+  border-radius: 10px 0;
   border-bottom: 0;
   transition: background-color 0.25s ease-in-out !important;
   cursor: pointer;
@@ -18,10 +19,48 @@
   &:hover,
   &:focus {
     background-color: darken($highlight, 5%);
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+
+    &::before,
+    &::after {
+      height: calc(100% + 0.5em - 3px);
+      width: calc(100% + 0.5em - 3px);
+    }
   }
 
   &:focus .label {
     border-bottom-color: $main;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0.25em;
+    width: 0.25em;
+    border-style: solid;
+    border-color: $highlight;
+    opacity: 0;
+    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    will-change: height, width, opacity;
+  }
+
+  &::before {
+    top: -0.25em;
+    left: -0.25em;
+    border-radius: 15px 0 0;
+    border-width: 3px 0 0 3px;
+  }
+
+  &::after {
+    bottom: -0.25em;
+    right: -0.25em;
+    border-radius: 0 0 15px;
+    border-width: 0 3px 3px 0;
   }
 }
 
@@ -40,5 +79,10 @@
   &:hover,
   &:focus {
     background-color: darken($control-dark, 5%);
+  }
+
+  &::before,
+  &::after {
+    border-color: $control-dark;
   }
 }
