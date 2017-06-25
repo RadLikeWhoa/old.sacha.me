@@ -16,16 +16,26 @@
   }
 }
 
+.avatar-container {
+  width: 10em;
+  height: 10em;
+  margin-bottom: 1.5em;
+
+  @include up-to(m) {
+    width: 100%;
+  }
+}
+
 .avatar {
   display: block;
   width: 10em;
   height: 10em;
-  margin: 0 auto 1.5em;
+  margin: 0 auto;
   border-radius: 5px;
 
   @include at-least(m) {
     float: left;
-    margin: 0 0 1.5em;
+    margin: 0;
   }
 }
 
