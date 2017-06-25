@@ -48,6 +48,12 @@ navigation_match: /about/
       <p data-block="warning">This is a warning.</p>
       <p data-block="share">This is a sharing message.</p>
     </div>
+    <h2 class="section-heading">Projects</h2>
+    <div class="home-section">
+      <a class="project-link">
+        <div class="icon-well" data-pattern="dots" style="background-color: #4cadeb"><img src="/assets/img/happyflowers/icon.svg" alt="happyflowers icon"></div>
+      </a>
+    </div>
     <h2 class="section-heading">Code</h2>
     <div class="home-section">
       {% capture inline %}`<div class="inline"></div>`{% endcapture %}
@@ -60,6 +66,21 @@ navigation_match: /about/
 ```
       {% endcapture %}
       {{ code | markdownify }}
+    </div>
+    <h2 class="section-heading">Tags</h2>
+    <div class="home-section sg-section">
+      <ul data-tags>
+        <li class="tag">HTML</li>
+        <li class="tag">CSS</li>
+        <li class="tag">JavaScript</li>
+        <li class="tag">PHP</li>
+        <li class="tag">Swift</li>
+        <li class="tag">C++</li>
+        <li class="tag">Objective-C</li>
+        <li class="tag">C#</li>
+        <li class="tag">Haskell</li>
+        <li class="tag">Java</li>
+      </ul>
     </div>
     <h2 class="section-heading">Icons</h2>
     <div class="home-section sg-section">
