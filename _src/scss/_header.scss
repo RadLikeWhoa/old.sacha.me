@@ -98,7 +98,9 @@
   }
 
   @include at-least(m) {
-    margin: 0 1.5em;
+    margin: 0 1.5em 1.5em;
+    padding: 0;
+    max-width: none;
 
     &:hover .site-nav-item.is-active {
       background-color: rgba(255, 255, 255, 0);
@@ -127,8 +129,6 @@
 
   @include at-least(l) {
     margin: 1.5em 0.75em 0 0;
-    padding: 0;
-    max-width: none;
   }
 }
 
@@ -261,7 +261,7 @@
     position: absolute;
     height: 3em;
     background-color: $main;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     pointer-events: none;
     z-index: 5;
 
@@ -269,10 +269,6 @@
       transition: transform 0.35s ease-in-out;
       will-change: transform;
     }
-  }
-
-  @include at-least(l) {
-    border-radius: 5px;
   }
 }
 
