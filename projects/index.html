@@ -1,11 +1,45 @@
 ---
 title: Projects
 description: "Read about web projects Sacha Schmid was involved in and learn about his experiences."
+filters:
+  platform:
+    - Web
+    - iOS
+  type:
+    - App
+    - Site
+    - Library
+    - Game
+  tool:
+    - Swift
+    - Haskell
+    - JavaScript
+    - Node.js
+    - PHP
+    - HTML
+    - Sass
+    - React
+    - Angular.js
+    - Assemble.io
+    - Wordpress
 ---
 
 <div class="wrap content">
   <section class="home-section">
     <h2 class="section-heading">All Projects</h2>
+    <div class="filters">
+      <ul class="filter-list" data-tags>
+        {% for platform in page.filters.platform %}
+          <a href="#" class="tag filter-platform">{{ platform }}</a>
+        {% endfor %}
+        {% for type in page.filters.type %}
+          <a href="#" class="tag filter-type">{{ type }}</a>
+        {% endfor %}
+        {% for tool in page.filters.tool %}
+          <a href="#" class="tag filter-tool">{{ tool }}</a>
+        {% endfor %}
+      </ul>
+    </div>
     {% for project in site.categories.projects %}
       {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
       {% include project.html project = project class = class %}

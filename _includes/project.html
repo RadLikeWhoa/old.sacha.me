@@ -2,7 +2,7 @@
 {% capture start %}{{ project.date | date: "%Y" }}{% endcapture %}
 {% assign start = start | plus: 0 %}
 
-<article class="post-inline">
+<article class="post-inline" data-project-tags="{{ include.project.tags | join: ' ' }} {{ include.project.technologies | join: ' ' }}">
   <div data-grid="{{ include.class }}">
     <div data-col="M1-3">
       <a href="{{ include.project.url }}" class="project-link">

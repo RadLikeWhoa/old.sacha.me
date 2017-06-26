@@ -98,4 +98,54 @@
       anchor.focus()
     })
   }())
+
+  ;(function () {
+    var filtersContainer = document.querySelector('.filters')
+    var filters = filtersContainer.querySelectorAll('.tag')
+    var projects = document.querySelectorAll('.post-inline')
+
+    var latest = undefined
+
+    Array.prototype.forEach.call(filters, function (f) {
+      f.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        var prev = document.querySelector('.tag.is-active')
+        var last = document.querySelector('.is-last')
+        var prevSide = 'right'
+
+        if (prev) {
+          prev.classList.remove('is-active')
+        }
+
+        if (last) {
+          last.classList.remove('is-last')
+        }
+
+        latest = latest === e.target.textContent ? undefined : e.target.textContent
+
+        if (latest) {
+          f.classList.add('is-active')
+          filtersContainer.classList.add('is-filtered')
+        } else {
+          filtersContainer.classList.remove('is-filtered')
+        }
+
+        Array.prototype.forEach.call(projects, function (p) {
+          if (!latest || p.getAttribute('data-project-tags').indexOf(latest) !== -1) {
+            p.querySelector('[data-grid]').setAttribute('data-grid', prevSide === 'right' ? '' : 'rev')
+            prevSide = prevSide === 'right' ? 'left' : 'right'
+            p.classList.remove('is-hidden')
+            p.classList.add('is-visible')
+          } else {
+            p.classList.add('is-hidden')
+            p.classList.remove('is-visible')
+          }
+        })
+
+        var visibles = document.querySelectorAll('.is-visible')
+        visibles[visibles.length - 1].classList.add('is-last')
+      })
+    })
+  }())
 }())
