@@ -30,13 +30,13 @@ filters:
     <div class="filters">
       <ul class="filter-list" data-tags>
         {% for platform in page.filters.platform %}
-          <a href="#" class="tag filter-platform">{{ platform }}</a>
+          <a href="#" class="tag filter-platform"><span class="label">{{ platform }}</span></a>
         {% endfor %}
         {% for type in page.filters.type %}
-          <a href="#" class="tag filter-type">{{ type }}</a>
+          <a href="#" class="tag filter-type"><span class="label">{{ type }}</span></a>
         {% endfor %}
         {% for tool in page.filters.tool %}
-          <a href="#" class="tag filter-tool">{{ tool }}</a>
+          <a href="#" class="tag filter-tool"><span class="label">{{ tool }}</span></a>
         {% endfor %}
       </ul>
     </div>

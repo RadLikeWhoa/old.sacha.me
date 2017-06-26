@@ -24,6 +24,15 @@
       opacity: 1;
       transform: scale(1.05);
     }
+
+    .label {
+      border-bottom: 1px solid transparent;
+      transition: border-bottom-color 0.25s ease-in-out;
+    }
+
+    &:focus .label {
+      border-bottom-color: $main;
+    }
   }
 }
 

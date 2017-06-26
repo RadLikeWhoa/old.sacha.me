@@ -99,7 +99,9 @@
     <p data-block="share">
       If you enjoyed reading this case study you might want to share it <a href="https://twitter.com/intent/tweet?url={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}&amp;text={{ page.title | UrlEncode }}&amp;via=sachaschmid&amp;related=sachaschmid%3AFront-end%20developer%20from%20Switzerland">on Twitter</a>, <a href="https://facebook.com/sharer.php?u={{ site.url | UrlEncode }}{{ page.url | UrlEncode }}">on Facebook</a>, or <a href="https://pinboard.in/add?next=same&amp;url={{ site.url | UrlEncode }}{{ page.url | UrlEncode}}&amp;title={{ page.title | UrlEncode }}">on Pinboard</a>. {% if page.link %}You should also take a look at the project's <a href="{{ page.link }}">website</a>, if you haven't already.{% endif %} For comments and questions, <a href="https://twitter.com/sachaschmid">contact me on Twitter</a>.
     </p>
-    <a href="/projects/" data-button="center"><span class="label">View more projects</span></a>
+    <a href="/projects/" data-button="center">
+      <span class="label">View more projects</span>
+    </a>
   </article>
 </section>
 {% include footer.html %}

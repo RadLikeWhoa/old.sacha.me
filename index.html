@@ -9,7 +9,9 @@ navigation_match: /
   <h2 class="section-heading">Latest Project</h2>
   {% assign project = site.categories.projects.first %}
   {% include project.html project = project %}
-  <a href="/projects" data-button="center"><span class="label">View all projects</span></a>
+  <a href="/projects" data-button="center">
+    <span class="label">View all projects</span>
+  </a>
 </section>
 <section class="home-section wrap">
   <h2 class="section-heading">Latest Article</h2>
@@ -19,5 +21,7 @@ navigation_match: /
     <p class="post-caption">{{ post.caption }}</p>
     <p><a href="{{ post.url }}">Read more &raquo;</a></p>
   </article>
-  <a href="/articles" data-button="center"><span class="label">View all articles</span></a>
+  <a href="/articles" data-button="center">
+    <span class="label">View all articles</span>
+  </a>
 </section>
