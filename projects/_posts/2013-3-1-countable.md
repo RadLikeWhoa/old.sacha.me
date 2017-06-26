@@ -16,7 +16,6 @@ learned:
 technologies:
   - JavaScript
   - HTML
-  - CSS
   - Sass
 pattern: cloth
 background: rgb(235, 164, 76)

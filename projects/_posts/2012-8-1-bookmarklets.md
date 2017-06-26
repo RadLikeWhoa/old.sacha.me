@@ -2,7 +2,7 @@
 title: bookmarklets
 tags:
   - Web
-  - App
+  - Site
   - Node.js
 learned:
   - Open Source

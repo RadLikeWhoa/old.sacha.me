@@ -13,7 +13,7 @@ learned:
   - Immutability
   - REST
 technologies:
-  - ES6
+  - JavaScript
   - React
   - Sass
   - PHP
