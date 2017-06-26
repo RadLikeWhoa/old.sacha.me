@@ -15,6 +15,8 @@ learned:
   - Hardware Programming
   - Real-Time Communication
 technologies:
+  - JavaScript
+  - CSS
   - React
   - Redux
   - ImmutableJS

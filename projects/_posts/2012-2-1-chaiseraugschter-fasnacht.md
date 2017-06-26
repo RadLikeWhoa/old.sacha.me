@@ -15,10 +15,10 @@ learned:
   - Build Processes
 technologies:
   - HTML
-  - CSS
   - Sass
   - JavaScript
   - PHP
+  - Assemble.io
   - Handlebars
 pattern: zigzag
 background: rgb(189, 40, 94)

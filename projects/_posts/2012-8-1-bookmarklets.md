@@ -14,7 +14,6 @@ technologies:
   - HTML
   - CSS
   - Sass
-  - JavaScript
   - Node.js
 pattern: checker
 background: rgb(122, 124, 115)

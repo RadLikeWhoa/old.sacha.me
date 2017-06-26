@@ -12,9 +12,9 @@ learned:
   - Development
   - Usability
 technologies:
+  - JavaScript
   - Angular
   - HTML
-  - CSS
   - Sass
   - MySQL
 pattern: shippo

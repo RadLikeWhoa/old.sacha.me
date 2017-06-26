@@ -12,7 +12,6 @@ learned:
   - Usability
 technologies:
   - HTML
-  - CSS
   - Sass
 pattern: dots
 background: rgb(133, 184, 68)
