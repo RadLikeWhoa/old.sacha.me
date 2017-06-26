@@ -27,6 +27,9 @@ filters:
 <div class="wrap content">
   <section class="home-section">
     <h2 class="section-heading">All Projects</h2>
+    <a data-button="block" class="filter-toggle">
+      <span data-icon="list"></span><span class="label">Show Filters</span>
+    </a>
     <div class="filters">
       <ul class="filter-list" data-tags>
         {% for platform in page.filters.platform %}
@@ -40,6 +43,7 @@ filters:
         {% endfor %}
       </ul>
     </div>
+    <div class="filter-shade"></div>
     {% for project in site.categories.projects %}
       {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
       {% include project.html project = project class = class %}

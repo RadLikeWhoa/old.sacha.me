@@ -1,6 +1,71 @@
-.filters.is-filtered .tag {
-  opacity: 0.3;
-  filter: grayscale(80%);
+.filters {
+  &.is-filtered .tag {
+    opacity: 0.3;
+    filter: grayscale(80%);
+  }
+
+  @include up-to(m) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 75%;
+    padding: 1.5em 1.5em 0;
+    background-color: $control-light;
+    box-shadow: 0 2px 4px rgba($default, 0.35);
+    z-index: 100;
+    transform: translateX(-120%);
+    will-change: transform;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .has-transitions & {
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &.is-overlaid {
+      transform: translateX(0);
+    }
+  }
+}
+
+.filter-shade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($default, 0.8);
+  opacity: 0;
+  will-change: opacity;
+  z-index: 10;
+  pointer-events: none;
+
+  .has-transitions & {
+    transition: opacity 0.25s ease-in-out;
+  }
+
+  .filters.is-overlaid + & {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @include at-least(m) {
+    display: none;
+  }
+}
+
+.filter-toggle {
+  margin-bottom: 3em;
+
+  [data-icon] {
+    float: right;
+    padding-top: 0.25em;
+  }
+
+  @include at-least(m) {
+    display: none;
+  }
 }
 
 .filter-list {
@@ -42,6 +107,10 @@
     &:focus .label {
       border-bottom-color: $main;
     }
+  }
+
+  @include up-to(m) {
+    margin-bottom: 1em;
   }
 }
 

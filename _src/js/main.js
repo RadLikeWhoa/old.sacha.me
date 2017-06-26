@@ -101,30 +101,31 @@
 
   ;(function () {
     var filtersContainer = document.querySelector('.filters')
+
+    if (!filtersContainer) {
+      return
+    }
+    
     var filters = filtersContainer.querySelectorAll('.tag')
     var projects = document.querySelectorAll('.post-inline')
-
-    var latest = undefined
+    var lastFilter = undefined
 
     Array.prototype.forEach.call(filters, function (f) {
       f.addEventListener('click', function (e) {
         e.preventDefault()
 
+        filtersContainer.classList.remove('is-overlaid')
+
         var prev = document.querySelector('.tag.is-active')
-        var last = document.querySelector('.is-last')
         var prevSide = 'right'
 
         if (prev) {
           prev.classList.remove('is-active')
         }
 
-        if (last) {
-          last.classList.remove('is-last')
-        }
+        lastFilter = lastFilter === e.target.textContent ? undefined : e.target.textContent
 
-        latest = latest === e.target.textContent ? undefined : e.target.textContent
-
-        if (latest) {
+        if (lastFilter) {
           f.classList.add('is-active')
           filtersContainer.classList.add('is-filtered')
         } else {
@@ -132,7 +133,9 @@
         }
 
         Array.prototype.forEach.call(projects, function (p) {
-          if (!latest || p.getAttribute('data-project-tags').indexOf(latest) !== -1) {
+          p.classList.remove('is-last')
+
+          if (!lastFilter || p.getAttribute('data-project-tags').indexOf(lastFilter) !== -1) {
             p.querySelector('[data-grid]').setAttribute('data-grid', prevSide === 'right' ? '' : 'rev')
             prevSide = prevSide === 'right' ? 'left' : 'right'
             p.classList.remove('is-hidden')
@@ -146,6 +149,14 @@
         var visibles = document.querySelectorAll('.is-visible')
         visibles[visibles.length - 1].classList.add('is-last')
       })
+    })
+
+    document.querySelector('.filter-toggle').addEventListener('click', function () {
+      filtersContainer.classList.add('is-overlaid')
+    })
+
+    document.querySelector('.filter-shade').addEventListener('click', function () {
+      filtersContainer.classList.remove('is-overlaid')
     })
   }())
 }())
