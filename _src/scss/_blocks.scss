@@ -37,6 +37,11 @@
   }
 }
 
+[data-block~="share"] {
+  padding: calc(90px + 1.5em) 3em 3em;
+  text-align: center;
+}
+
 $blocks: (
   "warning": (
     "background": #e85d5d,
@@ -53,7 +58,7 @@ $blocks: (
 );
 
 @each $name, $block in $blocks {
-  [data-block="#{$name}"] {
+  [data-block~="#{$name}"] {
     background-image: linear-gradient(to bottom, #fff 70px, map-get($block, "background") 70px);
 
     &::before {
