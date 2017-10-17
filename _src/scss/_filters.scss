@@ -9,15 +9,15 @@
     top: 0;
     left: 0;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
     width: 75%;
-    padding: 1.5em 1.5em 0;
+    padding: 1.5em;
     background-color: $control-light;
     box-shadow: 0 2px 4px rgba($default, 0.35);
     z-index: 100;
     transform: translateX(-120%);
     will-change: transform;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 
     .has-transitions & {
       transition: transform 0.25s ease-in-out;
@@ -26,6 +26,16 @@
     &.is-overlaid {
       transform: translateX(0);
     }
+  }
+}
+
+.filter-list-wrapper {
+  @include up-to(m) {
+    flex-grow: 1;
+    padding: 1.5em 1.5em 0;
+    margin: -1.5em -1.5em 1.5em;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -110,7 +120,7 @@
   }
 
   @include up-to(m) {
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
 }
 

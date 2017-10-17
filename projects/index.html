@@ -31,19 +31,22 @@ filters:
       <span data-icon="list"></span><span class="label">Show Filters</span>
     </a>
     <div class="filters">
-      <ul class="filter-list" data-tags>
-        {% for platform in page.filters.platform %}
-          <a href="#" class="tag filter-platform"><span class="label">{{ platform }}</span></a>
-        {% endfor %}
-        {% for type in page.filters.type %}
-          <a href="#" class="tag filter-type"><span class="label">{{ type }}</span></a>
-        {% endfor %}
-        {% for tool in page.filters.tool %}
-          <a href="#" class="tag filter-tool"><span class="label">{{ tool }}</span></a>
-        {% endfor %}
-      </ul>
+      <div class="filter-list-wrapper">
+        <ul class="filter-list" data-tags>
+          {% for platform in page.filters.platform %}
+            <a href="#" class="tag filter-platform"><span class="label">{{ platform }}</span></a>
+          {% endfor %}
+          {% for type in page.filters.type %}
+            <a href="#" class="tag filter-type"><span class="label">{{ type }}</span></a>
+          {% endfor %}
+          {% for tool in page.filters.tool %}
+            <a href="#" class="tag filter-tool"><span class="label">{{ tool }}</span></a>
+          {% endfor %}
+        </ul>
+      </div>
+      <a data-button="block center" class="filter-close">Close</a>
     </div>
-    <div class="filter-shade"></div>
+    <div class="filter-shade filter-close"></div>
     {% for project in site.categories.projects %}
       {% capture class %}{% cycle "project": "", "rev" %}{% endcapture %}
       {% include project.html project = project class = class %}

@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+var babel = require('gulp-babel')
 var uglify = require('gulp-uglify')
 var sass = require('gulp-sass')
 var csso = require('gulp-csso')
@@ -26,6 +27,9 @@ gulp.task('jekyll', [ 'version' ], function () {
 gulp.task('scripts', function () {
   return gulp.src('_src/js/*.js')
     .pipe(newer('assets/js'))
+    .pipe(babel({
+			presets: [ 'env' ]
+		}))
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'))
     .pipe(gulp.dest('_site/assets/js'))

@@ -1,4 +1,7 @@
 (function () {
+  const loop = function (el, cb) {
+    Array.prototype.forEach.call(el, cb)
+  }
 
   // This fixes the sometimes jumping animation of the active navigation item
   // backdrop.
@@ -10,23 +13,22 @@
   // Get all the links on post pages and create a list of all in-post URLs.
 
   ;(function () {
-    var links = document.querySelectorAll('.post-body a')
-    var list = document.getElementById('post-links-list')
-    var counter = 0
-    var html = ''
+    const links = document.querySelectorAll('.post-body a')
+    const list = document.getElementById('post-links-list')
+    let counter = 0
+    let html = ''
 
     if (!links || !list) {
       return
     }
 
-    for (var i = 0, j = links.length; i < j; i++) {
-      var link = links[i]
-      var href = link.href
+    loop(links, function (link) {
+      const href = link.href
 
       // If the link doesn't have an href or if it's a link on the same page,
       // ignore it and continue.
 
-      if (!href || href.indexOf(window.location.host + window.location.pathname) !== -1) continue
+      if (!href || href.indexOf(window.location.host + window.location.pathname) !== -1) return
 
       // All links get an auto-incremented counter, unless they already have
       // a defined ID.
@@ -45,7 +47,7 @@
                   link.title +
                 '</div>' +
               '</div>'
-    }
+    })
 
     // The list is only displayed if there are any links.
 
@@ -58,15 +60,15 @@
 
   ;(function () {
     document.getElementById('topLink').addEventListener('click', function (e) {
-      var position = window.pageYOffset
-      var time = 0
-      var raf, percentage
+      let position = window.pageYOffset
+      let time = 0
+      let raf, percentage
 
       e.preventDefault()
 
       // The easing function is an easeInOutQuad function.
 
-      var easing = function (time) {
+      const easing = function (time) {
         return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
       }
 
@@ -74,7 +76,7 @@
       // passed time and the overall distance. Using requestAnimationFrame we
       // can achieve 30fps.
 
-      var scroll = function () {
+      const scroll = function () {
         if (window.pageYOffset > position) return
 
         percentage = (time += 60) / 3000
@@ -92,32 +94,33 @@
   }())
 
   ;(function () {
+    const anchor = document.getElementById('content-start')
+
     document.getElementById('skip').addEventListener('click', function () {
-      var anchor = document.getElementById('content-start')
       anchor.tabIndex = -1
       anchor.focus()
     })
   }())
 
   ;(function () {
-    var filtersContainer = document.querySelector('.filters')
+    const filtersContainer = document.querySelector('.filters')
 
     if (!filtersContainer) {
       return
     }
 
-    var filters = filtersContainer.querySelectorAll('.tag')
-    var projects = document.querySelectorAll('.post-inline')
-    var lastFilter = undefined
+    const filters = filtersContainer.querySelectorAll('.tag')
+    const projects = document.querySelectorAll('.post-inline')
+    let lastFilter = undefined
 
-    Array.prototype.forEach.call(filters, function (f) {
+    loop(filters, function (f) {
       f.addEventListener('click', function (e) {
         e.preventDefault()
 
         filtersContainer.classList.remove('is-overlaid')
 
-        var prev = document.querySelector('.tag.is-active')
-        var prevSide = 'right'
+        const prev = document.querySelector('.tag.is-active')
+        let prevSide = 'right'
 
         if (prev) {
           prev.classList.remove('is-active')
@@ -146,17 +149,21 @@
           }
         })
 
-        var visibles = document.querySelectorAll('.is-visible')
+        const visibles = document.querySelectorAll('.is-visible')
         visibles[visibles.length - 1].classList.add('is-last')
       })
     })
 
     document.querySelector('.filter-toggle').addEventListener('click', function () {
       filtersContainer.classList.add('is-overlaid')
+      document.body.classList.add('is-locked')
     })
 
-    document.querySelector('.filter-shade').addEventListener('click', function () {
-      filtersContainer.classList.remove('is-overlaid')
+    loop(document.querySelectorAll('.filter-close'), function (c) {
+      c.addEventListener('click', function () {
+        filtersContainer.classList.remove('is-overlaid')
+        document.body.classList.remove('is-locked')
+      })
     })
   }())
 }())

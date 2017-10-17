@@ -11,6 +11,10 @@ body {
   color: $default;
   background-color: $footer;
   -webkit-text-size-adjust: 100%;
+
+  &.is-locked {
+    overflow: hidden;
+  }
 }
 
 h1,
