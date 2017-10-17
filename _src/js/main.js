@@ -57,38 +57,38 @@
   // https://github.com/cferdinandi/smooth-scroll
 
   ;(function () {
-    if ('requestAnimationFrame' in window) {
-      document.getElementById('topLink').addEventListener('click', function (e) {
-        var position = window.pageYOffset
-        var time = 0
-        var raf, percentage
+    document.getElementById('topLink').addEventListener('click', function (e) {
+      var position = window.pageYOffset
+      var time = 0
+      var raf, percentage
 
-        e.preventDefault()
+      e.preventDefault()
 
-        // The easing function is an easeInOutQuad function.
+      // The easing function is an easeInOutQuad function.
 
-        var easing = function (time) {
-          return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
+      var easing = function (time) {
+        return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time
+      }
+
+      // The distance to scroll for each iteration is calculated using the
+      // passed time and the overall distance. Using requestAnimationFrame we
+      // can achieve 30fps.
+
+      var scroll = function () {
+        if (window.pageYOffset > position) return
+
+        percentage = (time += 60) / 3000
+
+        position -= (position * easing(Math.min(1, percentage)))
+        window.scrollTo(0, Math.floor(position))
+
+        if (position > 0) {
+          raf = requestAnimationFrame(scroll)
         }
+      }
 
-        // The distance to scroll for each iteration is calculated using the
-        // passed time and the overall distance. Using requestAnimationFrame we
-        // can achieve 30fps.
-
-        var scroll = function () {
-          percentage = (time += 60) / 3000
-
-          position -= (position * easing(Math.min(1, percentage)))
-          window.scrollTo(0, Math.floor(position))
-
-          if (position > 0) {
-            raf = requestAnimationFrame(scroll)
-          }
-        }
-
-        raf = requestAnimationFrame(scroll)
-      })
-    }
+      raf = requestAnimationFrame(scroll)
+    })
   }())
 
   ;(function () {
@@ -105,7 +105,7 @@
     if (!filtersContainer) {
       return
     }
-    
+
     var filters = filtersContainer.querySelectorAll('.tag')
     var projects = document.querySelectorAll('.post-inline')
     var lastFilter = undefined
