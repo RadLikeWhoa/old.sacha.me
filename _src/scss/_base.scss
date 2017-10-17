@@ -45,7 +45,6 @@ figure {
 
 .section-heading {
   padding: 0.882em 0;
-  margin-bottom: 1.765em;
   text-align: center;
   background-color: $control-light;
   border-radius: 5px;
@@ -56,4 +55,6 @@ figure {
   padding-top: 3em;
   padding-bottom: 1.5em;
   background-color: $main;
+  box-shadow: 0 2px 4px rgba($default, 0.85);
+  z-index: 2;
 }
