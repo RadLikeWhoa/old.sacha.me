@@ -21,7 +21,7 @@ links:
 markdown: kramdown
 highlighter: rouge
 
-gems:
+plugins:
   - jekyll-sitemap
 
 kramdown:
