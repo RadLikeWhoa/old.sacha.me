@@ -22,6 +22,7 @@ markdown: kramdown
 highlighter: rouge
 
 plugins:
+  - jekyll-redirect-from
   - jekyll-sitemap
 
 kramdown:
