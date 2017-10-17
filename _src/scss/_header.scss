@@ -31,7 +31,6 @@
   margin-bottom: 0;
 
   a {
-    display: inline-block;
     padding: 0.75em 0;
     font-weight: normal;
     background-color: transparent;
@@ -42,6 +41,10 @@
     &:hover,
     &:focus {
       background-color: rgba(#000, 0.06);
+    }
+
+    @include at-least(l) {
+      display: inline-block;
     }
 
     @include up-to(l) {
