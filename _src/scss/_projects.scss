@@ -47,6 +47,7 @@
 .hero-img-wrapper {
   @extend %wide-bordered;
 
+  position: relative;
   margin-bottom: 1.5em;
   border-color: #ededed;
 
