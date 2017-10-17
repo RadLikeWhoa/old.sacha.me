@@ -27,6 +27,12 @@
       transform: translateX(0);
     }
   }
+
+  .filter-close {
+    @include at-least(m) {
+      display: none;
+    }
+  }
 }
 
 .filter-list-wrapper {
