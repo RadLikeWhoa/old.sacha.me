@@ -59,8 +59,8 @@
   margin-bottom: 3em;
 
   [data-icon] {
-    float: right;
-    padding-top: 0.25em;
+    padding-top: 0.175em;
+    margin-right: 0.5em;
   }
 
   @include at-least(m) {

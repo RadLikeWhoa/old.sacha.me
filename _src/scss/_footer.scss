@@ -1,7 +1,9 @@
 .site-footer {
+  position: relative;
   padding: 3em 0 1.5em;
   color: $main;
   background-color: $footer;
+  z-index: -1;
 
   [data-button] {
     margin-bottom: 1.5em;
