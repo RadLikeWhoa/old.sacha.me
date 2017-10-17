@@ -1,17 +1,25 @@
 [data-block] {
   @extend %wide-bordered;
 
+  position: relative;
   padding: 90px 1.5em 1.5em;
   color: #fff;
-  background-repeat: repeat-x, no-repeat;
+  background-repeat: no-repeat;
   border: none;
   box-shadow: 0 2px 4px rgba($default, 0.15);
-  animation: wave 20s linear infinite;
-  animation-play-state: paused;
-  will-change: background-position;
+  overflow: hidden;
 
-  &:hover {
-    animation-play-state: running;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 200%;
+    background-size: 360px 70px;
+    background-repeat: repeat;
+    animation: wave 20s linear infinite;
+    will-change: transform;
   }
 
   code {
@@ -20,12 +28,12 @@
 }
 
 @keyframes wave {
-  from {
-    background-position: 0 0, 0 0;
+  0% {
+    transform: translate3d(0, 0, 0);
   }
 
-  to {
-    background-position: -360px 0, 0 0;
+  100% {
+    transform: translate3d(-360px, 0, 0);
   }
 }
 
@@ -46,9 +54,11 @@ $blocks: (
 
 @each $name, $block in $blocks {
   [data-block="#{$name}"] {
-    background-image:
-      url(/assets/img/waves/#{$name}.svg),
-      linear-gradient(to bottom, #fff 70px, map-get($block, "background") 70px);
+    background-image: linear-gradient(to bottom, #fff 70px, map-get($block, "background") 70px);
+
+    &::before {
+      background-image: url(/assets/img/waves/#{$name}.svg);
+    }
 
     a {
       color: map-get($block, "link");
