@@ -1,42 +1,8 @@
-.about-header {
-  display: flex;
-
-  p {
-    @include at-least(m) {
-      align-self: center;
-      background-color: $main;
-      padding: 1.5em 0 1.5em 1.5em;
-      margin-left: -1.5em;
-      border-radius: 5px;
-    }
-  }
-
-  @include up-to(m) {
-    flex-direction: column;
-  }
-}
-
-.avatar-container {
-  width: 10em;
-  height: 10em;
-  margin-bottom: 1.5em;
-
-  @include up-to(m) {
-    width: 100%;
-  }
-}
-
 .avatar {
   display: block;
-  width: 10em;
-  height: 10em;
-  margin: 0 auto;
+	width: calc(100% + 3em);
+  margin: 0 -1.5em 1.5em;
   border-radius: 5px;
-
-  @include at-least(m) {
-    float: left;
-    margin: 0;
-  }
 }
 
 .sg-section {
