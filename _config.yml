@@ -25,6 +25,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
 
 kramdown:
   header_offset: 2
