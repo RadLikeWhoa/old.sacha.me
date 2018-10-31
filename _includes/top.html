@@ -1,45 +1,19 @@
-{% capture title %}
-  {% if page.title %}{{ page.title }} — {% endif %}Sacha Schmid, Front-End Developer
-{% endcapture %}
-{% capture description %}
-  {% if page.description %}{{ page.description | truncate: 160 }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}
-{% endcapture %}
-
 <!doctype html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title | strip_newlines }}</title>
     <meta name="apple-mobile-web-app-title" content="Sacha Schmid">
     <meta name="author" content="Sacha Schmid">
-    <meta name="description" content="{{ description }}">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.png">
     <link rel="icon" sizes="192x192" href="/apple-touch-icon.png">
-    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
     <meta name="theme-color" content="#e95e7a">
     <meta name="msapplication-TileColor" content="#e95e7a">
     <meta name="msapplication-TileImage" content="/apple-touch-icon.png">
     <link rel="alternate" href="{{ site.url }}/feed.xml" type="application/rss+xml" title="All Articles">
     <link rel="stylesheet" href="/assets/css/style.css?v={{ site.data.assets.style }}">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@sachaschmid">
-    <meta name="twitter:creator" content="@sachaschmid">
-    <meta name="twitter:img:src" content="{{ site.url }}/og-icon.png">
-    <meta name="twitter:img:width" content="800">
-    <meta name="twitter:img:height" content="800">
-    <meta name="twitter:title" content="{{ title | strip_newlines }}">
-    <meta name="twitter:description" content="{{ description }}">
-    <meta property="og:url" conent="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
-    <meta property="og:title" content="{{ title | strip_newlines }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="{{ site.url }}/apple-touch-icon.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
-    <link rel="cannonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+    {% seo %}
   </head>
   <body>
     <a id="skip" href="#content-start" tabindex="1" class="skip-to-content">Skip to content</a>
